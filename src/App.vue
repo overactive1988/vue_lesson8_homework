@@ -23,7 +23,7 @@ export default {
       } else {
         document
           .querySelector("meta[name='description']")
-          .setAttribute("content", "在古堡探險的旅途中，為您提供所需的道具與物資。");
+          .setAttribute("content", "小魔女諾貝塔雜貨店，在古堡探險的旅途中，為您提供所需的道具與物資。");
       }
     },
   },
