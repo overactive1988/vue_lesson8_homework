@@ -36,6 +36,7 @@ const app = createApp(App);
 app.config.globalProperties.$filters = {
   date,
   currency,
+  render: h => h(App)
 };
 
 app.use(VueAxios, axios);
@@ -44,5 +45,6 @@ app.use(router);
 app.component("Form", Form);
 app.component("Field", Field);
 app.component("ErrorMessage", ErrorMessage);
+
 
 app.mount("#app");
