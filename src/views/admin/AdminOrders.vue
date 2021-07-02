@@ -126,6 +126,9 @@ export default {
     DelAllOrders,
   },
   methods: {
+    showAlert(res) {
+      this.$swal(res.data.message);
+    },
     getOrder(num = this.pagination.current_page || 1) {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/orders?page=${num};`;
       this.$http
@@ -151,7 +154,7 @@ export default {
           if (res.data.success) {
             this.loadingStatus.loadingItem = "";
             this.$refs.adminOrderDelModal.closeModal();
-            alert(res.data.message);
+            this.showAlert(res);
             this.getOrder();
           }
         })
@@ -168,7 +171,7 @@ export default {
           if (res.data.success) {
             this.loadingStatus.loadingItem = "";
             this.$refs.adminAllOrderDelModal.closeModal();
-            alert(res.data.message);
+            this.showAlert(res);
             this.getOrder();
           }
         })
@@ -209,7 +212,7 @@ export default {
             this.$refs.adminOrderModal.closeModal(); // 關掉 modal
             this.getOrder(); // 重整畫面
           } else {
-            alert(res.data.message);
+            this.showAlert(res);
           }
         })
         .catch((error) => {

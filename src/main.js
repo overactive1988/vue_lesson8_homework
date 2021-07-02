@@ -8,6 +8,8 @@ import rules from "@vee-validate/rules";
 import { localize, setLocale } from "@vee-validate/i18n";
 // 匯入繁體中文語系檔案
 import zhTW from "@vee-validate/i18n/dist/locale/zh_TW.json";
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App.vue";
@@ -41,10 +43,23 @@ app.config.globalProperties.$filters = {
 app.use(VueAxios, axios);
 app.use(router);
 
+const options = {
+  confirmButtonColor: '#41b882',
+  cancelButtonColor: '#ff7674',
+  icon: 'success',
+};
+
+app.use(VueSweetalert2,options);
+
 app.component("Form", Form);
 app.component("Field", Field);
 app.component("ErrorMessage", ErrorMessage);
 
-new App({
-  render: h => h(App)
-}).$mount('#app')
+// LINE OGP 顯示
+// npm run build 時打開
+// new App({
+//   render: h => h(App)
+// }).$mount('#app')
+
+// npm run build 時關掉
+app.mount('#app')

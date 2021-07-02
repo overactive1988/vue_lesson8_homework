@@ -30,6 +30,12 @@ export default {
     this.loginCheck();
   },
   methods: {
+    showAlert() {
+      this.$swal({
+        title: "您尚未登入，請重新登入",
+        icon: 'info',
+      });
+    },
     // 檢查使用者是否仍持續登入
     loginCheck() {
       const url = `${process.env.VUE_APP_API}api/user/check`;
@@ -39,7 +45,7 @@ export default {
           if (res.data.success) {
             this.check = true;
           } else {
-            alert("您尚未登入，請重新登入");
+            this.showAlert();
             this.$router.push("/login");
           }
         })

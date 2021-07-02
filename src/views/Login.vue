@@ -75,7 +75,12 @@ export default {
     Footer,
   },
   methods: {
-    // 函式的集合
+    showAlert(res) {
+      this.$swal({
+        title: res.data.message,
+        icon: "error",
+      });
+    },
     login() {
       const url = `${process.env.VUE_APP_API}admin/signin`;
       this.$http
@@ -93,7 +98,7 @@ export default {
             this.$router.push("/admin");
           } else {
             // 輸入資料錯誤報錯提醒
-            alert(res.data.message);
+            this.showAlert(res);
             this.loginData = {};
           }
         })

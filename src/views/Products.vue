@@ -84,6 +84,9 @@ export default {
     Pagination,
   },
   methods: {
+    showAlert(res) {
+      this.$swal(res.data.message);
+    },
     // 取得商品列表
     getProducts(num = this.pagination.current_page || 1) {
       // 參數預設值
@@ -128,7 +131,7 @@ export default {
         .then((res) => {
           this.loadingStatus.loadingItem = "";
           emitter.emit("update-cart");
-          alert(res.data.message);
+          this.showAlert(res);
         })
         .catch((error) => {
           console.log(error);

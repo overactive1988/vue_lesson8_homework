@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import emitter from '../assets/js/methods/emitter';
+import emitter from "../assets/js/methods/emitter";
 export default {
   data() {
     return {
@@ -90,6 +90,9 @@ export default {
     };
   },
   methods: {
+    showAlert(res) {
+      this.$swal(res.data.message);
+    },
     getProduct() {
       const id = this.$route.params.id;
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/product/${id}`;
@@ -125,7 +128,7 @@ export default {
           this.loadingStatus.loadingItem = "";
           console.log(res);
           emitter.emit("update-cart");
-          alert(res.data.message);
+          this.showAlert(res);
           this.qty = 1;
         })
         .catch((error) => {

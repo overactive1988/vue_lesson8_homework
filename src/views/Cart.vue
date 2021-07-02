@@ -172,6 +172,9 @@ export default {
     UserCart,
   },
   methods: {
+    showAlert(res) {
+      this.$swal(res.data.message);
+    },
     deleteCartAll() {
       this.loadingStatus.loadingItem = 1;
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/carts`;
@@ -180,7 +183,7 @@ export default {
         .then((res) => {
           if (res.data.success) {
             this.loadingStatus.loadingItem = "";
-            alert(res.data.message);
+            this.showAlert(res);
             this.getCart();
           }
         })
@@ -212,7 +215,7 @@ export default {
         .then((res) => {
           if (res.data.success) {
             this.loadingStatus.loadingItem = "";
-            alert(res.data.message);
+            this.showAlert(res);
             this.getCart();
           }
         })
@@ -285,7 +288,7 @@ export default {
           if (res.data.success) {
             this.$refs.form.resetForm();
             this.form.message = "";
-            alert(res.data.message);
+            this.showAlert(res);
             this.loadingStatus.loadingItem = "";
             this.getCart();
           }

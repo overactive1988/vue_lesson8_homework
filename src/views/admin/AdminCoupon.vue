@@ -94,6 +94,9 @@ export default {
     AdminCouponDelModal,
   },
   methods: {
+    showAlert(res) {
+      this.$swal(res.data.message);
+    },
     getCoupon(num = this.pagination.current_page || 1) {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupons?page=${num}`;
       this.$http
@@ -153,7 +156,7 @@ export default {
             this.$refs.adminCouponModal.closeModal(); // 關掉 modal
             this.getCoupon(); // 重整畫面
           } else {
-            alert(res.data.message);
+            this.showAlert(res);
           }
         })
         .catch((error) => {
@@ -166,7 +169,7 @@ export default {
         .delete(url)
         .then((res) => {
           this.$refs.adminCouponDelModal.closeModal(); // 關掉 modal
-          alert(`已刪除${propsCoupon.title}優惠券`);
+          this.showAlert(res);
           console.log(res.data);
           this.getCoupon();
         })

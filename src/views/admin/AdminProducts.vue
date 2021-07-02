@@ -105,6 +105,9 @@ export default {
     this.getData();
   },
   methods: {
+    showAlert(res) {
+      this.$swal(res.data.message);
+    },
     // 取得商品列表
     getData(num = this.pagination.current_page || 1) {
       // 參數預設值
@@ -141,7 +144,7 @@ export default {
         .delete(url)
         .then((res) => {
           this.$refs.adminDelModal.closeModal(); // 關掉 modal
-          alert(`已刪除${this.tempProduct.title}商品`);
+          this.showAlert(res);
           console.log(res.data);
           this.getData();
         })
@@ -194,7 +197,7 @@ export default {
             this.$refs.adminControlModal.closeModal(); // 關掉 modal
             this.getData(); // 重整畫面
           } else {
-            alert(res.data.message);
+            this.showAlert(res);
           }
         })
         .catch((error) => {
