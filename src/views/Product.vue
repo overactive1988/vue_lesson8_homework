@@ -10,10 +10,40 @@
         <div class="row">
           <div class="col-sm-6">
             <img
+              v-if="!tempProduct.imagesUrl"
               class="img-fluid"
               :src="tempProduct.imageUrl"
               alt="{{tempProduct.title}}"
             />
+            <template v-if="tempProduct.imagesUrl">
+              <swiper
+                :style="{
+                  '--swiper-navigation-color': '#fff',
+                  '--swiper-pagination-color': '#fff',
+                }"
+                :spaceBetween="10"
+                :navigation="true"
+                :thumbs="{ swiper: thumbsSwiper }"
+                class="mySwiper2"
+              >
+                <swiper-slide v-for="item in tempProduct.imagesUrl" :key="item">
+                  <img class="img-fluid" :src="item" alt="" />
+                </swiper-slide>
+              </swiper>
+              <swiper
+                @swiper="setThumbsSwiper"
+                :spaceBetween="10"
+                :slidesPerView="4"
+                :freeMode="true"
+                :watchSlidesVisibility="true"
+                :watchSlidesProgress="true"
+                class="mySwiper mt-3"
+              >
+                <swiper-slide v-for="item in tempProduct.imagesUrl" :key="item">
+                  <img class="img-fluid" :src="item" alt="" />
+                </swiper-slide>
+              </swiper>
+            </template>
           </div>
           <div class="col-sm-6">
             <span class="badge bg-primary rounded-pill">{{
@@ -78,10 +108,18 @@
 </template>
 
 <script>
+import SwiperCore, { Navigation, Thumbs } from "swiper";
 import emitter from "../assets/js/methods/emitter";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/swiper.scss";
+import "swiper/components/navigation/navigation.min.css";
+import "swiper/components/thumbs/thumbs.min.css";
+
+SwiperCore.use([Navigation, Thumbs]);
 export default {
   data() {
     return {
+      thumbsSwiper: null,
       loadingStatus: {
         loadingItem: "",
       },
@@ -89,7 +127,14 @@ export default {
       tempProduct: {},
     };
   },
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
   methods: {
+    setThumbsSwiper(swiper) {
+      this.thumbsSwiper = swiper;
+    },
     showAlert(res) {
       this.$swal(res.data.message);
     },
@@ -144,3 +189,14 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.mySwiper .swiper-slide {
+  width: 25%;
+  opacity: 0.4;
+  cursor: pointer;
+}
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+</style>
