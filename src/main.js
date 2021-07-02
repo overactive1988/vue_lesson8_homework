@@ -44,7 +44,7 @@ app.use(VueAxios, axios);
 app.use(router);
 
 const options = {
-  confirmButtonColor: '#41b882',
+  confirmButtonColor: '#562a4d',
   cancelButtonColor: '#ff7674',
   icon: 'success',
 };
