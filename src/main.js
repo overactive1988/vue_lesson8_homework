@@ -32,6 +32,7 @@ configure({
 setLocale("zh_TW");
 
 const app = createApp(App);
+
 app.config.globalProperties.$filters = {
   date,
   currency,
@@ -44,4 +45,6 @@ app.component("Form", Form);
 app.component("Field", Field);
 app.component("ErrorMessage", ErrorMessage);
 
-app.mount("#app");
+new App({
+  render: h => h(App)
+}).$mount('#app')
