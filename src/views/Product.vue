@@ -18,8 +18,8 @@
             <template v-if="tempProduct.imagesUrl">
               <swiper
                 :style="{
-                  '--swiper-navigation-color': '#fff',
-                  '--swiper-pagination-color': '#fff',
+                  '--swiper-navigation-color': '#562a4d',
+                  'text-shadow':'1px 1px 4px #562a4d',
                 }"
                 :spaceBetween="10"
                 :navigation="true"
@@ -197,9 +197,4 @@ export default {
   opacity: 1;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-  color: #562a4d !important;
-  text-shadow: 1px 1px 4px #562a4d;
-}
 </style>
