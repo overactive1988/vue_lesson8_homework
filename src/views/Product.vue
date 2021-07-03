@@ -112,7 +112,6 @@ import SwiperCore, { Navigation, Thumbs } from "swiper";
 import emitter from "../assets/js/methods/emitter";
 import { Swiper, SwiperSlide } from "swiper/vue";
 
-
 SwiperCore.use([Navigation, Thumbs]);
 export default {
   data() {
@@ -198,8 +197,9 @@ export default {
   opacity: 1;
 }
 
-.swiper-button-next, .swiper-button-prev {
-  color: #562a4d!important;
+.swiper-button-next,
+.swiper-button-prev {
+  color: #562a4d !important;
   text-shadow: 1px 1px 4px #562a4d;
 }
 </style>
