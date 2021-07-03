@@ -111,9 +111,7 @@
 import SwiperCore, { Navigation, Thumbs } from "swiper";
 import emitter from "../assets/js/methods/emitter";
 import { Swiper, SwiperSlide } from "swiper/vue";
-import "swiper/swiper.scss";
-import "swiper/components/navigation/navigation.min.css";
-import "swiper/components/thumbs/thumbs.min.css";
+
 
 SwiperCore.use([Navigation, Thumbs]);
 export default {
