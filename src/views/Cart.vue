@@ -299,10 +299,8 @@ export default {
     },
   },
   mounted() {
-    this.getCart();
-  },
-  created() {
     console.clear();
+    this.getCart();
   },
 };
 </script>

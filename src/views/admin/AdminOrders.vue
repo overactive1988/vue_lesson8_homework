@@ -220,7 +220,7 @@ export default {
         });
     },
   },
-  created() {
+  mounted() {
     console.clear();
     this.getOrder();
   },

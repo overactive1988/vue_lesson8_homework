@@ -19,7 +19,7 @@
               <swiper
                 :style="{
                   '--swiper-navigation-color': '#562a4d',
-                  'text-shadow':'1px 1px 4px #562a4d',
+                  'text-shadow': '1px 1px 4px #562a4d',
                 }"
                 :spaceBetween="10"
                 :navigation="true"
@@ -179,10 +179,8 @@ export default {
     },
   },
   mounted() {
-    this.getProduct();
-  },
-  created() {
     console.clear();
+    this.getProduct();
   },
 };
 </script>
@@ -196,5 +194,4 @@ export default {
 .mySwiper .swiper-slide-thumb-active {
   opacity: 1;
 }
-
 </style>

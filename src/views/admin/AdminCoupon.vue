@@ -179,10 +179,8 @@ export default {
     },
   },
   mounted() {
-    this.getCoupon();
-  },
-  created() {
     console.clear();
+    this.getCoupon();
   },
 };
 </script>

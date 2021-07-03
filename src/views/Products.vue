@@ -138,8 +138,7 @@ export default {
         });
     },
   },
-  mounted() {},
-  created() {
+  mounted() {
     console.clear();
     this.getProducts();
   },

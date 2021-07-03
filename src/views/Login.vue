@@ -108,7 +108,7 @@ export default {
         });
     },
   },
-  created() {
+  mounted() {
     console.clear();
   },
 };

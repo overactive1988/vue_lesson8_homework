@@ -102,6 +102,7 @@ export default {
     DelProductModal,
   },
   mounted() {
+    console.clear();
     this.getData();
   },
   methods: {
@@ -204,9 +205,6 @@ export default {
           console.log(error);
         });
     },
-  },
-  created() {
-    console.clear();
   },
 };
 </script>
