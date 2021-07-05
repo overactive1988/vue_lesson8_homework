@@ -10,7 +10,7 @@
       <div class="modal-content border-0">
         <div class="modal-header bg-primary text-white">
           <h5 id="productModalLabel" class="modal-title">
-            <span v-if="whereProduct.title">編輯商品</span>
+            <span v-if="propsProduct.title">編輯商品</span>
             <span v-else>新增商品</span>
           </h5>
           <button
@@ -263,7 +263,7 @@
           <button
             type="button"
             class="btn btn-primary"
-            @click="$emit('update-product', whereProduct)"
+            @click="$emit('update-product', propsProduct)"
           >
             確認
           </button>
@@ -277,7 +277,7 @@
 import modalMixin from "@/assets/js/mixins/modalMixin";
 export default {
   props: {
-    whereProduct: {
+    propsProduct: {
       type: Object,
       default() {
         return {};
@@ -330,8 +330,8 @@ export default {
     };
   },
   watch: {
-    whereProduct() {
-      this.newProduct = this.whereProduct;
+    propsProduct() {
+      this.newProduct = this.propsProduct;
     },
   },
   mixins: [modalMixin],

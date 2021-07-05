@@ -6,7 +6,7 @@
           class="page-link"
           href="#"
           aria-label="Previous"
-          @click.prevent="$emit('get-product', page.current_page - 1)"
+          @click.prevent="$emit('get-page', page.current_page - 1)"
         >
           <span aria-hidden="true">&laquo;</span>
         </a>
@@ -21,7 +21,7 @@
         <a
           class="page-link"
           href="#"
-          @click.prevent="$emit('get-product', item)"
+          @click.prevent="$emit('get-page', item)"
           >{{ item }}</a
         >
       </li>
@@ -31,7 +31,7 @@
           class="page-link"
           href="#"
           aria-label="Next"
-          @click.prevent="$emit('get-product', page.current_page + 1)"
+          @click.prevent="$emit('get-page', page.current_page + 1)"
         >
           <span aria-hidden="true">&raquo;</span>
         </a>

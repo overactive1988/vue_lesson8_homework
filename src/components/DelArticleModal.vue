@@ -1,17 +1,17 @@
 <template>
   <div
-    id="delProductModal"
+    id="delArticleModal"
     ref="modal"
     class="modal fade"
     tabindex="-1"
-    aria-labelledby="delProductModalLabel"
+    aria-labelledby="delArticleModalLabel"
     aria-hidden="true"
   >
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content border-0">
         <div class="modal-header bg-danger text-white">
-          <h5 id="delProductModalLabel" class="modal-title">
-            <span>刪除商品</span>
+          <h5 id="delArticleModalLabel" class="modal-title">
+            <span>刪除文章</span>
           </h5>
           <button
             type="button"
@@ -21,9 +21,8 @@
           ></button>
         </div>
         <div class="modal-body">
-          是否刪除
-          <strong class="text-danger">{{ propsProduct.title }}</strong>
-          商品(刪除後將無法恢復)。
+          是否刪除文章<br />
+          <strong class="text-danger">{{ propsArticle.title }}</strong>
         </div>
         <div class="modal-footer">
           <button
@@ -34,7 +33,7 @@
             取消
           </button>
           <button
-            @click="$emit('delete-product', propsProduct)"
+            @click="$emit('delete-article', propsArticle)"
             type="button"
             class="btn btn-danger"
           >
@@ -51,13 +50,14 @@ import modalMixin from "@/assets/js/mixins/modalMixin";
 
 export default {
   props: {
-    propsProduct: {
+    propsArticle: {
       type: Object,
       default() {
         return {};
       },
     },
   },
+  emits: ["delete-article"],
   data() {
     return {
       modal: "",

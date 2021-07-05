@@ -166,7 +166,7 @@ import modalMixin from "@/assets/js/mixins/modalMixin";
 export default {
   emits: ["update-order"],
   props: {
-    editOrder: {
+    propsOrder: {
       type: Object,
       default() {
         return {};
@@ -189,8 +189,8 @@ export default {
     },
   },
   watch: {
-    editOrder() {
-      this.tempOrder = this.editOrder;
+    propsOrder() {
+      this.tempOrder = this.propsOrder;
     },
   },
   mixins: [modalMixin],

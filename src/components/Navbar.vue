@@ -80,9 +80,8 @@
 </template>
 
 <script>
-import emitter from '../assets/js/methods/emitter';
+import emitter from "../assets/js/methods/emitter";
 export default {
-
   data() {
     return {
       cartItems: "",
@@ -106,9 +105,9 @@ export default {
   },
   mounted() {
     this.getCartItem();
-    emitter.on('update-cart',()=>{
+    emitter.on("update-cart", () => {
       this.getCartItem();
-    })
+    });
   },
 };
 </script>

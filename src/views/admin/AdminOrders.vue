@@ -2,7 +2,7 @@
   <div class="container content">
     <h1 class="text-center">訂單列表</h1>
     <div class="d-flex justify-content-center mt-5">
-      <Pagination :page="pagination" @get-product="getOrder"></Pagination>
+      <Pagination :page="pagination" @get-page="getOrder"></Pagination>
     </div>
     <!-- 訂單列表 -->
     <table class="table align-middle mt-4">
@@ -80,19 +80,19 @@
       </tfoot>
     </table>
     <div class="d-flex justify-content-center mt-5">
-      <Pagination :page="pagination" @get-product="getOrder"></Pagination>
+      <Pagination :page="pagination" @get-page="getOrder"></Pagination>
     </div>
 
     <!-- Modal -->
     <AdminOrderModal
-      ref="adminOrderModal"
-      :edit-order="tempOrder"
+      ref="adminModal"
+      :props-order="tempOrder"
       @update-order="updateOrder"
     ></AdminOrderModal>
     <!-- 刪除按鈕彈出 Modal -->
     <DelOrdersModal
-      ref="adminOrderDelModal"
-      :delete-order="tempOrder"
+      ref="adminDelModal"
+      :props-order="tempOrder"
       @delete-orders="deleteOrder"
     ></DelOrdersModal>
     <DelAllOrders
@@ -153,7 +153,7 @@ export default {
         .then((res) => {
           if (res.data.success) {
             this.loadingStatus.loadingItem = "";
-            this.$refs.adminOrderDelModal.closeModal();
+            this.$refs.adminDelModal.closeModal();
             this.showAlert(res);
             this.getOrder();
           }
@@ -187,13 +187,13 @@ export default {
           this.tempOrder = { ...item };
           console.clear();
           console.log(this.tempOrder);
-          this.$refs.adminOrderModal.openModal();
+          this.$refs.adminModal.openModal();
           break;
         case "delete":
           // 因為傳參考特性會連動到資料，因此將資料進行淺層複製
           this.tempOrder = { ...item };
           // Modal需要拿到 title 和刪除按鈕時需要獲得 id
-          this.$refs.adminOrderDelModal.openModal();
+          this.$refs.adminDelModal.openModal();
           break;
         case "deleteall":
           this.$refs.adminAllOrderDelModal.openModal();
@@ -209,7 +209,7 @@ export default {
         .put(url, { data: temp }) // post 或 put
         .then((res) => {
           if (res.data.success) {
-            this.$refs.adminOrderModal.closeModal(); // 關掉 modal
+            this.$refs.adminModal.closeModal(); // 關掉 modal
             this.getOrder(); // 重整畫面
           } else {
             this.showAlert(res);

@@ -61,19 +61,19 @@
       總共有 <span id="productCount">{{ allproductsNum.length }}</span> 項商品
     </p>
     <div class="d-flex justify-content-center mt-5 mb-4">
-      <Pagination :page="pagination" @get-product="getData"></Pagination>
+      <Pagination :page="pagination" @get-page="getData"></Pagination>
     </div>
 
     <!-- Modal -->
     <AdminProductModal
-      ref="adminControlModal"
-      :where-product="tempProduct"
+      ref="adminModal"
+      :props-product="tempProduct"
       @update-product="updateProduct"
     ></AdminProductModal>
     <!-- 刪除按鈕彈出 Modal -->
     <DelProductModal
       ref="adminDelModal"
-      :temp-product="tempProduct"
+      :props-product="tempProduct"
       @delete-product="deleteProduct"
     ></DelProductModal>
   </div>
@@ -162,14 +162,14 @@ export default {
             imagesUrl: [],
           };
           this.isNew = true;
-          this.$refs.adminControlModal.openModal();
+          this.$refs.adminModal.openModal();
           break;
         case "edit":
           // 因為傳參考特性會連動到資料，因此將資料進行淺層複製
           this.getData();
           this.tempProduct = { ...item };
           this.isNew = false;
-          this.$refs.adminControlModal.openModal();
+          this.$refs.adminModal.openModal();
           break;
         case "delete":
           // 因為傳參考特性會連動到資料，因此將資料進行淺層複製
@@ -195,7 +195,7 @@ export default {
       this.$http[httpMethod](url, { data: tempProduct }) // post 或 put
         .then((res) => {
           if (res.data.success) {
-            this.$refs.adminControlModal.closeModal(); // 關掉 modal
+            this.$refs.adminModal.closeModal(); // 關掉 modal
             this.getData(); // 重整畫面
           } else {
             this.showAlert(res);

@@ -20,9 +20,9 @@
             aria-label="Close"
           ></button>
         </div>
-        <div v-if="deleteOrder.id" class="modal-body">
+        <div v-if="propsOrder.id" class="modal-body">
           是否刪除
-          <strong class="text-danger">{{ deleteOrder.user.name }}</strong>
+          <strong class="text-danger">{{ propsOrder.user.name }}</strong>
           的訂單(刪除後將無法恢復)。
         </div>
         <div class="modal-footer">
@@ -34,7 +34,7 @@
             取消
           </button>
           <button
-            @click="$emit('delete-orders', deleteOrder)"
+            @click="$emit('delete-orders', propsOrder)"
             type="button"
             class="btn btn-danger"
           >
@@ -50,7 +50,7 @@
 import modalMixin from "@/assets/js/mixins/modalMixin";
 export default {
   props: {
-    deleteOrder: {
+    propsOrder: {
       type: Object,
       default() {
         return {};

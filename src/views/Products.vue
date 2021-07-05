@@ -3,7 +3,7 @@
     <h1 class="text-center">商品列表</h1>
     <!-- 商品列表 -->
     <div class="d-flex justify-content-center mt-5">
-      <Pagination :page="pagination" @get-product="getProducts"></Pagination>
+      <Pagination :page="pagination" @get-page="getProducts"></Pagination>
     </div>
     <table class="table align-middle mt-4">
       <thead>
@@ -59,7 +59,7 @@
       總共有 <span id="productCount">{{ allproductsNum.length }}</span> 項商品
     </p>
     <div class="d-flex justify-content-center mt-5 mb-6">
-      <Pagination :page="pagination" @get-product="getProducts"></Pagination>
+      <Pagination :page="pagination" @get-page="getProducts"></Pagination>
     </div>
   </div>
 </template>

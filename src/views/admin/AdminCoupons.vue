@@ -56,28 +56,28 @@
       </tbody>
     </table>
     <div class="d-flex justify-content-center mt-5">
-      <Pagination :page="pagination" @get-product="getCoupon"></Pagination>
+      <Pagination :page="pagination" @get-page="getCoupon"></Pagination>
     </div>
 
     <!-- Modal -->
     <AdminCouponModal
-      ref="adminCouponModal"
-      :props-coupon="couponData"
+      ref="adminModal"
+      :props-coupon="tempCoupon"
       @update-coupon="updateCoupon"
     ></AdminCouponModal>
     <!-- 刪除按鈕彈出 Modal -->
-    <AdminCouponDelModal
-      ref="adminCouponDelModal"
-      :props-coupon="couponData"
+    <DelCouponModal
+      ref="adminDelModal"
+      :props-coupon="tempCoupon"
       @delete-coupon="deleteCoupon"
-    ></AdminCouponDelModal>
+    ></DelCouponModal>
   </div>
 </template>
 
 <script>
 import Pagination from "@/components/Pagination.vue";
 import AdminCouponModal from "@/components/AdminCouponModal.vue";
-import AdminCouponDelModal from "@/components/AdminCouponDelModal.vue";
+import DelCouponModal from "@/components/DelCouponModal.vue";
 
 export default {
   data() {
@@ -85,13 +85,13 @@ export default {
       isNew: true,
       coupons: {},
       pagination: {},
-      couponData: {},
+      tempCoupon: {},
     };
   },
   components: {
     Pagination,
     AdminCouponModal,
-    AdminCouponDelModal,
+    DelCouponModal,
   },
   methods: {
     showAlert(res) {
@@ -117,24 +117,24 @@ export default {
       switch (isNew) {
         case "new":
           // 先設定預設內容 due_date 轉為當前 Unix Timestamp 時間戳
-          this.couponData = {
+          this.tempCoupon = {
             due_date: Math.floor(Date.now() / 1000),
             is_enabled: 0,
           };
-          this.$refs.adminCouponModal.openModal();
+          this.$refs.adminModal.openModal();
           break;
         case "edit":
           // 因為傳參考特性會連動到資料，因此將資料進行淺層複製
           this.getCoupon();
-          this.couponData = { ...item };
+          this.tempCoupon = { ...item };
           this.isNew = false;
-          this.$refs.adminCouponModal.openModal();
+          this.$refs.adminModal.openModal();
           break;
         case "delete":
           // 因為傳參考特性會連動到資料，因此將資料進行淺層複製
-          this.couponData = { ...item };
+          this.tempCoupon = { ...item };
           // Modal需要拿到 title 和刪除按鈕時需要獲得 id
-          this.$refs.adminCouponDelModal.openModal();
+          this.$refs.adminDelModal.openModal();
           break;
         default:
           break;
@@ -153,7 +153,7 @@ export default {
       this.$http[httpMethod](url, { data: propsCoupon }) // post 或 put
         .then((res) => {
           if (res.data.success) {
-            this.$refs.adminCouponModal.closeModal(); // 關掉 modal
+            this.$refs.adminModal.closeModal(); // 關掉 modal
             this.getCoupon(); // 重整畫面
           } else {
             this.showAlert(res);

@@ -57,6 +57,13 @@
               >訂單列表<span class="text-uppercase">orders</span></router-link
             >
           </li>
+          <li class="nav-item">
+            <router-link
+              class="nav-link text-decoration-none header-nav-link fs-5"
+              to="/admin/articles"
+              >文章列表<span class="text-uppercase">articles</span></router-link
+            >
+          </li>
         </ul>
       </div>
     </div>
