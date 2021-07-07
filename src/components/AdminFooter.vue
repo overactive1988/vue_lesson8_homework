@@ -1,6 +1,16 @@
 <template>
-  <footer class="bg-primary fs-7 p-3 text-center position-relative">
-    <div class="position-absolute copyRight">
+  <footer
+    class="
+      bg-primary
+      fs-7
+      p-3
+      text-center
+      position-relative
+      d-flex d-sm-block
+      flex-column
+    "
+  >
+    <div class="order-2 mt-2 mt-sm-0 position-sm-absolute copyRight">
       <nav>
         <ul
           class="

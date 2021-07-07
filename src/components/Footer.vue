@@ -10,14 +10,7 @@
       flex-column
     "
   >
-    <div
-      class="
-        order-2
-        mt-2 mt-sm-0
-        position-sm-absolute
-        copyRight
-      "
-    >
+    <div class="order-2 mt-2 mt-sm-0 position-sm-absolute copyRight">
       <nav>
         <ul
           class="
