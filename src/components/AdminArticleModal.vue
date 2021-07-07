@@ -10,8 +10,7 @@
       <div class="modal-content border-0">
         <div class="modal-header bg-primary text-white">
           <h5 id="articleModalLabel" class="modal-title">
-            <span v-if="propsArticle.title">編輯文章</span>
-            <span v-else>新增文章</span>
+            <span>新增文章</span>
           </h5>
           <button
             type="button"
@@ -69,18 +68,49 @@
               />
             </div>
             <div class="form-group col-9">
-              <label for="description">文章敘述</label>
+              <label for="description">文章簡述</label>
               <input
                 id="description"
                 type="text"
                 class="form-control mt-1"
-                placeholder="請輸入文章敘述"
+                placeholder="請輸入文章簡述"
                 v-model.trim="newArticle.description"
               />
             </div>
           </div>
 
           <div class="row mt-3">
+            <div class="form-group col-md-4">
+              <div class="form-group">
+                <label
+                  class="text-light bg-secondary mb-2 py-1 px-2"
+                  for="mainImageUrl"
+                  >請輸入文章圖片網址</label
+                >
+                <input
+                  id="mainImageUrl"
+                  type="text"
+                  class="form-control"
+                  placeholder="請輸入圖片連結"
+                  v-model.trim="newArticle.image"
+                />
+                <img
+                  class="img-fluid my-3 form-img"
+                  :src="newArticle.image"
+                  :alt="newArticle.title"
+                />
+              </div>
+
+              <label class="btn btn-outline-success btn-sm d-block w-100 mt-3">
+                <input
+                  id="upload_img"
+                  style="display: none"
+                  type="file"
+                  @change="uploadMainImgage"
+                />
+                上傳圖片
+              </label>
+            </div>
             <div class="form-group col-md-8">
               <label for="content">文章內容</label>
               <textarea
@@ -88,12 +118,11 @@
                 type="text"
                 class="form-control mt-1"
                 placeholder="請輸入文章內容"
-                rows="4"
+                rows="12"
                 v-model.trim="newArticle.content"
               >
               </textarea>
             </div>
-            <div class="form-group col-md-4"></div>
           </div>
 
           <div class="form-group mt-3">
@@ -102,8 +131,8 @@
                 id="isPublic"
                 class="form-check-input"
                 type="checkbox"
-                :true-value="1"
-                :false-value="0"
+                :true-value="true"
+                :false-value="false"
                 v-model="newArticle.isPublic"
               />
               <label class="form-check-label" for="isPublic">是否啟用</label>
@@ -149,6 +178,24 @@ export default {
       create_at: "",
       newArticle: [],
     };
+  },
+  methods: {
+    uploadMainImgage(e) {
+      console.dir(e);
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/upload`;
+      const file = e.target.files[0];
+      const formData = new FormData();
+      formData.append("file-to-upload", file);
+      this.$http
+        .post(url, formData)
+        .then((res) => {
+          console.log(res);
+          this.newArticle.image = res.data.imageUrl;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
   },
   emits: ["update-article"],
   watch: {

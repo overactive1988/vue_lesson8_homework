@@ -83,6 +83,10 @@ const routes = [
         component: () => import("@/views/admin/AdminArticles.vue"),
         meta: { title: "文章列表", desc: "" },
       },
+      {
+        path: "article/:id",
+        component: () => import("@/views/admin/AdminArticle.vue"),
+      },
     ],
   },
 ];

@@ -12,24 +12,27 @@
         :key="item"
         class="col-12 col-md-6 col-lg-3 mb-4"
       >
-        <div class="card">
-          <h5 class="card-header">{{ item.title }}</h5>
-          <img
-            src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1624116647492.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=A9owtWGMztQvMIN7xsS%2BroI2hMulnjCPCUoJgP%2BGZ6HlS5gektIqNRpny3qzqcLnXD50K1UIKcrGoXY%2FamdNhZZ2h7fJ73HLq8%2BMJQwSqULoRXxlMbi9zliOmJRS87Nub76GpW7jcQ8MfBcf526wcqN7tixYgXonD8w3%2Bp9LzstRSda8vgCIuLI%2FlT%2FDnY%2Fw%2FjXCc%2Bj8tGARUP0oFtklLS3NNlRVrfBCGZts0Hp5a%2FzWc2U%2FWeDTWVZD%2FjOUI438UJH2bdSMTjVwnAVwV8m1hnzJ8ER%2F8wzc95zvMU%2FROQKI%2FtXsuFiJCySISitWRCNw8LtyEj%2FV9pC2NvBkmatstQ%3D%3D"
-            alt
-            class="card-img-top"
-          />
-          <div class="card-body">
-            <h5 class="card-title">{{ item.description }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{ item.content }}</h6>
-            <p class="card-text">作者：{{ item.author }}</p>
-            <small class="mb-2 text-muted">
+        <div class="card h-100">
+          <h5 class="card-header min-vh-75 d-flex align-items-center">
+            {{ item.title }}
+          </h5>
+          <img :src="item.image" alt class="card-img-top" />
+          <div class="card-body d-flex flex-column justify-content-end">
+            <span class="badge bg-primary mb-1">{{ item.tag }}</span>
+            <h5 class="card-title">
+              {{ item.description
+              }}<span v-if="item.isPublic" class="material-icons">
+                verified
+              </span>
+            </h5>
+            <p class="card-subtitle">作者：{{ item.author }}</p>
+            <small class="card-text mb-2 text-muted">
               貼文日期：{{ $filters.date(item.create_at) }}
             </small>
             <div class="btn-group w-100 mt-3">
               <router-link
                 class="btn btn-outline-primary btn-sm"
-                :to="`/article/${item.id}`"
+                :to="`/admin/article/${item.id}`"
                 >編輯</router-link
               >
               <button
@@ -145,8 +148,9 @@ export default {
         case "new":
           this.tempArticle = {
             create_at: Math.floor(Date.now() / 1000),
+            image: [],
             tag: [],
-            isPublic: 0,
+            isPublic: false,
           };
           this.isNew = true;
           this.$refs.adminModal.openModal();
