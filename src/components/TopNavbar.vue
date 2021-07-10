@@ -1,6 +1,13 @@
 <template>
   <nav
-    class="navbar navbar-expand-lg header-nav navbar-dark position-absolute w-100"
+    class="
+      nav-top
+      navbar navbar-expand-lg
+      header-nav
+      navbar-dark
+      position-absolute
+      w-100
+    "
     style="z-index: 1"
   >
     <div class="container-fluid">
@@ -26,7 +33,13 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div
-        class="collapse navbar-collapse justify-content-end"
+        class="
+          nav-top__collapse
+          collapse
+          navbar-collapse
+          position-lg-relative
+          justify-content-lg-end
+        "
         id="navbarNavDropdown"
       >
         <ul class="navbar-nav">
