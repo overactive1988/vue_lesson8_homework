@@ -1,0 +1,22 @@
+.section {
+}
+
+.section-title {
+    display: inline-flex;
+    flex-direction: column;
+
+}
+
+.section-title__text {
+    position: relative;
+}
+
+.section-title__text + .section-title__text {
+    margin-top: .5em;
+}
+
+.section-icon {
+    position: absolute;
+    left: -35px;
+    top: 15%;
+}

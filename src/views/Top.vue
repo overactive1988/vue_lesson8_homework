@@ -25,6 +25,104 @@
         </div>
       </div>
     </section>
+    <section class="top-products section py-6">
+      <div class="container">
+        <h3 class="section-title mb-5">
+          <p class="section-title__text h2">
+            <span class="material-icons section-icon"> flare </span>選購商品
+          </p>
+          <p class="section-title__text h5">請選擇您有興趣的商品類別</p>
+        </h3>
+        <div class="row row-cols-2 row-cols-lg-3 g-2 g-lg-3">
+          <div class="col">
+            <div class="top-products-card">
+              <a class="top-products-card__link" href="#">
+                <div class="top-products-card__inner">
+                  <figure class="top-products-card__media">
+                    <img
+                      class="img-fluid"
+                      src="../assets/images/top_products01.png"
+                      alt
+                    />
+                    <figcaption>莫妮卡 相關商品</figcaption>
+                  </figure>
+                  <span class="top-products-card__text">MONIKA</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="top-products-card">
+              <a class="top-products-card__link" href="#">
+                <div class="top-products-card__inner">
+                  <figure class="top-products-card__media">
+                    <img
+                      class="img-fluid"
+                      src="../assets/images/top_products02.png"
+                      alt
+                    />
+                    <figcaption>塔妮亞 相關商品</figcaption>
+                  </figure>
+                  <span class="top-products-card__text">TANIA</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="top-products-card">
+              <a class="top-products-card__link" href="#">
+                <div class="top-products-card__inner">
+                  <figure class="top-products-card__media">
+                    <img
+                      class="img-fluid"
+                      src="../assets/images/top_products03.png"
+                      alt
+                    />
+                    <figcaption>諾貝塔 相關商品</figcaption>
+                  </figure>
+                  <span class="top-products-card__text">NOBETA</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="top-news section pt-4 pb-2">
+      <div class="container">
+        <dl class="top-news__inner">
+          <dt class="top-news__title">
+            <a class="" href="#">最新消息</a>
+          </dt>
+          <dd class="top-news__item">
+            <ul class="top-news__lists">
+              <li class="top-news__list">
+                <a class="top-news__link text-light" href="#">
+                  <span class="top-news__date">2021/6/15</span>
+                  <span class="top-news__description"
+                    >實體化GK雕像製作決定!</span
+                  >
+                </a>
+              </li>
+              <li class="top-news__list">
+                <a class="top-news__link text-light" href="#">
+                  <span class="top-news__date">2021/6/1</span>
+                  <span class="top-news__description">6/1 是諾貝塔的生日</span>
+                </a>
+              </li>
+              <li class="top-news__list">
+                <a class="top-news__link text-light" href="#">
+                  <span class="top-news__date">2020/10/18</span>
+                  <span class="top-news__description"
+                    >小魔女諾貝塔的連載漫畫-第五話</span
+                  >
+                </a>
+              </li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+    </section>
   </main>
 </template>
 
