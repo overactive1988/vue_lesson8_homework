@@ -1,4 +1,7 @@
 <template>
+  <header>
+    <Navbar></Navbar>
+  </header>
   <div class="container mt-4">
     <h1 class="text-center">購物車列表</h1>
     <div class="text-end mb-2">
@@ -130,7 +133,7 @@
         <div class="text-end">
           <button
             type="submit"
-            class="btn btn-danger"
+            class="btn btn-primary"
             :disabled="cart.carts <= 1"
           >
             <span
@@ -148,6 +151,7 @@
 </template>
 
 <script>
+import Navbar from "@/components/Navbar.vue";
 import UserCart from "../components/UserCart.vue";
 import emitter from "../assets/js/methods/emitter";
 export default {
@@ -169,6 +173,7 @@ export default {
     };
   },
   components: {
+    Navbar,
     UserCart,
   },
   methods: {

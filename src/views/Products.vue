@@ -1,4 +1,7 @@
 <template>
+  <header>
+    <Navbar></Navbar>
+  </header>
   <div class="container content">
     <h1 class="text-center">商品列表</h1>
     <!-- 商品列表 -->
@@ -65,6 +68,7 @@
 </template>
 
 <script>
+import Navbar from "@/components/Navbar.vue";
 import Pagination from "@/components/Pagination.vue";
 import emitter from "../assets/js/methods/emitter";
 export default {
@@ -81,6 +85,7 @@ export default {
     };
   },
   components: {
+    Navbar,
     Pagination,
   },
   methods: {

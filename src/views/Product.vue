@@ -1,4 +1,7 @@
 <template>
+  <header>
+    <Navbar></Navbar>
+  </header>
   <div class="container content">
     <div class="modal-content border-0">
       <div class="modal-header">
@@ -108,6 +111,7 @@
 </template>
 
 <script>
+import Navbar from "@/components/Navbar.vue";
 import SwiperCore, { Navigation, Thumbs } from "swiper";
 import emitter from "../assets/js/methods/emitter";
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -125,6 +129,7 @@ export default {
     };
   },
   components: {
+    Navbar,
     Swiper,
     SwiperSlide,
   },
