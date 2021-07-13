@@ -40,11 +40,40 @@ const routes = [
       },
       {
         path: "cart",
-        component: () => import("@/views/Cart.vue"),
-        meta: {
-          title: "購物車列表",
-          desc: "距離獲得諾貝塔的稀有寶物與商品只差臨門一腳了",
-        },
+        component: () => import("@/views/cart/Cart.vue"),
+        children: [
+          {
+            path: "",
+            component: () => import("@/views/cart/CartTop.vue"),
+            meta: {
+              title: "購物車",
+              desc: "距離獲得諾貝塔的稀有寶物與商品只差臨門一腳了",
+            },
+          },
+          {
+            path: "/cartcheck",
+            component: () => import("@/views/cart/CartCheck.vue"),
+            meta: {
+              title: "填寫訂單",
+              desc: "距離獲得諾貝塔的稀有寶物與商品只差臨門一腳了",
+            },
+          },
+          {
+            path: "/cartconfirm",
+            component: () => import("@/views/cart/CartConfirm.vue"),
+            meta: {
+              title: "確認訂單",
+              desc: "距離獲得諾貝塔的稀有寶物與商品只差臨門一腳了",
+            },
+          },
+          {
+            path: "/cartcompleted",
+            component: () => import("@/views/cart/CartCompleted.vue"),
+            meta: {
+              title: "完成訂單",
+            },
+          },
+        ],
       },
       {
         path: "about",

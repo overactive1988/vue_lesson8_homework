@@ -1,52 +1,27 @@
 <template>
-  <header>
-    <Navbar></Navbar>
-  </header>
-  <div class="container mt-4">
-    <h1 class="text-center">購物車列表</h1>
-    <div class="text-end mb-2">
-      <button
-        class="btn btn-outline-danger"
-        type="button"
-        @click="deleteCartAll"
-        :disabled="cart.carts <= 1"
-      >
-        <span
-          v-if="loadingStatus.loadingItem === 1"
-          class="material-icons animate-spin"
-        >
-          cached
-        </span>
-        清空購物車
-      </button>
-    </div>
-    <!-- 購物車列表 -->
+  <div class="container content">
+    <h1 class="text-center">確認訂單</h1>
     <table class="table align-middle">
       <thead>
         <tr>
-          <th width="5%"></th>
           <th width="10%">縮圖</th>
           <th width="10%">類別</th>
           <th width="15%">品名</th>
-          <th width="15%">商品敘述</th>
-          <th width="15%">數量</th>
+          <th width="5%" class="text-end">數量</th>
           <th width="10%" class="text-end">單價</th>
           <th width="12%" class="text-end">合計</th>
         </tr>
       </thead>
       <tbody>
-        <UserCart
+        <ConfirmCart
           :loading="loadingStatus"
           :cartitem="cart"
-          @delete-cart="deleteCart"
-          @add-product-num="addProductNum"
-          @cut-product-num="cutProductNum"
           v-if="cart.carts"
-        ></UserCart>
+        ></ConfirmCart>
       </tbody>
       <tfoot>
         <tr>
-          <td colspan="7" class="text-end">總計</td>
+          <td colspan="5" class="text-end">總計</td>
           <td v-if="cart?.carts?.length >= 1" class="text-end">
             {{ $filters.currency(this.cart.total) }}
           </td>
@@ -54,10 +29,8 @@
         </tr>
       </tfoot>
     </table>
-  </div>
-  <div class="container content">
     <div class="my-5 row justify-content-center">
-      <Form ref="form" v-slot="{ errors }" @submit="onSubmit" class="col-md-6">
+      <Form ref="form" @submit="onSubmit" class="col-md-6">
         <div class="mb-3">
           <label for="name" class="form-label">收件人姓名</label>
           <Field
@@ -65,12 +38,11 @@
             name="姓名"
             type="text"
             class="form-control"
-            :class="{ 'is-invalid': errors['姓名'] }"
             placeholder="請輸入 姓名"
             rules="required"
-            v-model="form.user.name"
+            :value="form.user.name"
+            disabled
           ></Field>
-          <ErrorMessage name="姓名" class="invalid-feedback"></ErrorMessage>
         </div>
 
         <div class="mb-3">
@@ -80,12 +52,11 @@
             name="信箱"
             type="email"
             class="form-control"
-            :class="{ 'is-invalid': errors['信箱'] }"
             placeholder="請輸入 Email"
             rules="email|required"
-            v-model="form.user.email"
+            :value="form.user.email"
+            disabled
           ></Field>
-          <ErrorMessage name="信箱" class="invalid-feedback"></ErrorMessage>
         </div>
 
         <div class="mb-3">
@@ -95,12 +66,10 @@
             name="電話"
             type="tel"
             class="form-control"
-            :class="{ 'is-invalid': errors['電話'] }"
             placeholder="請輸入 電話"
-            :rules="isPhone"
-            v-model="form.user.tel"
+            :value="form.user.tel"
+            disabled
           ></Field>
-          <ErrorMessage name="電話" class="invalid-feedback"></ErrorMessage>
         </div>
 
         <div class="mb-3">
@@ -110,12 +79,24 @@
             name="地址"
             type="text"
             class="form-control"
-            :class="{ 'is-invalid': errors['地址'] }"
             placeholder="請輸入 地址"
             rules="required"
-            v-model="form.user.address"
+            :value="form.user.address"
+            disabled
           ></Field>
-          <ErrorMessage name="地址" class="invalid-feedback"></ErrorMessage>
+        </div>
+
+        <div class="mb-3">
+          <label for="payment" class="form-label">付款方式</label>
+          <Field
+            id="payment"
+            class="form-control"
+            name="付款方式"
+            rules="required"
+            :value="form.user.payment_method"
+            disabled
+          >
+          </Field>
         </div>
 
         <div class="mb-3">
@@ -126,7 +107,8 @@
             class="form-control"
             cols="30"
             rows="10"
-            v-model="form.message"
+            :value="form.message"
+            disabled
           ></textarea>
         </div>
 
@@ -147,13 +129,17 @@
         </div>
       </Form>
     </div>
+    <div class="d-flex justify-content-between mb-4">
+      <router-link class="btn btn-secondary" to="/cartcheck"
+        >返回填寫訂單</router-link
+      >
+    </div>
   </div>
 </template>
 
 <script>
-import Navbar from "@/components/Navbar.vue";
-import UserCart from "../components/UserCart.vue";
-import emitter from "../assets/js/methods/emitter";
+import emitter from "../../assets/js/methods/emitter";
+import ConfirmCart from "../../components/ConfirmCart.vue";
 export default {
   data() {
     return {
@@ -163,38 +149,28 @@ export default {
       cart: "",
       form: {
         user: {
-          name: "",
-          email: "",
-          tel: "",
-          address: "",
+          name: "123",
+          email: "koushun777@gmail.com",
+          tel: "0912345678",
+          address: "12444",
+          payment_method: "信用卡",
         },
         message: "",
       },
     };
   },
   components: {
-    Navbar,
-    UserCart,
+    ConfirmCart,
   },
   methods: {
     showAlert(res) {
       this.$swal(res.data.message);
     },
-    deleteCartAll() {
-      this.loadingStatus.loadingItem = 1;
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/carts`;
-      this.$http
-        .delete(url)
-        .then((res) => {
-          if (res.data.success) {
-            this.loadingStatus.loadingItem = "";
-            this.showAlert(res);
-            this.getCart();
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+    check() {
+      if (this.cart.carts.length < 1) {
+        alert("請先加入商品至購物車");
+        this.$router.push("/products");
+      }
     },
     getCart() {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`;
@@ -205,76 +181,27 @@ export default {
           if (res.data.success) {
             this.cart = res.data.data;
             emitter.emit("update-cart");
-            console.log(this.cart);
+            this.check();
           }
         })
         .catch((error) => {
           console.log(error);
         });
     },
-    deleteCart(item) {
-      this.loadingStatus.loadingItem = item.id;
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart/${item.id}`;
+    getCartOnly() {
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`;
       this.$http
-        .delete(url)
+        .get(url)
         .then((res) => {
+          // console.log(res);
           if (res.data.success) {
-            this.loadingStatus.loadingItem = "";
-            this.showAlert(res);
-            this.getCart();
+            this.cart = res.data.data;
+            emitter.emit("update-cart");
           }
         })
         .catch((error) => {
           console.log(error);
         });
-    },
-    cutProductNum(item) {
-      this.loadingStatus.loadingItem = item.id;
-      const cartInfo = {
-        data: {
-          product_id: item.product.id,
-          qty: (item.qty -= 1),
-        },
-      };
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart/${item.id}`;
-      this.$http
-        .put(url, cartInfo)
-        .then((res) => {
-          console.log(res);
-          if (res.data.success) {
-            this.loadingStatus.loadingItem = "";
-            this.getCart();
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-    addProductNum(item) {
-      this.loadingStatus.loadingItem = item.id;
-      const cartInfo = {
-        data: {
-          product_id: item.product.id,
-          qty: (item.qty += 1),
-        },
-      };
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart/${item.id}`;
-      this.$http
-        .put(url, cartInfo)
-        .then((res) => {
-          console.log(res);
-          if (res.data.success) {
-            this.loadingStatus.loadingItem = "";
-            this.getCart();
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-    isPhone(value) {
-      const phoneNumber = /^(09)[0-9]{8}$/;
-      return phoneNumber.test(value) ? true : "需為正確的 手機號碼";
     },
     onSubmit() {
       this.loadingStatus.loadingItem = 2;
@@ -295,7 +222,8 @@ export default {
             this.form.message = "";
             this.showAlert(res);
             this.loadingStatus.loadingItem = "";
-            this.getCart();
+            this.getCartOnly();
+            this.$router.push("/cartcompleted");
           }
         })
         .catch((error) => {

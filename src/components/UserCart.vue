@@ -29,9 +29,6 @@
       {{ item.product.title }}
     </td>
     <td>
-      {{ item.product.description }}
-    </td>
-    <td>
       <div class="input-group input-group-sm">
         <div class="input-group text-center mb-3">
           <button
