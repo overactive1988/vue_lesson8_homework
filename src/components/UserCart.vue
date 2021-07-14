@@ -1,36 +1,26 @@
 <template>
   <tr v-for="item in cartitem.carts" :key="item.id">
     <td>
-      <button
-        @click="$emit('delete-cart', item)"
-        type="button"
-        class="btn btn-outline-danger btn-sm"
+      <router-link
+        class="p-table__link text-decoration-none"
+        :to="`/product/${item.product.id}`"
       >
-        <span
-          v-if="loading.loadingItem === item.id"
-          class="material-icons animate-spin"
-        >
-          cached
-        </span>
-        x
-      </button>
+        <figure class="d-sm-flex align-items-center">
+          <img
+            class="product-img d-none d-sm-block"
+            :src="item.product.imageUrl"
+            :alt="item.product.title"
+          />
+          <figcaption class="ps-2">
+            <span class="badge bg-primary">{{ item.product.category }}</span>
+            <p class="fs-7 fs-sm-6">{{ item.product.title }}</p>
+          </figcaption>
+        </figure>
+      </router-link>
     </td>
     <td>
-      <img
-        class="product-img"
-        :src="item.product.imageUrl"
-        :alt="item.product.title"
-      />
-    </td>
-    <td>
-      {{ item.product.category }}
-    </td>
-    <td>
-      {{ item.product.title }}
-    </td>
-    <td>
-      <div class="input-group input-group-sm">
-        <div class="input-group text-center mb-3">
+      <div class="input-group">
+        <div class="input-group input-group-sm text-center mb-3 w-75 mx-auto">
           <button
             type="button"
             @click="$emit('cut-product-num', item)"
@@ -40,7 +30,7 @@
           >
             <span>-</span>
           </button>
-          <p class="form-control m-0">{{ item.qty }}</p>
+          <p class="form-control m-0 fs-7 fs-sm-6">{{ item.qty }}</p>
           <button
             type="button"
             @click="$emit('add-product-num', item)"
@@ -53,11 +43,24 @@
       </div>
     </td>
     <td class="text-end">
-      {{ $filters.currency(item.product.price) }}
+      <small class="text-success fs-7 fs-sm-6"
+        >{{ $filters.currency(item.total) }} NTD</small
+      >
     </td>
-
     <td class="text-end">
-      <small class="text-success">價格：{{ $filters.currency(item.total) }}</small>
+      <button
+        @click="$emit('delete-cart', item)"
+        type="button"
+        class="btn btn-outline-danger btn-sm fs-7 fs-sm-6"
+      >
+        <span
+          v-if="loading.loadingItem === item.id"
+          class="material-icons animate-spin"
+        >
+          cached
+        </span>
+        刪除
+      </button>
     </td>
   </tr>
 </template>

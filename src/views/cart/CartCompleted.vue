@@ -1,40 +1,23 @@
 <template>
   <div class="container content">
-    <h1 class="text-center">完成訂單</h1>
+    <template class="text-center" v-if="!this.$route.params.id"> 很抱歉，您並未依照正常流程操作 </template>
+    <router-view />
   </div>
 </template>
 
 <script>
-import emitter from "../../assets/js/methods/emitter";
 export default {
-  data() {
-    return {
-      cart: "",
-    };
-  },
   methods: {
-    showAlert(res) {
-      this.$swal(res.data.message);
-    },
-    getCart() {
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`;
-      this.$http
-        .get(url)
-        .then((res) => {
-          // console.log(res);
-          if (res.data.success) {
-            this.cart = res.data.data;
-            emitter.emit("update-cart");
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+    check() {
+      if (!this.$route.params.id) {
+        alert("很抱歉，請依照正常流程進行操作");
+        this.$router.push("/");
+      }
     },
   },
   mounted() {
     console.clear();
-    this.getCart();
+    this.check();
   },
 };
 </script>

@@ -46,7 +46,7 @@ const routes = [
             path: "",
             component: () => import("@/views/cart/CartTop.vue"),
             meta: {
-              title: "購物車",
+              title: "確認購物車",
               desc: "距離獲得諾貝塔的稀有寶物與商品只差臨門一腳了",
             },
           },
@@ -72,6 +72,12 @@ const routes = [
             meta: {
               title: "完成訂單",
             },
+            children: [
+              {
+                path: "/cartcompleted/:id",
+                component: () => import("@/views/cart/CartOrder.vue"),
+              },
+            ]
           },
         ],
       },

@@ -1,0 +1,38 @@
+.p-table {
+}
+
+.p-table__th--num {
+  width: 20%;
+  @include media-breakpoint-down(sm) {
+    width: 45%;
+  }
+}
+
+.p-table__th--name {
+  width: 40%;
+  @include media-breakpoint-down(sm) {
+    width: 25%;
+  }
+}
+
+.p-table__head {
+  background: #af7ca4;
+  border-bottom: 3px solid #562a4d;
+}
+
+.p-table__body {
+}
+
+.p-table__link {
+  & figure {
+    transition: 0.3s opacity;
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+}
+
+.p-table__foot {
+  background: #af7ca4;
+  border-top: 3px solid #562a4d;
+}

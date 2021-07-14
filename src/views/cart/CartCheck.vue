@@ -1,10 +1,18 @@
 <template>
-  <div class="container content">
+  <div class="container-lg content">
     <h1 class="text-center">填寫訂單</h1>
+    <figure class="my-5 text-center mx-auto">
+      <img
+        class="img-fluid"
+        src="../../assets/images/cart_step02.png"
+        alt="step2 填寫訂單"
+      />
+    </figure>
     <div class="my-5 row justify-content-center">
-      <Form ref="form" v-slot="{ errors }" @submit="onSubmit" class="col-md-6">
+      <Form ref="form" v-slot="{ errors }" @submit="onSubmit" class="col-md-7">
         <div class="mb-3">
           <label for="name" class="form-label">收件人姓名</label>
+          <span class="badge bg-danger p-1 fs-7 ms-1">必要</span>
           <Field
             id="name"
             name="姓名"
@@ -20,6 +28,7 @@
 
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
+          <span class="badge bg-danger p-1 fs-7 ms-1">必要</span>
           <Field
             id="email"
             name="信箱"
@@ -35,6 +44,7 @@
 
         <div class="mb-3">
           <label for="tel" class="form-label">收件人電話</label>
+          <span class="badge bg-danger p-1 fs-7 ms-1">必要</span>
           <Field
             id="tel"
             name="電話"
@@ -50,6 +60,7 @@
 
         <div class="mb-3">
           <label for="address" class="form-label">收件人地址</label>
+          <span class="badge bg-danger p-1 fs-7 ms-1">必要</span>
           <Field
             id="address"
             name="地址"
@@ -65,6 +76,7 @@
 
         <div class="mb-3">
           <label for="payment" class="form-label">付款方式</label>
+          <span class="badge bg-danger p-1 fs-7 ms-1">必要</span>
           <Field
             id="payment"
             class="d-block w-50 p-1"
@@ -94,7 +106,11 @@
           ></textarea>
         </div>
 
-        <div class="text-end">
+        <div class="d-flex justify-content-between">
+          <router-link class="btn btn-secondary" to="/cart"
+            >返回購物車</router-link
+          >
+
           <button
             type="submit"
             class="btn btn-primary"
@@ -110,9 +126,6 @@
           </button>
         </div>
       </Form>
-    </div>
-    <div class="d-flex justify-content-between mb-4">
-      <router-link class="btn btn-secondary" to="/cart">返回購物車</router-link>
     </div>
   </div>
 </template>

@@ -4,35 +4,33 @@
   </header>
   <div class="container content">
     <h1 class="text-center">商品列表</h1>
+    <p class="mt-4 text-end">
+      總共有 <span id="productCount">{{ allproductsNum.length }}</span> 項商品
+    </p>
     <!-- 商品列表 -->
-    <div class="d-flex justify-content-center mt-5">
-      <Pagination :page="pagination" @get-page="getProducts"></Pagination>
-    </div>
     <table class="table align-middle mt-4">
       <thead>
         <tr>
-          <th width="8%">排序</th>
           <th width="10%">商品縮圖</th>
           <th width="10%">商品名稱</th>
           <th width="27%">商品敘述</th>
           <th width="17%">商品規格</th>
-          <th width="9%">價格</th>
-          <th width="23%"></th>
+          <th class="text-end" width="9%">價格</th>
+          <th class="text-end" width="23%"></th>
         </tr>
       </thead>
       <tbody>
         <tr class="align-middle" v-for="item in products" :key="item.id">
-          <td>{{ item.num }}</td>
           <td>
             <img class="product-img" :src="item.imageUrl" :alt="item.title" />
           </td>
           <td>{{ item.title }}</td>
           <td>{{ item.description }}</td>
           <td>{{ item.content }}</td>
-          <td>
+          <td class="text-end">
             <div class="h5">{{ $filters.currency(item.price) }} 元</div>
           </td>
-          <td>
+          <td class="text-end">
             <div class="btn-group btn-group-sm">
               <router-link
                 class="btn btn-outline-primary"
@@ -58,18 +56,11 @@
         </tr>
       </tbody>
     </table>
-    <p class="mt-4">
-      總共有 <span id="productCount">{{ allproductsNum.length }}</span> 項商品
-    </p>
-    <div class="d-flex justify-content-center mt-5 mb-6">
-      <Pagination :page="pagination" @get-page="getProducts"></Pagination>
-    </div>
   </div>
 </template>
 
 <script>
 import Navbar from "@/components/Navbar.vue";
-import Pagination from "@/components/Pagination.vue";
 import emitter from "../assets/js/methods/emitter";
 export default {
   data() {
@@ -78,7 +69,6 @@ export default {
         loadingItem: "",
       },
       products: [],
-      pagination: {},
       product: {},
       cart: {},
       allproductsNum: "",
@@ -86,23 +76,21 @@ export default {
   },
   components: {
     Navbar,
-    Pagination,
   },
   methods: {
     showAlert(res) {
       this.$swal(res.data.message);
     },
     // 取得商品列表
-    getProducts(num = this.pagination.current_page || 1) {
+    getProducts() {
       // 參數預設值
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products?page=${num}`;
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`;
       this.$http
         .get(url)
         .then((res) => {
           if (res.data.success) {
-            const { products, pagination } = res.data;
+            const { products } = res.data;
             this.products = products;
-            this.pagination = pagination;
             this.getAllproducts();
             console.log(this.products);
           }

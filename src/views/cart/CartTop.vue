@@ -1,55 +1,62 @@
 <template>
-  <div class="container content mt-4">
-    <h1 class="text-center">購物車</h1>
-    <div class="text-end mb-2">
-      <button
-        class="btn btn-outline-danger"
-        type="button"
-        @click="deleteCartAll"
-        :disabled="cart.carts <= 1"
-      >
-        <span
-          v-if="loadingStatus.loadingItem === 1"
-          class="material-icons animate-spin"
+  <div class="container-lg content mt-4">
+    <h1 class="text-center">確認購物車</h1>
+    <figure class="my-5 text-center mx-auto">
+      <img
+        class="img-fluid"
+        src="../../assets/images/cart_step01.png"
+        alt="step1 確認購物車"
+      />
+    </figure>
+    <template v-if="cart.total > 0">
+      <div class="text-end mb-2">
+        <button
+          class="btn btn-outline-danger"
+          type="button"
+          @click="deleteCartAll"
+          :disabled="cart.carts <= 1"
         >
-          cached
-        </span>
-        清空購物車
-      </button>
-    </div>
-    <!-- 購物車列表 -->
-    <table class="table align-middle">
-      <thead>
-        <tr>
-          <th width="5%"></th>
-          <th width="10%">縮圖</th>
-          <th width="10%">類別</th>
-          <th width="15%">品名</th>
-          <th width="15%">數量</th>
-          <th width="10%" class="text-end">單價</th>
-          <th width="12%" class="text-end">合計</th>
-        </tr>
-      </thead>
-      <tbody>
-        <UserCart
-          :loading="loadingStatus"
-          :cartitem="cart"
-          @delete-cart="deleteCart"
-          @add-product-num="addProductNum"
-          @cut-product-num="cutProductNum"
-          v-if="cart.carts"
-        ></UserCart>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td colspan="6" class="text-end">總計</td>
-          <td v-if="cart?.carts?.length >= 1" class="text-end">
-            {{ $filters.currency(this.cart.total) }}
-          </td>
-          <td v-else class="text-end">尚無商品</td>
-        </tr>
-      </tfoot>
-    </table>
+          <span
+            v-if="loadingStatus.loadingItem === 1"
+            class="material-icons animate-spin"
+          >
+            cached
+          </span>
+          清空購物車
+        </button>
+      </div>
+      <!-- 購物車列表 -->
+      <table class="p-table table align-middle">
+        <thead class="p-table__head">
+          <tr class="text-light">
+            <th width="30%" class="text-center fs-7 fs-sm-6">商品</th>
+            <th class="p-table__th--num text-center fs-7 fs-sm-6">數量</th>
+            <th width="20%" class="text-end fs-7 fs-sm-6">小計</th>
+            <th width="20%"></th>
+          </tr>
+        </thead>
+        <tbody class="p-table__body">
+          <UserCart
+            :loading="loadingStatus"
+            :cartitem="cart"
+            @delete-cart="deleteCart"
+            @add-product-num="addProductNum"
+            @cut-product-num="cutProductNum"
+            v-if="cart.carts"
+          ></UserCart>
+        </tbody>
+        <tfoot class="p-table__foot">
+          <tr class="text-light">
+            <td colspan="2" class="text-end">總計</td>
+            <td colspan="2" v-if="cart?.carts?.length >= 1" class="text-end">
+              {{ $filters.currency(this.cart.total) }} NTD
+            </td>
+            <td v-else class="text-end">尚無商品</td>
+          </tr>
+        </tfoot>
+      </table>
+    </template>
+    <p v-else class="text-center">請先將商品加入購物車</p>
     <div class="d-flex justify-content-between mb-4">
       <router-link class="btn btn-secondary" to="/products"
         >繼續購物</router-link

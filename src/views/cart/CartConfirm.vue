@@ -1,138 +1,145 @@
 <template>
-  <div class="container content">
+  <div class="container-lg content">
     <h1 class="text-center">確認訂單</h1>
-    <table class="table align-middle">
-      <thead>
-        <tr>
-          <th width="10%">縮圖</th>
-          <th width="10%">類別</th>
-          <th width="15%">品名</th>
-          <th width="5%" class="text-end">數量</th>
-          <th width="10%" class="text-end">單價</th>
-          <th width="12%" class="text-end">合計</th>
-        </tr>
-      </thead>
-      <tbody>
-        <ConfirmCart
-          :loading="loadingStatus"
-          :cartitem="cart"
-          v-if="cart.carts"
-        ></ConfirmCart>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td colspan="5" class="text-end">總計</td>
-          <td v-if="cart?.carts?.length >= 1" class="text-end">
-            {{ $filters.currency(this.cart.total) }}
-          </td>
-          <td v-else class="text-end">尚無商品</td>
-        </tr>
-      </tfoot>
-    </table>
+    <figure class="my-5 text-center mx-auto">
+      <img
+        class="img-fluid"
+        src="../../assets/images/cart_step03.png"
+        alt="step3 確認訂單內容"
+      />
+    </figure>
     <div class="my-5 row justify-content-center">
-      <Form ref="form" @submit="onSubmit" class="col-md-6">
-        <div class="mb-3">
-          <label for="name" class="form-label">收件人姓名</label>
-          <Field
-            id="name"
-            name="姓名"
-            type="text"
-            class="form-control"
-            placeholder="請輸入 姓名"
-            rules="required"
-            :value="form.user.name"
-            disabled
-          ></Field>
+      <template v-if="cart.total > 0">
+        <div class="col-md-8">
+          <h2 class="text-center">購買品項</h2>
+          <table class="p-table table align-middle">
+            <thead class="p-table__head">
+              <tr class="text-light">
+                <th class="p-table__th--name text-center fs-7 fs-sm-6">商品</th>
+                <th width="15%" class="text-center fs-7 fs-sm-6">單價</th>
+                <th width="20%" class="text-center fs-7 fs-sm-6">數量</th>
+                <th width="30%" class="text-end fs-7 fs-sm-6">小計</th>
+              </tr>
+            </thead>
+            <tbody class="p-table__body">
+              <ConfirmCart :cartitem="cart" v-if="cart.carts"></ConfirmCart>
+            </tbody>
+            <tfoot class="p-table__foot">
+              <tr class="text-light">
+                <td colspan="3" class="text-end">總計</td>
+                <td v-if="cart?.carts?.length >= 1" class="text-end">
+                  {{ $filters.currency(this.cart.total) }} NTD
+                </td>
+                <td v-else class="text-end">尚無商品</td>
+              </tr>
+            </tfoot>
+          </table>
         </div>
 
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <Field
-            id="email"
-            name="信箱"
-            type="email"
-            class="form-control"
-            placeholder="請輸入 Email"
-            rules="email|required"
-            :value="form.user.email"
-            disabled
-          ></Field>
-        </div>
+        <Form ref="form" @submit="onSubmit" class="col-md-4">
+          <div class="mb-3">
+            <h2 class="text-center">客戶資訊</h2>
+            <label for="name" class="form-label">收件人姓名</label>
+            <Field
+              id="name"
+              name="姓名"
+              type="text"
+              class="form-control"
+              placeholder="請輸入 姓名"
+              rules="required"
+              :value="form.user.name"
+              disabled
+            ></Field>
+          </div>
 
-        <div class="mb-3">
-          <label for="tel" class="form-label">收件人電話</label>
-          <Field
-            id="tel"
-            name="電話"
-            type="tel"
-            class="form-control"
-            placeholder="請輸入 電話"
-            :value="form.user.tel"
-            disabled
-          ></Field>
-        </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <Field
+              id="email"
+              name="信箱"
+              type="email"
+              class="form-control"
+              placeholder="請輸入 Email"
+              rules="email|required"
+              :value="form.user.email"
+              disabled
+            ></Field>
+          </div>
 
-        <div class="mb-3">
-          <label for="address" class="form-label">收件人地址</label>
-          <Field
-            id="address"
-            name="地址"
-            type="text"
-            class="form-control"
-            placeholder="請輸入 地址"
-            rules="required"
-            :value="form.user.address"
-            disabled
-          ></Field>
-        </div>
+          <div class="mb-3">
+            <label for="tel" class="form-label">收件人電話</label>
+            <Field
+              id="tel"
+              name="電話"
+              type="tel"
+              class="form-control"
+              placeholder="請輸入 電話"
+              :value="form.user.tel"
+              disabled
+            ></Field>
+          </div>
 
-        <div class="mb-3">
-          <label for="payment" class="form-label">付款方式</label>
-          <Field
-            id="payment"
-            class="form-control"
-            name="付款方式"
-            rules="required"
-            :value="form.user.payment_method"
-            disabled
-          >
-          </Field>
-        </div>
+          <div class="mb-3">
+            <label for="address" class="form-label">收件人地址</label>
+            <Field
+              id="address"
+              name="地址"
+              type="text"
+              class="form-control"
+              placeholder="請輸入 地址"
+              rules="required"
+              :value="form.user.address"
+              disabled
+            ></Field>
+          </div>
 
-        <div class="mb-3">
-          <label for="message" class="form-label">留言</label>
-          <textarea
-            name=""
-            id="message"
-            class="form-control"
-            cols="30"
-            rows="10"
-            :value="form.message"
-            disabled
-          ></textarea>
-        </div>
-
-        <div class="text-end">
-          <button
-            type="submit"
-            class="btn btn-primary"
-            :disabled="cart.carts <= 1"
-          >
-            <span
-              v-if="loadingStatus.loadingItem === 2"
-              class="material-icons animate-spin"
+          <div class="mb-3">
+            <label for="payment" class="form-label">付款方式</label>
+            <Field
+              id="payment"
+              class="form-control"
+              name="付款方式"
+              rules="required"
+              :value="form.user.payment_method"
+              disabled
             >
-              cached
-            </span>
-            送出訂單
-          </button>
-        </div>
-      </Form>
-    </div>
-    <div class="d-flex justify-content-between mb-4">
-      <router-link class="btn btn-secondary" to="/cartcheck"
-        >返回填寫訂單</router-link
-      >
+            </Field>
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label">留言</label>
+            <textarea
+              name=""
+              id="message"
+              class="form-control"
+              cols="30"
+              rows="10"
+              :value="form.message"
+              disabled
+            ></textarea>
+          </div>
+
+          <div class="d-flex justify-content-between">
+            <router-link class="btn btn-secondary" to="/cartcheck"
+              >返回填寫訂單</router-link
+            >
+            <button
+              type="submit"
+              class="btn btn-primary"
+              :disabled="cart.carts <= 1"
+            >
+              <span
+                v-if="loadingStatus.loadingItem === 2"
+                class="material-icons animate-spin"
+              >
+                cached
+              </span>
+              送出訂單
+            </button>
+          </div>
+        </Form>
+      </template>
+      <p v-else class="text-center">請先將商品加入購物車</p>
     </div>
   </div>
 </template>
@@ -223,7 +230,7 @@ export default {
             this.showAlert(res);
             this.loadingStatus.loadingItem = "";
             this.getCartOnly();
-            this.$router.push("/cartcompleted");
+            this.$router.push(`/cartcompleted/${res.data.orderId}`);
           }
         })
         .catch((error) => {
