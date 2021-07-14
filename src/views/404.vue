@@ -17,7 +17,7 @@
           </div>
           <div class="col">
             <h1 class="fs-xl text-light">404</h1>
-            <p class="fs-4 text-light">對不起，找不太到您想前往的頁面…</p>
+            <p class="fs-4 text-light">對不起，找不到您想前往的頁面…</p>
           </div>
         </div>
       </div>

@@ -47,11 +47,39 @@
         </tbody>
         <tfoot class="p-table__foot">
           <tr class="text-light">
-            <td colspan="2" class="text-end">總計</td>
+            <td colspan="2">
+              <div class="input-group mb-3 input-group-sm">
+                <input
+                  type="text"
+                  class="form-control"
+                  v-model="coupon_code"
+                  placeholder="請輸入優惠碼"
+                />
+                <div class="input-group-append">
+                  <button
+                    class="btn btn-sm btn-outline-light ms-2"
+                    type="button"
+                    @click="addCouponCode()"
+                  >
+                    套用優惠碼
+                  </button>
+                </div>
+              </div>
+            </td>
             <td colspan="2" v-if="cart?.carts?.length >= 1" class="text-end">
-              {{ $filters.currency(this.cart.total) }} NTD
+              <del v-if="cart.final_total !== cart.total">
+                總計： {{ $filters.currency(this.cart.total) }} NTD</del
+              >
+              <template v-else
+                >總計： {{ $filters.currency(this.cart.total) }} NTD</template
+              >
             </td>
             <td v-else class="text-end">尚無商品</td>
+          </tr>
+          <tr v-if="cart.final_total !== cart.total">
+            <td colspan="4" class="text-end text-light">
+              折扣價： {{ $filters.currency(cart.final_total) }} NTD
+            </td>
           </tr>
         </tfoot>
       </table>
@@ -82,6 +110,7 @@ export default {
         loadingItem: "",
       },
       cart: "",
+      coupon_code: "",
     };
   },
   components: {
@@ -177,6 +206,25 @@ export default {
           if (res.data.success) {
             this.loadingStatus.loadingItem = "";
             this.getCart();
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    addCouponCode() {
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/coupon`;
+      const coupon = {
+        code: this.coupon_code,
+      };
+      this.$http
+        .post(url, { data: coupon })
+        .then((res) => {
+          if (res.data.success) {
+            console.log(res);
+            this.getCart();
+          } else {
+            console.log(res);
           }
         })
         .catch((error) => {

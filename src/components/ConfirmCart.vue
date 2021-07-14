@@ -20,24 +20,17 @@
       {{ item.qty }}
     </td>
     <td class="text-end">
-      <small class="text-success"
-        >價格：{{ $filters.currency(item.total) }}</small
-      >
+      <small v-if="item.final_total !== item.total" class="text-success"
+        >折扣價：</small
+      >{{ $filters.currency(item.final_total) }} NTD
     </td>
   </tr>
 </template>
 
 <script>
 export default {
-  emits: ["delete-cart", "add-product-num", "cut-product-num"],
   props: {
     cartitem: {
-      type: Object,
-      default() {
-        return {};
-      },
-    },
-    loading: {
       type: Object,
       default() {
         return {};

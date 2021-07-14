@@ -26,11 +26,25 @@
             </tbody>
             <tfoot class="p-table__foot">
               <tr class="text-light">
-                <td colspan="3" class="text-end">總計</td>
-                <td v-if="cart?.carts?.length >= 1" class="text-end">
-                  {{ $filters.currency(this.cart.total) }} NTD
+                <td
+                  colspan="4"
+                  v-if="cart?.carts?.length >= 1"
+                  class="text-end"
+                >
+                  <del v-if="cart.final_total !== cart.total">
+                    總計： {{ $filters.currency(this.cart.total) }} NTD</del
+                  >
+                  <template v-else
+                    >總計：
+                    {{ $filters.currency(this.cart.total) }} NTD</template
+                  >
                 </td>
                 <td v-else class="text-end">尚無商品</td>
+              </tr>
+              <tr v-if="cart.final_total !== cart.total">
+                <td colspan="4" class="text-end text-light">
+                  折扣價： {{ $filters.currency(cart.final_total) }} NTD
+                </td>
               </tr>
             </tfoot>
           </table>
@@ -114,7 +128,7 @@
               class="form-control"
               cols="30"
               rows="10"
-              :value="form.message"
+              :value="form.message" 
               disabled
             ></textarea>
           </div>
@@ -162,7 +176,7 @@ export default {
           address: "12444",
           payment_method: "信用卡",
         },
-        message: "",
+        message: "cccccc",
       },
     };
   },

@@ -51,6 +51,14 @@
                 </span>
                 加到購物車
               </button>
+              <button
+                @click="addMyFavorite(item.id)"
+                type="button"
+                class="btn btn-outline-danger"
+                :class="{ active: myFavorite.includes(item.id) }"
+              >
+                加到我的最愛
+              </button>
             </div>
           </td>
         </tr>
@@ -60,6 +68,19 @@
 </template>
 
 <script>
+// LocalStorage
+// 轉型
+const storageMethods = {
+  save(favorite) {
+    const favoriteString = JSON.stringify(favorite);
+    // Favorite
+    localStorage.setItem("Favorite", favoriteString);
+  },
+  get() {
+    return JSON.parse(localStorage.getItem("Favorite"));
+  },
+};
+
 import Navbar from "@/components/Navbar.vue";
 import emitter from "../assets/js/methods/emitter";
 export default {
@@ -72,12 +93,22 @@ export default {
       product: {},
       cart: {},
       allproductsNum: "",
+      myFavorite: storageMethods.get() || [],
     };
   },
   components: {
     Navbar,
   },
   methods: {
+    addMyFavorite(id) {
+      if (this.myFavorite.includes(id)) {
+        this.myFavorite.splice(this.myFavorite.indexOf(id), 1);
+      } else {
+        this.myFavorite.push(id);
+      }
+      console.log(this.myFavorite);
+      storageMethods.save(this.myFavorite);
+    },
     showAlert(res) {
       this.$swal(res.data.message);
     },

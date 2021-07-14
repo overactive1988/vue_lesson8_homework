@@ -42,10 +42,10 @@
         </div>
       </div>
     </td>
-    <td class="text-end">
-      <small class="text-success fs-7 fs-sm-6"
-        >{{ $filters.currency(item.total) }} NTD</small
-      >
+    <td class="text-end fs-7 fs-sm-6">
+      <small v-if="item.final_total !== item.total" class="text-success"
+        >折扣價：</small
+      >{{ $filters.currency(item.final_total) }} NTD
     </td>
     <td class="text-end">
       <button
