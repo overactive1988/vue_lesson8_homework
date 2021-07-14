@@ -244,7 +244,7 @@ export default {
             this.showAlert(res);
             this.loadingStatus.loadingItem = "";
             this.getCartOnly();
-            this.$router.push(`/cartcompleted/${res.data.orderId}`);
+            this.$router.push(`/cartpayment/${res.data.orderId}`);
           }
         })
         .catch((error) => {

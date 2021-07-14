@@ -44,23 +44,41 @@
             @cut-product-num="cutProductNum"
             v-if="cart.carts"
           ></UserCart>
+          <tr>
+            <td>
+              <span v-if="this.message" class="text-danger">{{
+                this.message
+              }}</span>
+            </td>
+          </tr>
         </tbody>
         <tfoot class="p-table__foot">
           <tr class="text-light">
             <td colspan="2">
-              <div class="input-group mb-3 input-group-sm">
+              <div
+                v-if="cart.final_total == cart.total"
+                class="input-group mb-3 input-group-sm"
+              >
                 <input
                   type="text"
                   class="form-control"
                   v-model="coupon_code"
                   placeholder="請輸入優惠碼"
+                  :disabled="cart.final_total !== cart.total"
                 />
                 <div class="input-group-append">
                   <button
                     class="btn btn-sm btn-outline-light ms-2"
                     type="button"
                     @click="addCouponCode()"
+                    :disabled="cart.final_total !== cart.total"
                   >
+                    <span
+                      v-if="loadingStatus.loadingItem === 3"
+                      class="material-icons animate-spin"
+                    >
+                      cached
+                    </span>
                     套用優惠碼
                   </button>
                 </div>
@@ -111,6 +129,7 @@ export default {
       },
       cart: "",
       coupon_code: "",
+      message: "",
     };
   },
   components: {
@@ -213,6 +232,7 @@ export default {
         });
     },
     addCouponCode() {
+      this.loadingStatus.loadingItem = 3;
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/coupon`;
       const coupon = {
         code: this.coupon_code,
@@ -221,10 +241,14 @@ export default {
         .post(url, { data: coupon })
         .then((res) => {
           if (res.data.success) {
-            console.log(res);
+            this.loadingStatus.loadingItem = "";
+            this.showAlert(res);
+            this.coupon_code = "";
+            this.message = "";
             this.getCart();
           } else {
             console.log(res);
+            this.message = res.data.message;
           }
         })
         .catch((error) => {

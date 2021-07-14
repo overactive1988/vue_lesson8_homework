@@ -2,7 +2,7 @@
   <header>
     <Navbar></Navbar>
   </header>
-  <div class="container content">
+  <div class="container-lg content">
     <h1 class="text-center">商品列表</h1>
     <p class="mt-4 text-end">
       總共有 <span id="productCount">{{ allproductsNum.length }}</span> 項商品

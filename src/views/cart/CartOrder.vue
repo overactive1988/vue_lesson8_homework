@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-center">完成訂單</h1>
+  <h1 class="text-center">完成下訂</h1>
   <figure class="my-5 text-center mx-auto">
     <img
       class="img-fluid"
@@ -62,15 +62,16 @@
       </tr>
     </tfoot>
   </table>
-  <figure class="my-6 text-center">
-    <img
-      class="img-fluid"
-      src="../../assets/images/thanks.jpg"
-      alt="謝謝您的下訂"
-    />
-  </figure>
   <div class="d-flex justify-content-center mb-4">
-    <router-link class="btn btn-secondary" to="/products">回商品列表</router-link>
+    <button type="button" class="btn btn-primary" @click="payment()">
+      <span
+        v-if="loadingStatus.loadingItem === 3"
+        class="material-icons animate-spin"
+      >
+        cached
+      </span>
+      結帳付款
+    </button>
   </div>
 </template>
 
@@ -78,6 +79,9 @@
 export default {
   data() {
     return {
+      loadingStatus: {
+        loadingItem: "",
+      },
       order: {},
     };
   },
@@ -95,6 +99,23 @@ export default {
           console.log(this.order);
           console.log(this.order.products);
           console.log(this.order.user);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    payment() {
+      this.loadingStatus.loadingItem = "3";
+      const id = this.$route.params.id;
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/pay/${id}`;
+      this.$http
+        .post(url)
+        .then((res) => {
+          if (res.data.success) {
+            this.loadingStatus.loadingItem = "";
+            this.showAlert(res);
+            this.$router.push(`/cartcompleted/${id}`);
+          }
         })
         .catch((error) => {
           console.log(error);

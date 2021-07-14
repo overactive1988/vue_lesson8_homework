@@ -11,9 +11,10 @@
             :src="item.product.imageUrl"
             :alt="item.product.title"
           />
-          <figcaption class="ps-2">
+          <figcaption class="ps-sm-2">
             <span class="badge bg-primary">{{ item.product.category }}</span>
-            <p class="fs-7 fs-sm-6">{{ item.product.title }}</p>
+            <p class="fs-7 fs-sm-6 mb-1">{{ item.product.title }}</p>
+            <div class="badge bg-success fs-8 fs-sm-7" v-if="item.coupon">已套用優惠券</div>
           </figcaption>
         </figure>
       </router-link>

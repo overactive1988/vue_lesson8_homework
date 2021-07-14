@@ -67,17 +67,30 @@ const routes = [
             },
           },
           {
+            path: "/cartpayment",
+            component: () => import("@/views/cart/CartPayment.vue"),
+            meta: {
+              title: "完成下訂",
+            },
+            children: [
+              {
+                path: "/cartpayment/:id",
+                component: () => import("@/views/cart/CartOrder.vue"),
+              },
+            ],
+          },
+          {
             path: "/cartcompleted",
             component: () => import("@/views/cart/CartCompleted.vue"),
             meta: {
-              title: "完成訂單",
+              title: "完成付款",
             },
             children: [
               {
                 path: "/cartcompleted/:id",
-                component: () => import("@/views/cart/CartOrder.vue"),
+                component: () => import("@/views/cart/CartFinished.vue"),
               },
-            ]
+            ],
           },
         ],
       },

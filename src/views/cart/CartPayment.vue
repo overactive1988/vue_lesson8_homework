@@ -1,8 +1,6 @@
 <template>
-  <div class="container-lg content">
-    <template class="text-center" v-if="!this.$route.params.id">
-      很抱歉，您並未依照正常流程操作
-    </template>
+  <div class="container content">
+    <template class="text-center" v-if="!this.$route.params.id"> 很抱歉，您並未依照正常流程操作 </template>
     <router-view />
   </div>
 </template>
