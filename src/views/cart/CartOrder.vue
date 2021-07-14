@@ -7,28 +7,9 @@
       alt="step4 完成下訂"
     />
   </figure>
-  <h2 class="text-center">
-    您的訂單編號為：<br class="d-block d-sm-none" /><span
-      class="fs-4 text-danger fw-bold"
-      >{{ this.order.id }}</span
-    >
-  </h2>
-  <hr />
-  <h2 class="text-center">客戶資訊</h2>
-  <div class="row justify-content-center">
-    <dl class="col-md-6" v-if="order.user">
-      <dt>姓名：</dt>
-      <dd>{{ order.user.name }}</dd>
-      <dt>寄送地址：</dt>
-      <dd>{{ order.user.address }}</dd>
-      <dt>E-mail信箱：</dt>
-      <dd>{{ order.user.email }}</dd>
-      <dt>付款方式：</dt>
-      <dd>{{ order.user.payment_method }}</dd>
-    </dl>
-  </div>
+
   <h2 class="text-center">購買品項</h2>
-  <table class="p-table table align-middle">
+  <table class="p-table table align-middle w-md-50 mx-auto">
     <thead class="p-table__foot">
       <tr class="text-light">
         <th width="40%" class="text-center fs-7 fs-sm-6">商品</th>
@@ -40,7 +21,7 @@
         <td>
           <figure class="d-sm-flex align-items-center">
             <img
-              class="product-img d-none d-sm-block"
+              class="product-img"
               :src="item.product.imageUrl"
               :alt="item.product.title"
             />
@@ -62,6 +43,21 @@
       </tr>
     </tfoot>
   </table>
+
+  <h2 class="text-center">客戶資訊</h2>
+  <div class="row justify-content-center">
+    <dl class="col-md-6" v-if="order.user">
+      <dt>姓名：</dt>
+      <dd>{{ order.user.name }}</dd>
+      <dt>寄送地址：</dt>
+      <dd>{{ order.user.address }}</dd>
+      <dt>E-mail信箱：</dt>
+      <dd>{{ order.user.email }}</dd>
+      <dt>付款方式：</dt>
+      <dd>{{ order.user.payment_method }}</dd>
+    </dl>
+  </div>
+
   <div class="d-flex justify-content-center mb-4">
     <button type="button" class="btn btn-primary" @click="payment()">
       <span
@@ -96,16 +92,13 @@ export default {
         .get(url)
         .then((res) => {
           this.order = res.data.order;
-          console.log(this.order);
-          console.log(this.order.products);
-          console.log(this.order.user);
         })
         .catch((error) => {
           console.log(error);
         });
     },
     payment() {
-      this.loadingStatus.loadingItem = "3";
+      this.loadingStatus.loadingItem = 3;
       const id = this.$route.params.id;
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/pay/${id}`;
       this.$http

@@ -247,6 +247,8 @@ export default {
             this.message = "";
             this.getCart();
           } else {
+            this.coupon_code = "";
+            this.loadingStatus.loadingItem = "";
             console.log(res);
             this.message = res.data.message;
           }

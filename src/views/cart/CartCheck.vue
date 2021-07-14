@@ -141,10 +141,10 @@ export default {
       cart: "",
       form: {
         user: {
-          name: "123",
-          email: "koushun777@gmail.com",
-          tel: "0912345678",
-          address: "12444",
+          name: "",
+          email: "",
+          tel: "",
+          address: "",
           payment_method: "",
         },
         message: "",
@@ -183,6 +183,7 @@ export default {
     },
     onSubmit() {
       this.loadingStatus.loadingItem = 2;
+      emitter.emit("sendForm", this.form);
       this.$router.push("/cartconfirm");
     },
   },

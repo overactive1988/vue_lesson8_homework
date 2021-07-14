@@ -61,7 +61,7 @@
               class="form-control"
               placeholder="請輸入 姓名"
               rules="required"
-              :value="form.user.name"
+              :value="propsForm.user.name"
               disabled
             ></Field>
           </div>
@@ -75,7 +75,7 @@
               class="form-control"
               placeholder="請輸入 Email"
               rules="email|required"
-              :value="form.user.email"
+              :value="propsForm.user.email"
               disabled
             ></Field>
           </div>
@@ -88,7 +88,7 @@
               type="tel"
               class="form-control"
               placeholder="請輸入 電話"
-              :value="form.user.tel"
+              :value="propsForm.user.tel"
               disabled
             ></Field>
           </div>
@@ -102,7 +102,7 @@
               class="form-control"
               placeholder="請輸入 地址"
               rules="required"
-              :value="form.user.address"
+              :value="propsForm.user.address"
               disabled
             ></Field>
           </div>
@@ -114,7 +114,7 @@
               class="form-control"
               name="付款方式"
               rules="required"
-              :value="form.user.payment_method"
+              :value="propsForm.user.payment_method"
               disabled
             >
             </Field>
@@ -128,7 +128,7 @@
               class="form-control"
               cols="30"
               rows="10"
-              :value="form.message" 
+              :value="propsForm.message"
               disabled
             ></textarea>
           </div>
@@ -162,22 +162,21 @@
 import emitter from "../../assets/js/methods/emitter";
 import ConfirmCart from "../../components/ConfirmCart.vue";
 export default {
+  props: {
+    propsForm: {
+      type: Object,
+      default() {
+        return {};
+      },
+    },
+  },
   data() {
     return {
       loadingStatus: {
         loadingItem: "",
       },
       cart: "",
-      form: {
-        user: {
-          name: "123",
-          email: "koushun777@gmail.com",
-          tel: "0912345678",
-          address: "12444",
-          payment_method: "信用卡",
-        },
-        message: "cccccc",
-      },
+      form: {},
     };
   },
   components: {
@@ -228,8 +227,8 @@ export default {
       this.loadingStatus.loadingItem = 2;
       const orderInfo = {
         data: {
-          user: this.form.user,
-          message: this.form.message,
+          user: this.propsForm.user,
+          message: this.propsForm.message,
         },
       };
       console.log(orderInfo);
@@ -245,6 +244,8 @@ export default {
             this.loadingStatus.loadingItem = "";
             this.getCartOnly();
             this.$router.push(`/cartpayment/${res.data.orderId}`);
+          }else{
+            console.log(res);
           }
         })
         .catch((error) => {

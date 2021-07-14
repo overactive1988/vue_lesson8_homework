@@ -14,7 +14,9 @@
           <figcaption class="ps-sm-2">
             <span class="badge bg-primary">{{ item.product.category }}</span>
             <p class="fs-7 fs-sm-6 mb-1">{{ item.product.title }}</p>
-            <div class="badge bg-success fs-8 fs-sm-7" v-if="item.coupon">已套用優惠券</div>
+            <div class="badge bg-success fs-8 fs-sm-7" v-if="item.coupon">
+              已套用優惠券
+            </div>
           </figcaption>
         </figure>
       </router-link>
@@ -45,8 +47,10 @@
     </td>
     <td class="text-end fs-7 fs-sm-6">
       <small v-if="item.final_total !== item.total" class="text-success"
-        >折扣價：</small
-      >{{ $filters.currency(item.final_total) }} NTD
+        >折扣價：{{ $filters.currency(item.final_total) }} NTD<br /><del class="text-dark"
+          >{{ $filters.currency(item.total) }} NTD</del
+        ></small
+      ><template v-else>{{ $filters.currency(item.total) }} NTD</template>
     </td>
     <td class="text-end">
       <button
