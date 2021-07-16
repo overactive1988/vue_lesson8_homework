@@ -37,22 +37,22 @@
 .top-scrolldown {
   position: absolute;
   bottom: 3.38542%;
-  right: 2.5%;
+  right: 4%;
   display: block;
   padding-right: 180px;
   overflow: hidden;
   color: #fff;
-  font-weight: 700;
-  font-size: 0.6rem;
-  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  font-size: .6rem;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.2;
   -webkit-transform: rotate(90deg) translate(0%, -100%);
   -ms-transform: rotate(90deg) translate(0%, -100%);
   transform: rotate(90deg) translate(0%, -100%);
-  -webkit-transform-origin: top right;
-  -ms-transform-origin: top right;
-  transform-origin: top right;
-  letter-spacing: 0.3em;
+  -webkit-transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
+  letter-spacing: .3em;
   @include media-breakpoint-down(md) {
     right: 8%;
   }
@@ -78,24 +78,22 @@
   width: 166px;
   height: 1px;
   overflow: hidden;
-  &::before {
-    background-color: #fff;
+  &::before,
+  &::after {
     position: absolute;
     display: block;
     width: 100%;
     height: inherit;
     content: "";
   }
+  &::before {
+    background-color: #fff;
+  }
   &::after {
     background-color: #000;
     -webkit-animation: line-scroll 1.3s cubic-bezier(0.215, 0.61, 0.355, 1)
       infinite;
     animation: line-scroll 1.3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: inherit;
-    content: "";
   }
 }
 

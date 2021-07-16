@@ -14,7 +14,6 @@
 .header-nav {
   & .header-nav-link {
     text-align: center;
-    font-family: Open Sans, sans-serif;
     letter-spacing: 0.16em;
     line-height: 1.6;
     padding-right: 1.4vw;
@@ -48,7 +47,7 @@
           border-bottom: 2px solid #a39f9c;
           display: inline-block;
           width: 75%;
-          top: 52%;
+          top: 55%;
           left: 12%;
           transition: all 0.4s ease 0s;
         }
@@ -71,7 +70,7 @@
           border-bottom: 2px solid #a39f9c;
           display: inline-block;
           width: 75%;
-          top: 52%;
+          top: 55%;
           left: 12%;
         }
       }
@@ -91,15 +90,4 @@
 
 .content-user {
   padding-top: 120.75px;
-}
-
-.navbar-brand {
-  & img {
-    transition: .2s opacity;
-  }
-  &:hover {
-    & img {
-      opacity: .75;
-    }
-  }
 }

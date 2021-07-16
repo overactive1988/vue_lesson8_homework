@@ -8,7 +8,7 @@
       position-fixed
       w-100
     "
-    :class="{ 'bg-dark': navbarTop }"
+    :class="{ 'bg-dark': navbarTop,'p-0': navbarTop }"
     style="z-index: 1"
   >
     <div class="container-fluid">
@@ -17,8 +17,8 @@
           <img
             src="../assets/images/logo.png"
             alt="LITTLE WITCH NOBETA"
-            width="180"
-            class="d-inline-block align-text-top"
+            class="d-inline-block align-text-top nav-logo"
+            :class="logoWidth.logo"
           />
         </router-link>
       </h1>
@@ -130,6 +130,9 @@ export default {
     return {
       cartItems: "",
       navbarTop: false,
+      logoWidth: {
+        logo: "w-100 w-sm-75",
+      },
     };
   },
   methods: {
@@ -148,14 +151,20 @@ export default {
         });
     },
     navSwitch() {
-      window.addEventListener("scroll", ()=> {
+      window.addEventListener("scroll", () => {
         const windowY = window.scrollY;
         const main = document.querySelector("#main");
 
         if (windowY > main.offsetTop) {
           this.navbarTop = true;
+          this.logoWidth = {
+            logo: "w-50",
+          };
         } else {
           this.navbarTop = false;
+          this.logoWidth = {
+            logo: "w-100 w-sm-75",
+          };
         }
       });
     },

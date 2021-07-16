@@ -1,4 +1,11 @@
 .nav-top {
   background-color: rgba(0, 0, 0, 0.1);
-  transition: 0.3s background-color;
+  transition: 0.3s all;
+}
+
+.nav-logo {
+  transition: 0.5s all;
+  &:hover {
+    opacity: 0.75;
+  }
 }
