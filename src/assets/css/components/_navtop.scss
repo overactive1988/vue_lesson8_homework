@@ -1,9 +1,4 @@
-.nav-top__collapse {
-  @include media-breakpoint-down(lg) {
-    position:absolute;
-    top: 69%;
-    right: 0;
-    width: 310px;
-    background-color: rgba(33,37,41,.8);
-  }
+.nav-top {
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: 0.3s background-color;
 }

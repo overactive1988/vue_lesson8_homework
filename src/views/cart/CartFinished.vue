@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-center">完成付款</h1>
+  <h1 class="text-center pt-4">完成付款</h1>
   <figure class="my-5 text-center mx-auto">
     <img
       class="img-fluid"

@@ -5,13 +5,14 @@
       navbar navbar-expand-lg
       header-nav
       navbar-dark
-      position-absolute
+      position-fixed
       w-100
     "
+    :class="{ 'bg-dark': navbarTop }"
     style="z-index: 1"
   >
     <div class="container-fluid">
-      <h1>
+      <h1 class="w-50 w-sm-auto">
         <router-link class="navbar-brand" to="/">
           <img
             src="../assets/images/logo.png"
@@ -21,6 +22,33 @@
           />
         </router-link>
       </h1>
+      <ul class="navbar-nav ms-auto d-block d-lg-none pe-2" style="">
+        <li class="nav-item" style="">
+          <router-link class="nav-link text-decoration-none" to="/cart"
+            ><span
+              class="material-icons position-relative"
+              style="font-size: 2.8rem"
+            >
+              shopping_cart
+              <span
+                v-if="cartItems"
+                class="
+                  position-absolute
+                  top-0
+                  start-100
+                  translate-middle
+                  badge
+                  rounded-pill
+                  bg-secondary
+                  font-monospace
+                "
+                >{{ cartItems }}
+                <span class="visually-hidden">unread messages</span></span
+              >
+            </span>
+          </router-link>
+        </li>
+      </ul>
       <button
         class="navbar-toggler"
         type="button"
@@ -34,11 +62,11 @@
       </button>
       <div
         class="
-          nav-top__collapse
           collapse
           navbar-collapse
           position-lg-relative
           justify-content-lg-end
+          mb-2 mb-lg-0
         "
         id="navbarNavDropdown"
       >
@@ -64,7 +92,7 @@
               >關於諾貝塔<span class="text-uppercase">about</span></router-link
             >
           </li>
-          <li class="nav-item text-center">
+          <li class="nav-item text-center d-none d-lg-block">
             <router-link class="nav-link text-decoration-none" to="/cart"
               ><span
                 class="material-icons position-relative"
@@ -101,6 +129,7 @@ export default {
   data() {
     return {
       cartItems: "",
+      navbarTop: false,
     };
   },
   methods: {
@@ -118,8 +147,21 @@ export default {
           console.log(error);
         });
     },
+    navSwitch() {
+      window.addEventListener("scroll", ()=> {
+        const windowY = window.scrollY;
+        const main = document.querySelector("#main");
+
+        if (windowY > main.offsetTop) {
+          this.navbarTop = true;
+        } else {
+          this.navbarTop = false;
+        }
+      });
+    },
   },
   mounted() {
+    this.navSwitch();
     this.getCartItem();
     emitter.on("update-cart", () => {
       this.getCartItem();

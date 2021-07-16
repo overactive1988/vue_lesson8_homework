@@ -2,8 +2,8 @@
   <header>
     <Navbar></Navbar>
   </header>
-  <div class="container content">
-    <div class="modal-content border-0">
+  <div class="container content content-user">
+    <div class="modal-content border-0 pt-4">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">
           <span>{{ tempProduct.title }}</span>

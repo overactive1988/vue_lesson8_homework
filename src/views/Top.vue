@@ -25,7 +25,7 @@
         </div>
       </div>
     </section>
-    <section class="top-products section py-6">
+    <section id="main" class="top-products section py-6">
       <div class="container">
         <h3 class="section-title mb-5">
           <p class="section-title__text h2">
@@ -129,8 +129,15 @@
 <script>
 import TopNavbar from "@/components/TopNavbar.vue";
 export default {
+  data() {
+    return {};
+  },
   components: {
     TopNavbar,
+  },
+  methods: {},
+  mounted() {
+    console.clear();
   },
 };
 </script>

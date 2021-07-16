@@ -1,7 +1,7 @@
 <template>
   <Navbar></Navbar>
-  <div class="container content">
-    <h1 class="text-center">後台登入</h1>
+  <div class="container content content-user">
+    <h1 class="text-center pt-4">後台登入</h1>
     <article class="login-article text-center mt-4">
       <div class="login p-4 rounded">
         <div class="row justify-content-center">
