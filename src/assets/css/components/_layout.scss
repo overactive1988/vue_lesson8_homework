@@ -92,3 +92,14 @@
 .content-user {
   padding-top: 120.75px;
 }
+
+.navbar-brand {
+  & img {
+    transition: .2s opacity;
+  }
+  &:hover {
+    & img {
+      opacity: .75;
+    }
+  }
+}

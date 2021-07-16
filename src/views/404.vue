@@ -2,8 +2,8 @@
   <header>
     <Navbar></Navbar>
   </header>
-  <div class="container-fulid content-user text-center bg-primary">
-    <div class="container content-user pt-6 pb-4 content position-relative">
+  <div id="main" class="container-fulid content-user text-center bg-primary">
+    <div class="container content-user pt-8 pb-4 content position-relative">
       <div class="col position-relative">
         <figure class="ms-4 mb-0">
           <img src="../assets/images/404.png" alt="塔尼亞" class="img-fluid" />

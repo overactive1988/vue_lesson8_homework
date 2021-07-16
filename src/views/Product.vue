@@ -2,7 +2,7 @@
   <header>
     <Navbar></Navbar>
   </header>
-  <div class="container content content-user">
+  <div id="main" class="container content content-user">
     <div class="modal-content border-0 pt-4">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">
