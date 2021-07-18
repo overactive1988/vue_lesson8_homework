@@ -122,14 +122,7 @@ const storageMethods = {
 import Navbar from "@/components/Navbar.vue";
 import emitter from "../assets/js/methods/emitter";
 export default {
-  props: {
-    propsCategory: {
-      type: Object,
-      default() {
-        return {};
-      },
-    },
-  },
+  props: ['propsCategory'],
   data() {
     return {
       loadingStatus: {
@@ -205,6 +198,8 @@ export default {
       // console.log("categories:", categories); // set 原形 類陣列
       this.categories = [...categories];
       console.log(this.categories);
+      this.selectCategory = this.propsCategory;
+      emitter.emit("clearProps");
     },
   },
   computed: {
@@ -216,8 +211,8 @@ export default {
   },
   mounted() {
     console.clear();
-    this.selectCategory = this.propsCategory;
     this.getProducts();
+    this.topCategory = "";
   },
 };
 </script>

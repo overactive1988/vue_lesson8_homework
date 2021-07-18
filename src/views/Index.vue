@@ -17,7 +17,9 @@ export default {
   mounted() {
     emitter.on("categoryTop", (c) => {
       this.topCategory = c;
-      console.log("this.topCategory:", this.topCategory);
+    });
+    emitter.on("clearProps", () => {
+      this.topCategory = "";
     });
   },
 };
