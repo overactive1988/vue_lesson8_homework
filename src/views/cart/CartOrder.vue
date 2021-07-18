@@ -3,7 +3,7 @@
   <figure class="my-5 text-center mx-auto">
     <img
       class="img-fluid"
-      src="../../assets/images/cart_step04.png"
+      src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626638315773.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=NAzscr3NADSvZ5T%2FO1PKZsVwLaMgiErpdNX2PjCqeKouBzWLfyZvcvGPgqyAE%2FP2Kh0TVGbHsgb9oIY6mWd9qk8hB09lQrfHozajWcUm6JZqz%2F0GrOlyR7sR2YTLPj6v2X9A660jp3Xs2qVkfMEGBHSYWUpG2BUzc9%2BE2BiagVh7iV3xrZeZOtmSHQJLjJLZDDQoD7JdFOXQH4Gp3WQjIoOIQ0fkWF1oSo1MVLlCuubgLpTDdGXf3CYTHgnWaJkXKyKgh%2F2Kjd6wa9q7gabCxHQBud6hQ31yf5V%2BYXDrF2xNLAbcM6BwSPHJi8lt%2F0p19uXvyIOhdDU4M6bKw3d59g%3D%3D"
       alt="step4 完成下訂"
     />
   </figure>

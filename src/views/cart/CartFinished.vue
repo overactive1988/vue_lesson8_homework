@@ -3,7 +3,7 @@
   <figure class="my-5 text-center mx-auto">
     <img
       class="img-fluid"
-      src="../../assets/images/cart_step05.png"
+      src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626638328976.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=AEobiA3PaimJxUH05FoodErufJ6jRC%2FB4onnCbutqk6Bfz%2Fx44GFznWSgS9VkIcCfxnSjyTwZrLzlt381TiyA0y6Y4xWcpG1X7A6TugycKo5A8Fr1JvDqKuVN%2BdZ4RxfUuISY3XNv1IeHR0m5NQ7%2Fvhz40kLaWOqGTpsmWf3auj6A8XW%2Bu%2Ff0yysBIjh0Jrp8k1Vkm6tsd8D%2FCGNsjNyRWJiLnXIeeEhPYC0Sg4KQMsZFQZ%2FP2GXqqzWVSunhoUCzOU9YTTXl1FrBL1Ox%2BLr01VAy9rOgbcuVewi3bD%2FfO1Y9sqwjyJ%2FPRzS1Wue7HM2fuEayy0PkgEa9cU4mbSuow%3D%3D"
       alt="step5 完成付款"
     />
   </figure>
@@ -11,7 +11,7 @@
   <figure class="my-6 text-center">
     <img
       class="img-fluid"
-      src="../../assets/images/thanks.jpg"
+      src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626638342417.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=Maw1O1uTdEaQxIy4SGx94PD9%2BpFPIyMp9KQz4aoFLDegnoZjY5N2oXJQhiDXL8Gil%2Bv9lwHuolwLB1YtDz%2FvXUh7F%2BLDdGKFoGErOkiQt7MC752YmiSIusbtSo9RH6Lg5RJtBWuMAatNExBb1yvn3GeOi2auBkAZ5wAcB%2BXSdpw%2BudYxsLl8wEETMpuRQXn3Qnr%2FlMWABHZV0wantAA3OXeLZms1I0Nb%2BuNLqgZzCDjxWqO8uxeFzuOOYm5ttlIBubi1KJwwYzxGbot7GDJkew%2Fm9XCoXhhhFSbAR6LA658s520sZ96jVb2fsF%2F5ILLXh6zwPdb0S%2FNwUDwXUYZ36g%3D%3D"
       alt="謝謝您的購買"
     />
   </figure>

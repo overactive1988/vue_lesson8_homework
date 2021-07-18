@@ -4,7 +4,7 @@
     <figure class="my-5 text-center mx-auto">
       <img
         class="img-fluid"
-        src="../../assets/images/cart_step01.png"
+        src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626638211897.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=cE9cq%2FuejGmjfshmJWikytVxp1UR98rJprDbTcN9R7qyaqv9AGb4Nxrt5eNf9naqv1a7MIc9wQmEUGPppvJv%2BjhHz9do1NAk5xS6EyIDOG1ZOY7E5JXOECmeXUgnDZy2W1hbBAyB0lIsASpoSW8H2AywjxzMYFE%2FHboUtkzswdjy5tDy07DBmpnAM9udZ6KRX8DxpBwZqhYNE9u18aFpNC5O3TXoafvGsgvOx7d%2B10siwv%2FlWYYPe925Q3eR67yfRHol3RSioPgSiIPE9t9l%2BQHRiKdzszK15bDfahZlDlDbnDyTf7gv0S0L7QhM5rj14j8ELLYCuy3%2FjFAhsAXPNA%3D%3D"
         alt="step1 確認購物車"
       />
     </figure>

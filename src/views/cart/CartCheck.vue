@@ -4,7 +4,7 @@
     <figure class="my-5 text-center mx-auto">
       <img
         class="img-fluid"
-        src="../../assets/images/cart_step02.png"
+        src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626638262066.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=NfdAEOCee8c1DktKIangjnAP2g1jIMG3H05q4kQGNqzb98VCcv%2FKXolI3t4JA2gIaWZkQ0D1AfKLG41aAqt6m9eCFVINJBi9MTzqVxzwFe6DWq55IQKgZxbvFGOiSRkcaRXIxVuMJrX%2BFFtRqXGgxy2BLFU6I7EV9MSr3uUVYpyiQgdxLLmhDi8ws1TQdsz2nLgsxcmdT6k4PgpYaSbnahWJoQgcLONzYJ4ClFzQ6rjUveFIZ7vJSJd4LtkV7vsrT3xkL9KIEE%2FtxXoK6aW8Zph2X%2BfJvpwbc2yaUQfQCZcbX77chGTXSjuT7QN7Ooxig6tYUctLj6P0rYWPYgNd1A%3D%3D"
         alt="step2 填寫訂單"
       />
     </figure>

@@ -94,7 +94,7 @@
             <p class="mt-2">商品內容：{{ tempProduct.content }}</p>
           </div>
           <!-- col-sm-6 end -->
-          <h3 class="text-center mt-5">{{ tempProduct.category }} 相關商品</h3>
+          <h3 class="text-center mt-4 mb-0">{{ tempProduct.category }} 相關商品</h3>
           <ul
             class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 list-unstyled"
           >

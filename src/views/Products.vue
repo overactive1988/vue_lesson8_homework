@@ -9,11 +9,11 @@
       <span id="productCount">{{ this.filterProducts.length }}</span> 項商品
     </p>
     <div class="row">
-      <div class="col-3">
-        <div class="list-group">
+      <div class="col-12 col-sm-3">
+        <div class="list-group mb-3 mb-sm-0">
           <a
             href="#"
-            class="list-group-item list-group-item-action"
+            class="list-group-item"
             aria-current="true"
             @click.prevent="selectCategory = ''"
             :class="{ active: selectCategory === '' }"
@@ -31,13 +31,7 @@
             {{ item }}
           </a>
 
-          <!-- <a href="#" class="list-group-item list-group-item-action"
-            >A third link item</a
-          >
-          <a href="#" class="list-group-item list-group-item-action"
-            >A fourth link item</a
-          >
-          <a
+          <!-- <a
             href="#"
             class="list-group-item list-group-item-action active disabled"
             tabindex="-1"
@@ -46,10 +40,10 @@
           > -->
         </div>
       </div>
-      <div class="col-9">
+      <div class="col-12 col-sm-9">
         <!-- 商品列表 -->
         <ul
-          class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 list-unstyled"
+          class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3 list-unstyled"
         >
           <li v-for="item in filterProducts" :key="item" class="col">
             <div class="card h-100">
@@ -128,6 +122,14 @@ const storageMethods = {
 import Navbar from "@/components/Navbar.vue";
 import emitter from "../assets/js/methods/emitter";
 export default {
+  props: {
+    propsCategory: {
+      type: Object,
+      default() {
+        return {};
+      },
+    },
+  },
   data() {
     return {
       loadingStatus: {
@@ -214,6 +216,7 @@ export default {
   },
   mounted() {
     console.clear();
+    this.selectCategory = this.propsCategory;
     this.getProducts();
   },
 };
