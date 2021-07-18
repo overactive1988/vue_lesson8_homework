@@ -10,9 +10,9 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content border-0">
         <div class="modal-header bg-danger text-white">
-          <h5 id="delProductModalLabel" class="modal-title">
+          <h3 id="delProductModalLabel" class="modal-title">
             <span>刪除商品</span>
-          </h5>
+          </h3>
           <button
             type="button"
             class="btn-close"

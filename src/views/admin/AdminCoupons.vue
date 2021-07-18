@@ -1,6 +1,6 @@
 <template>
   <div class="container content">
-    <h1 class="text-center">優惠券</h1>
+    <h2 class="text-center">優惠券</h2>
     <div class="text-end mt-4">
       <button @click="openModal('new')" class="btn btn-primary">
         建立新的商品

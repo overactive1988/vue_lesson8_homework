@@ -9,9 +9,9 @@
     <div class="modal-dialog modal-xl modal-dialog-centered">
       <div class="modal-content border-0">
         <div class="modal-header bg-primary text-white">
-          <h5 id="articleModalLabel" class="modal-title">
+          <h3 id="articleModalLabel" class="modal-title">
             <span>新增文章</span>
-          </h5>
+          </h3>
           <button
             type="button"
             class="btn-close"

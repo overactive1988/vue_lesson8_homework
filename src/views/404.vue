@@ -9,7 +9,7 @@
           <img src="../assets/images/404.png" alt="塔尼亞" class="img-fluid" />
         </figure>
       </div>
-      <h1 class="fs-xl text-light">404</h1>
+      <h2 class="fs-xl text-light">404</h2>
       <p class="fs-4 text-light">對不起，找不到您想前往的頁面…</p>
     </div>
   </div>

@@ -2,9 +2,9 @@
   <div class="container content">
     <div class="modal-content border-0">
       <div class="modal-header bg-primary text-white">
-        <h5 id="articleModalLabel" class="modal-title">
+        <h2 id="articleModalLabel" class="modal-title">
           <span>編輯文章</span>
-        </h5>
+        </h2>
       </div>
       <div class="modal-body">
         <div class="row mt-3">

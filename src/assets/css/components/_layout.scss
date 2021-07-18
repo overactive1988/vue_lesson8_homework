@@ -91,3 +91,10 @@
 .content-user {
   padding-top: 120.75px;
 }
+
+.stretched-link {
+  transition: 0.3s all;
+  &:hover {
+    opacity: 0.8;
+  }
+}

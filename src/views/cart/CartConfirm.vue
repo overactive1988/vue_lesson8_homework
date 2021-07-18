@@ -1,6 +1,6 @@
 <template>
   <div id="main" class="container-lg content content-user">
-    <h1 class="text-center pt-4">確認訂單</h1>
+    <h2 class="text-center pt-4">確認訂單</h2>
     <figure class="my-5 text-center mx-auto">
       <img
         class="img-fluid"

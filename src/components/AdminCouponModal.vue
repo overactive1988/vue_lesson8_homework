@@ -9,10 +9,10 @@
     <div class="modal-dialog modal-xl modal-dialog-centered">
       <div class="modal-content border-0">
         <div class="modal-header bg-primary text-white">
-          <h5 id="couponModalLabel" class="modal-title">
+          <h3 id="couponModalLabel" class="modal-title">
             <span v-if="propsCoupon.title">編輯優惠券</span>
             <span v-else>新增優惠券</span>
-          </h5>
+          </h3>
           <button
             type="button"
             class="btn-close"

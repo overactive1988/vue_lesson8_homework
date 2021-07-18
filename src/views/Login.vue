@@ -1,13 +1,13 @@
 <template>
   <Navbar></Navbar>
   <div id="main" class="container content content-user">
-    <h1 class="text-center pt-4">後台登入</h1>
+    <h2 class="text-center pt-4">後台登入</h2>
     <article class="login-article text-center my-4">
       <div class="login p-4 rounded">
         <div class="row justify-content-center">
-          <h1 class="h3 pb-3 mb-3 font-weight-normal text-main login-title">
+          <h3 class="h3 pb-3 mb-3 font-weight-normal text-main login-title">
             請輸入管理者資料
-          </h1>
+          </h3>
           <div class="col-auto">
             <form id="form" class="form-signin" @submit.prevent="login">
               <div class="form-floating mb-3">

@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-center pt-4">完成下訂</h1>
+  <h2 class="text-center pt-4">完成下訂</h2>
   <figure class="my-5 text-center mx-auto">
     <img
       class="img-fluid"

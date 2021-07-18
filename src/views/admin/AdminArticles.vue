@@ -1,6 +1,6 @@
 <template>
   <div class="container content">
-    <h1 class="text-center">文章列表</h1>
+    <h2 class="text-center">文章列表</h2>
     <div class="text-end mt-4">
       <button class="btn btn-primary" @click="openModal('new')">
         新增文章

@@ -3,67 +3,111 @@
     <Navbar></Navbar>
   </header>
   <div id="main" class="container-lg content content-user">
-    <h1 class="text-center pt-4">商品列表</h1>
+    <h2 class="text-center pt-4">商品列表</h2>
     <p class="mt-4 text-end">
-      總共有 <span id="productCount">{{ allproductsNum.length }}</span> 項商品
+      總共有
+      <span id="productCount">{{ this.filterProducts.length }}</span> 項商品
     </p>
-    <!-- 商品列表 -->
-    <table class="table align-middle mt-4">
-      <thead>
-        <tr>
-          <th width="10%">商品縮圖</th>
-          <th width="10%">商品名稱</th>
-          <th width="27%">商品敘述</th>
-          <th width="17%">商品規格</th>
-          <th class="text-end" width="9%">價格</th>
-          <th class="text-end" width="23%"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="align-middle" v-for="item in products" :key="item.id">
-          <td>
-            <img class="product-img" :src="item.imageUrl" :alt="item.title" />
-          </td>
-          <td>{{ item.title }}</td>
-          <td>{{ item.description }}</td>
-          <td>{{ item.content }}</td>
-          <td class="text-end">
-            <div class="h5">{{ $filters.currency(item.price) }} 元</div>
-          </td>
-          <td class="text-end">
-            <div class="btn-group btn-group-sm">
+    <div class="row">
+      <div class="col-3">
+        <div class="list-group">
+          <a
+            href="#"
+            class="list-group-item list-group-item-action"
+            aria-current="true"
+            @click.prevent="selectCategory = ''"
+            :class="{ active: selectCategory === '' }"
+            >所有商品</a
+          >
+          <a
+            href="#"
+            v-for="item in categories"
+            :key="item"
+            class="list-group-item list-group-item-action"
+            aria-current="true"
+            @click.prevent="selectCategory = item"
+            :class="{ active: item === selectCategory }"
+          >
+            {{ item }}
+          </a>
+
+          <!-- <a href="#" class="list-group-item list-group-item-action"
+            >A third link item</a
+          >
+          <a href="#" class="list-group-item list-group-item-action"
+            >A fourth link item</a
+          >
+          <a
+            href="#"
+            class="list-group-item list-group-item-action active disabled"
+            tabindex="-1"
+            aria-disabled="true"
+            >A disabled link item</a
+          > -->
+        </div>
+      </div>
+      <div class="col-9">
+        <!-- 商品列表 -->
+        <ul
+          class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 list-unstyled"
+        >
+          <li v-for="item in filterProducts" :key="item" class="col">
+            <div class="card h-100">
               <router-link
-                class="btn btn-outline-primary"
+                href="#"
                 :to="`/product/${item.id}`"
-                >查看更多</router-link
+                class="text-decoration-none stretched-link h-100"
               >
-              <button
-                @click="addCart(item.id)"
-                type="button"
-                :disabled="loadingStatus.loadingItem === item.id + 1"
-                class="btn btn-outline-danger"
+                <img
+                  :src="item.imageUrl"
+                  class="card-img-top"
+                  alt="item.title"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">{{ item.title }}</h5>
+                  <p class="card-text">{{ item.price }}NTD</p>
+                </div>
+              </router-link>
+
+              <div
+                class="
+                  card-footer
+                  d-flex
+                  align-items-center
+                  justify-content-between
+                  position-relative
+                "
+                style="z-index: 50"
               >
-                <span
-                  v-if="loadingStatus.loadingItem === item.id + 1"
-                  class="material-icons animate-spin"
+                <a href="#" @click.prevent="addMyFavorite(item.id)">
+                  <span
+                    v-if="myFavorite.includes(item.id)"
+                    class="material-icons"
+                  >
+                    star
+                  </span>
+                  <span v-else class="material-icons"> star_border </span>
+                </a>
+                <button
+                  @click="addCart(item.id)"
+                  type="button"
+                  :disabled="loadingStatus.loadingItem === item.id + 1"
+                  class="btn btn-primary btn-sm"
                 >
-                  cached
-                </span>
-                加到購物車
-              </button>
-              <button
-                @click="addMyFavorite(item.id)"
-                type="button"
-                class="btn btn-outline-danger"
-                :class="{ active: myFavorite.includes(item.id) }"
-              >
-                加到我的最愛
-              </button>
+                  <span
+                    v-if="loadingStatus.loadingItem === item.id + 1"
+                    class="material-icons animate-spin"
+                  >
+                    cached
+                  </span>
+                  加到購物車
+                </button>
+              </div>
             </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -92,8 +136,9 @@ export default {
       products: [],
       product: {},
       cart: {},
-      allproductsNum: "",
       myFavorite: storageMethods.get() || [],
+      categories: [],
+      selectCategory: "",
     };
   },
   components: {
@@ -122,20 +167,9 @@ export default {
           if (res.data.success) {
             const { products } = res.data;
             this.products = products;
-            this.getAllproducts();
             console.log(this.products);
+            this.getCatgories();
           }
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-    getAllproducts() {
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`;
-      this.$http
-        .get(url)
-        .then((res) => {
-          this.allproductsNum = Object.values(res.data.products); // 將回傳的物件轉換為陣列
         })
         .catch((error) => {
           console.log(error);
@@ -160,6 +194,22 @@ export default {
         .catch((error) => {
           console.log(error);
         });
+    },
+    getCatgories() {
+      const categories = new Set();
+      this.products.forEach((item) => {
+        categories.add(item.category);
+      });
+      // console.log("categories:", categories); // set 原形 類陣列
+      this.categories = [...categories];
+      console.log(this.categories);
+    },
+  },
+  computed: {
+    filterProducts() {
+      return this.products.filter((item) =>
+        item.category.match(this.selectCategory)
+      );
     },
   },
   mounted() {

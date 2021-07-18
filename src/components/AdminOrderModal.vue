@@ -9,9 +9,9 @@
     <div class="modal-dialog modal-xl modal-dialog-centered">
       <div class="modal-content border-0">
         <div class="modal-header bg-primary text-white">
-          <h5 id="customerOrderModalLabel" class="modal-title">
+          <h3 id="customerOrderModalLabel" class="modal-title">
             <span>修改客戶訂單內容</span>
-          </h5>
+          </h3>
           <button
             type="button"
             class="btn-close"
