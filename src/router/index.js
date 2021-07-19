@@ -27,6 +27,18 @@ const routes = [
         },
       },
       {
+        path: "articles",
+        component: () => import("@/views/Articles.vue"),
+        meta: {
+          title: "最新消息",
+          desc: "來自官方的諾貝塔相關創作與新聞的所有最新消息，統統集結於此",
+        },
+      },
+      {
+        path: "article/:id",
+        component: () => import("@/views/Article.vue"),
+      },
+      {
         path: "products",
         component: () => import("@/views/Products.vue"),
         meta: {
@@ -142,6 +154,12 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+  scrollBehavior() {
+    return {
+      top: 0,
+      behavior: "smooth",
+    };
+  },
 });
 
 export default router;

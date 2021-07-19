@@ -39,6 +39,7 @@
                   rounded-pill
                   bg-secondary
                   font-monospace
+                  lh-xs
                 "
                 >{{ cartItems }}
                 <span class="visually-hidden">unread messages</span></span
@@ -75,6 +76,13 @@
               class="nav-link text-decoration-none header-nav-link fs-5"
               to="/products"
               >商品列表<span class="text-uppercase">lineup</span></router-link
+            >
+          </li>
+          <li class="nav-item">
+            <router-link
+              class="nav-link text-decoration-none header-nav-link fs-5"
+              to="/articles"
+              >最新消息<span class="text-uppercase">news</span></router-link
             >
           </li>
           <li class="nav-item">

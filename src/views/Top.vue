@@ -60,31 +60,38 @@
       <div class="container">
         <dl class="top-news__inner">
           <dt class="top-news__title">
-            <a class="" href="#">最新消息</a>
+            <div class="d-flex" v-if="newArticles">
+              <a href="#" class="me-3"
+                ><img
+                  src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626681936945.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=qtWyghLUdNHaBdAGfAZXLIqojS8p3TfSeBfX1YpPfOYfLWL%2BqwRomHpSYbf0MDT3DrVejkTiR7XqI%2Bp6ik6%2FGq3T1hklxhlAw9ocMveQUTyqnmgOKRE4wX%2F%2Bw08nD4Obur1R10d5cPY%2BWJI8SELvpxK4avKmGgWn4JgAlh8VI7Z5yuB2%2Frjq2tUMeLU%2FhCstnJMLk%2B3up4IW8xJnq8bUdWnT%2BOglkq6sx9xyE4crg6c7NfR7spyqTMSwfEkA2n3AZnU99Ju78KpVNrYIBRv0TNuK9pbPZFBk%2BO1qaEMWNcEA841zN7uJ7%2Bk6yfEB7VSDxwlp48D63oOKkD2uIh6f%2Fw%3D%3D"
+                  alt=""
+                  @click.prevent="getNewArticles"
+              /></a>
+              <router-link to="/articles">最新消息</router-link>
+              <a href="#" class="ms-3"
+                ><img
+                  src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626681959597.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=dKMqb5sq5bjeXHWfegMqPgbTjHY%2FN94z0fxKNk62pmWXBD2YdfCSVckIrk0C6rPsCG8JBMzL4FZGh3ORwpwytqTSH66CkBMfDV6ltZI9upYrvdxT7hejl5608DaZ1iBfmCWEAYEz2SKmaprYUt3eRQzqTcD5J%2BTujdF1iGWg2l%2B9TxOWC8Ve%2BPx8cuz33cgeB19zgWTEgM1gM9su5wxVzPJx7JXvs%2B5qeGz1ZPpiNDnB3NbKjZtnzQCae5dnkeLX5HK3W4%2FoQJU4Lx21qm3mxVRrtaqi8zHFA7nDxJ1Ak8R5w7JTl%2FrOYCWx%2BrfxnnljWGeD3pjWFFHnHfLKavXWWQ%3D%3D"
+                  @click.prevent="nextNewArticles"
+                  alt=""
+              /></a>
+            </div>
           </dt>
           <dd class="top-news__item">
             <ul class="top-news__lists">
-              <li class="top-news__list">
-                <a class="top-news__link text-light" href="#">
-                  <span class="top-news__date">2021/6/15</span>
-                  <span class="top-news__description"
-                    >實體化GK雕像製作決定!</span
-                  >
-                </a>
-              </li>
-              <li class="top-news__list">
-                <a class="top-news__link text-light" href="#">
-                  <span class="top-news__date">2021/6/1</span>
-                  <span class="top-news__description">6/1 是諾貝塔的生日</span>
-                </a>
-              </li>
-              <li class="top-news__list">
-                <a class="top-news__link text-light" href="#">
-                  <span class="top-news__date">2020/10/18</span>
-                  <span class="top-news__description"
-                    >小魔女諾貝塔的連載漫畫-第五話</span
-                  >
-                </a>
+              <li
+                v-for="item in newArticles"
+                :key="item"
+                class="top-news__list"
+              >
+                <router-link
+                  class="top-news__link text-light"
+                  :to="`/article/${item.id}`"
+                >
+                  <span class="top-news__date">{{
+                    $filters.date(item.create_at)
+                  }}</span>
+                  <span class="top-news__description">{{ item.title }}</span>
+                </router-link>
               </li>
             </ul>
           </dd>
@@ -120,19 +127,55 @@ export default {
             "https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626635590142.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=qgwOswjyhkKQMh5OqDQLgQZyJj0fcmbPac%2BasWQrZjGv3zu3XdpbISetULwqMQ0wbKqnGEBorflz2dSWoSFiYfQw%2FJHLoNLBqCjAAhQrYkkFAqzRZESSuafr4IMIW0D%2FG29u36AJYfweS%2BlJJyu9OF8emhFTeZ66qhA%2Fu5n%2Foiv%2BDnK9SimYY%2F314tsH6jCRd1sBKdZBMRgXd8WQEM7ViFNKvMU7XZls1GxbUDwk1WniK4oXgtd9yJ3ZpEYfPtk99OwRie9ySTwV%2FISZfdkKqMBgQPzOAgKLIzYAwkt9Agv56V99PDEiowxdeefo04bFxPfVQOjI4sQJ8JgXFLjZlw%3D%3D",
         },
       ],
+      articles: {},
+      newArticles: [],
+      pagination: {},
     };
   },
   components: {
     TopNavbar,
   },
   methods: {
+    getArticles(num = this.pagination.current_page || 1) {
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/articles?page=${num}`;
+      this.$http
+        .get(url)
+        .then((res) => {
+          if (res.data.success) {
+            const { articles, pagination } = res.data;
+            this.articles = articles;
+            this.pagination = pagination;
+            this.getNewArticles();
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
     clickCategory(category) {
-      emitter.emit("categoryTop",category);
+      emitter.emit("categoryTop", category);
       this.$router.push(`/products/`);
+    },
+    getNewArticles() {
+      this.newArticles = [];
+      const maxSize = 3;
+      for (let index = 0; index < maxSize; index++) {
+        this.newArticles.push(this.articles[index]);
+      }
+      console.log(this.newArticles);
+    },
+    nextNewArticles() {
+      this.newArticles = [];
+      const maxSize = 6;
+      for (let index = 3; index < maxSize; index++) {
+        this.newArticles.push(this.articles[index]);
+      }
+      console.log(this.newArticles);
     },
   },
   mounted() {
     console.clear();
+    this.getArticles();
   },
 };
 </script>

@@ -135,7 +135,6 @@
 .top-products {
   background: url(https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626638411518.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=QcOhOOb2mCwtn31EdJGoxDW2yMz80RGwfbe0fv8lBatiaCQzbIpCdR8iE%2FFLXCaaO9XTcgps3Dp2Mym1vb0oeS0NdZjnERMbcH8la%2FBVIs%2BjxgQ73ImSqSmdSOhFmVpg83cifYOf0MzdrHAwrxaPWvlTlX36R0IglI2Mr6uCbBKK6LN6aOYfJSbqfU9Erkg6OMfpbOVQJcJ0gxcccp2Gs8lAC1DmRQsryLvlUHEKAhUqZtzrLEX%2Bqqz76f6TkQ2uwX%2BbftFjF24MClmWzQ58KdXmSQdii%2B8uynHnLK8qyqskjtE%2BAGx6cCRKLr3miGMsmgN7W19po%2BDaNExfEN5%2BBA%3D%3D) no-repeat top center;
   background-size: cover;
-  height: 100vh;
   color: #fff;
 }
 
@@ -211,26 +210,6 @@
   display: inline-block;
   margin: 0 auto;
   font-size: 1.5rem;
-  &::before {
-    content: "";
-    background: url(../assets/images/news-left-icon.png) no-repeat;
-    width: 34px;
-    height: 42px;
-    position: absolute;
-    left: -30px;
-    top: 50%;
-    transform: translate(-100%, -50%);
-  }
-  &::after {
-    content: "";
-    background: url(../assets/images/news-right-icon.png) no-repeat;
-    position: absolute;
-    width: 34px;
-    height: 42px;
-    right: -30px;
-    top: 50%;
-    transform: translate(100%, -50%);
-  }
   & a {
     color: #fff;
     text-decoration: none;

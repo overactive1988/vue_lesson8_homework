@@ -8,7 +8,7 @@
       position-fixed
       w-100
     "
-    :class="{ 'bg-dark': navbarTop,'p-0': navbarTop }"
+    :class="{ 'bg-dark': navbarTop, 'p-0': navbarTop }"
     style="z-index: 1"
   >
     <div class="container-fluid">
@@ -18,7 +18,7 @@
             src="../assets/images/logo.png"
             alt="LITTLE WITCH NOBETA"
             class="d-inline-block align-text-top nav-logo"
-            :class="logoWidth.logo"
+            width="180"
           />
         </router-link>
       </h1>
@@ -41,6 +41,7 @@
                   rounded-pill
                   bg-secondary
                   font-monospace
+                  lh-xs
                 "
                 >{{ cartItems }}
                 <span class="visually-hidden">unread messages</span></span
@@ -88,6 +89,13 @@
           <li class="nav-item">
             <router-link
               class="nav-link text-decoration-none header-nav-link fs-5"
+              to="/articles"
+              >最新消息<span class="text-uppercase">news</span></router-link
+            >
+          </li>
+          <li class="nav-item">
+            <router-link
+              class="nav-link text-decoration-none header-nav-link fs-5"
               to="/about"
               >關於諾貝塔<span class="text-uppercase">about</span></router-link
             >
@@ -130,9 +138,6 @@ export default {
     return {
       cartItems: "",
       navbarTop: false,
-      logoWidth: {
-        logo: "w-100 w-sm-75",
-      },
     };
   },
   methods: {
@@ -157,14 +162,8 @@ export default {
 
         if (windowY > main.offsetTop) {
           this.navbarTop = true;
-          this.logoWidth = {
-            logo: "w-50",
-          };
         } else {
           this.navbarTop = false;
-          this.logoWidth = {
-            logo: "w-100 w-sm-75",
-          };
         }
       });
     },

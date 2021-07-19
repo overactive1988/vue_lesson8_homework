@@ -48,7 +48,6 @@
           <li v-for="item in filterProducts" :key="item" class="col">
             <div class="card h-100">
               <router-link
-                href="#"
                 :to="`/product/${item.id}`"
                 class="text-decoration-none stretched-link h-100"
               >
@@ -122,7 +121,7 @@ const storageMethods = {
 import Navbar from "@/components/Navbar.vue";
 import emitter from "../assets/js/methods/emitter";
 export default {
-  props: ['propsCategory'],
+  props: ["propsCategory"],
   data() {
     return {
       loadingStatus: {
@@ -154,7 +153,6 @@ export default {
     },
     // 取得商品列表
     getProducts() {
-      // 參數預設值
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`;
       this.$http
         .get(url)
