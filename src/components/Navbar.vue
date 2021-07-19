@@ -110,6 +110,7 @@
                     rounded-pill
                     bg-secondary
                     font-monospace
+                    lh-xs
                   "
                   >{{ cartItems }}
                   <span class="visually-hidden">unread messages</span></span

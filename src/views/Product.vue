@@ -124,7 +124,7 @@
                     type="button"
                     :disabled="loadingStatus.loadingItem === item.id + 2"
                     class="btn btn-primary btn-sm ms-auto"
-                    style="z-index: 50"
+                    style="z-index: 5"
                   >
                     <span
                       v-if="loadingStatus.loadingItem === item.id + 2"

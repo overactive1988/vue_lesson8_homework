@@ -9,7 +9,7 @@
       w-100
     "
     :class="{ 'bg-dark': navbarTop, 'p-0': navbarTop }"
-    style="z-index: 1"
+    style="z-index: 10"
   >
     <div class="container-fluid">
       <h1 class="w-50 w-sm-auto">
@@ -118,6 +118,7 @@
                     rounded-pill
                     bg-secondary
                     font-monospace
+                    lh-xs
                   "
                   >{{ cartItems }}
                   <span class="visually-hidden">unread messages</span></span

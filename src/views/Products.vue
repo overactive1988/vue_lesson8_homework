@@ -70,7 +70,7 @@
                   justify-content-between
                   position-relative
                 "
-                style="z-index: 50"
+                style="z-index: 5"
               >
                 <a href="#" @click.prevent="addMyFavorite(item.id)">
                   <span
