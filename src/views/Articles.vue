@@ -4,7 +4,7 @@
   </header>
   <div id="main" class="container-lg content content-user">
     <h2 class="text-center pt-4">最新消息</h2>
-    <div class="row mt-3">
+    <div class="row mt-4">
       <div
         v-for="item in articles"
         :key="item"

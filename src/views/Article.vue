@@ -4,6 +4,9 @@
   </header>
   <div id="main" class="container-lg content content-user">
     <h2 class="text-center pt-4">單一文章</h2>
+    <div class="w-100 w-md-50 mx-auto">
+      <img :src="article.image" alt="article.title" class="img-fluid" />
+    </div>
   </div>
 </template>
 

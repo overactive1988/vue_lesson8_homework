@@ -2,14 +2,20 @@
   <header>
     <Navbar></Navbar>
   </header>
-  <div id="main" class="container-lg content content-user">
+  <div id="main" class="container-fluid content content-user">
     <h2 class="text-center pt-4">商品列表</h2>
     <p class="mt-4 text-end">
       總共有
       <span id="productCount">{{ this.filterProducts.length }}</span> 項商品
     </p>
     <div class="row">
-      <div class="col-12 col-sm-3">
+      <div
+        class="
+          col-12 col-sm-3 col-md-2
+          position-relativd position-sm-fixed
+          me-auto
+        "
+      >
         <div class="list-group mb-3 mb-sm-0">
           <a
             href="#"
@@ -40,10 +46,10 @@
           > -->
         </div>
       </div>
-      <div class="col-12 col-sm-9">
+      <div class="col-12 col-sm-9 col-md-10 ms-auto">
         <!-- 商品列表 -->
         <ul
-          class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3 list-unstyled"
+          class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 list-unstyled"
         >
           <li v-for="item in filterProducts" :key="item" class="col">
             <div class="card h-100">

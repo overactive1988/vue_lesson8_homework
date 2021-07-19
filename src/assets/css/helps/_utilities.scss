@@ -412,7 +412,8 @@ $utilities: map-merge(
         map-merge(
           $spacers,
           (
-            auto: auto
+            auto: auto,
+            25: 25%
           )
         )
     ),
