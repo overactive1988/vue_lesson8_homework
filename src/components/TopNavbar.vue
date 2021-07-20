@@ -12,16 +12,16 @@
     style="z-index: 10"
   >
     <div class="container-fluid">
-      <h1 class="w-50 w-sm-auto">
+      <p class="w-50 w-sm-auto my-2">
         <router-link class="navbar-brand" to="/">
           <img
             src="../assets/images/logo.png"
             alt="LITTLE WITCH NOBETA"
             class="d-inline-block align-text-top nav-logo"
-            width="180"
+            width="120"
           />
         </router-link>
-      </h1>
+      </p>
       <ul class="navbar-nav ms-auto d-block d-lg-none pe-2" style="">
         <li class="nav-item" style="">
           <router-link class="nav-link text-decoration-none" to="/cart"
@@ -93,13 +93,13 @@
               >最新消息<span class="text-uppercase">news</span></router-link
             >
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <router-link
               class="nav-link text-decoration-none header-nav-link fs-5"
               to="/about"
               >關於諾貝塔<span class="text-uppercase">about</span></router-link
             >
-          </li>
+          </li> -->
           <li class="nav-item text-center d-none d-lg-block">
             <router-link class="nav-link text-decoration-none" to="/cart"
               ><span

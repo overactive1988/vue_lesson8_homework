@@ -1,0 +1,23 @@
+.img-cover {
+  object-position: center top;
+  object-fit: cover;
+  height: calc(10vw);
+  max-height: 400px;
+  min-height: 300px;
+  @include media-breakpoint-down(sm) {
+    min-height: 350px;
+  }
+}
+
+.img-top-about {
+  object-position: center 15%;
+  object-fit: cover;
+  height: 750px;
+  width: 100%;
+  @include media-breakpoint-down(md) {
+    height: 350px;
+  }
+  @include media-breakpoint-down(sm) {
+    height: 250px;
+  }
+}

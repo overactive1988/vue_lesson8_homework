@@ -8,20 +8,22 @@
       <div
         v-for="item in articles"
         :key="item"
-        class="col-12 col-md-6 col-lg-3 mb-4"
+        class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
       >
         <div class="card h-100">
           <router-link
             :to="`/article/${item.id}`"
             class="d-flex flex-column text-decoration-none stretched-link h-100"
           >
-            <img :src="item.image" alt class="card-img-top" />
+            <img :src="item.image" alt class="card-img-top img-cover" />
             <div class="card-body d-flex flex-column">
-              <h5 class="card-title mt-auto">
+              <h5 class="card-title my-auto">
                 {{ item.title }}
               </h5>
               <small class="card-text mb-2 text-muted">
-                {{ $filters.date(item.create_at) }}
+                <time :datetime="$filters.datetime(item.create_at)">{{
+                  $filters.date(item.create_at)
+                }}</time>
               </small>
               <span class="badge bg-primary mb-1 w-25 w-md-50 mx-auto">{{
                 item.tag

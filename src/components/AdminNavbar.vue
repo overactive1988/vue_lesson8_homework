@@ -6,7 +6,7 @@
           <img
             src="../assets/images/logo.png"
             alt="LITTLE WITCH NOBETA"
-            width="180"
+            width="120"
             class="d-inline-block align-text-top"
           />
         </router-link>

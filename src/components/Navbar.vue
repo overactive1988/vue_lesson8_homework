@@ -15,7 +15,7 @@
           <img
             src="../assets/images/logo.png"
             alt="LITTLE WITCH NOBETA"
-            width="180"
+            width="120"
             class="d-inline-block align-text-top"
           />
         </router-link>
@@ -85,13 +85,13 @@
               >最新消息<span class="text-uppercase">news</span></router-link
             >
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <router-link
               class="nav-link text-decoration-none header-nav-link fs-5"
               to="/about"
               >關於諾貝塔<span class="text-uppercase">about</span></router-link
             >
-          </li>
+          </li> -->
           <li class="nav-item text-center d-none d-lg-block">
             <router-link class="nav-link text-decoration-none" to="/cart"
               ><span

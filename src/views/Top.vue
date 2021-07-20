@@ -10,7 +10,7 @@
         </div>
         <div class="container position-relative vh-100">
           <div class="top__inner">
-            <h2 class="top__title text-light">小魔女諾貝塔<br />雜貨工坊</h2>
+            <h1 class="top__title text-light">小魔女諾貝塔<br />雜貨工坊</h1>
             <p class="top__subtitle text-light h6 fw-normal mb-2 mb-md-4">
               所有小魔女諾貝塔相關的商品，只有在這裡獨家販售
             </p>
@@ -25,13 +25,77 @@
         </div>
       </div>
     </section>
-    <section id="main" class="top-products section py-6">
-      <div class="container">
+    <section id="main" class="section pt-6 bg-dark">
+      <div class="container-fluid px-0">
+        <h2 class="text-center text-light mb-4">關於小魔女諾貝塔</h2>
+        <div class="row gx-0">
+          <div class="col-md-6 col-lg-5">
+            <div
+              class="
+                text-light
+                d-flex
+                justify-content-center
+                flex-column
+                px-4 px-md-5 px-lg-7
+                h-100
+              "
+            >
+              <h3 class="section-title__text h2 mb-3">簡介概述</h3>
+              <p class="fs-5">
+                小魔女諾貝塔是一款於 2017 年 6
+                月開始製作，台灣獨立開發的動作冒險遊戲，前期主要由
+                <a
+                  href="https://twitter.com/lsw001231"
+                  target="_blank"
+                  class="text-link-light text-decoration-none"
+                  >Pupuya</a
+                >
+                一人獨力開發。
+              </p>
+              <p class="fs-5">
+                之後開始與
+                <a
+                  href="http://simon.moe/"
+                  target="_blank"
+                  class="text-link-light text-decoration-none"
+                  >希萌創意</a
+                > 進行合作，並於 2020 年 6 月 24
+                日，遊戲以搶先體驗形式在Steam平台推出，遊戲內容尚未完全製作完成，預定日後更新補完。遊戲推出第一周銷量便超過
+                5 萬份，其中超過一半的銷量來自日本地區。
+              </p>
+              <hr class="mb-4" />
+              <h3 class="section-title__text h2 mb-3">得獎紀錄</h3>
+              <ul class="fs-5 list-unstyled">
+                <li class="mb-3">
+                  榮獲 第十三屆 巴哈姆特 遊戲動漫大賞 年度人氣國產遊戲 金賞
+                </li>
+                <li class="mb-3">
+                  榮獲 巴哈姆特 2019 ACG 創作大賽 &lt; Unity 特別獎 &gt;
+                </li>
+                <li>榮獲 巴哈姆特 2019 ACG 創作大賽 &lt; 人氣賞 &gt;</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-7 pt-3 pt-md-0">
+            <figure class="mb-0">
+              <img
+                src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626797489591.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=KN7bl3n%2Fy%2FgkCgGzbnUJBisq4XINHS9vhF43sHm8OSxMk0dHThDfK9u2fx2jhgbXQuBl8H2YAFyflxeh9FDohBsuGoqCq2LPf4g8Bg7dYPOi%2FWrdcnB2hnhghjiq37bqIgXbVLumcatnHSdIOVfic8kJFT2iZdLDOUR%2BE8dRNETzY8UCv250qhslIaXa1fwhLNsB3Az5YleWhpwQkBytTQpILKl%2B%2BfdwVWusB6qvqnM%2F9oWEm3f5RjcsC9lNpwH%2Fl1D7Tf2egcTkLjeEkM9cxQP%2Bol01mVvQBXMBIHL%2F%2BwoDkEIQWgXihT%2Ft%2FChdtEwJpq6u9baSLJEOdiFcKouvEQ%3D%3D"
+                alt=""
+                class="img-top-about img-fluid"
+              />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="top-products section py-6">
+      <div class="container px-4 px-sm-0">
         <h3 class="section-title mb-5">
           <p class="section-title__text h2">
-            <span class="material-icons section-icon"> flare </span>選購商品
+            <!-- <span class="material-icons section-icon"> flare </span> -->
+            選購商品
           </p>
-          <p class="section-title__text fw-normal h5">
+          <p class="section-title__text fw-normal fs-5">
             請選擇您有興趣的商品類別
           </p>
         </h3>
@@ -87,9 +151,11 @@
                   class="top-news__link text-light"
                   :to="`/article/${item.id}`"
                 >
-                  <span class="top-news__date">{{
-                    $filters.date(item.create_at)
-                  }}</span>
+                  <span class="top-news__date">
+                    <time :datetime="$filters.datetime(item.create_at)">
+                      {{ $filters.date(item.create_at) }}
+                    </time>
+                  </span>
                   <span class="top-news__description">{{ item.title }}</span>
                 </router-link>
               </li>

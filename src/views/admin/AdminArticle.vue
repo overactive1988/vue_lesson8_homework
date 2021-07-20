@@ -44,31 +44,28 @@
         <hr />
 
         <div class="row mt-3">
-          <div class="form-group col-md-3">
-            <label for="title">文章標題</label>
-            <input
-              id="title"
-              type="text"
-              class="form-control mt-1"
-              placeholder="請輸入文章標題"
-              v-model="this.tempArticle.title"
-            />
-          </div>
-          <div class="form-group col-9">
-            <label for="description">文章簡述</label>
-            <input
-              id="description"
-              type="text"
-              class="form-control mt-1"
-              placeholder="請輸入文章簡述"
-              v-model.trim="this.tempArticle.description"
-            />
-          </div>
-        </div>
-
-        <div class="row mt-3">
-          <div class="form-group col-md-4">
+          <div class="col-md-4">
             <div class="form-group">
+              <label for="title">文章標題</label>
+              <input
+                id="title"
+                type="text"
+                class="form-control mt-1"
+                placeholder="請輸入文章標題"
+                v-model="this.tempArticle.title"
+              />
+            </div>
+            <div class="form-group">
+              <label for="description">文章簡述</label>
+              <input
+                id="description"
+                type="text"
+                class="form-control mt-1"
+                placeholder="請輸入文章簡述"
+                v-model.trim="this.tempArticle.description"
+              />
+            </div>
+            <div class="form-group mt-2">
               <label
                 class="text-light bg-secondary mb-2 py-1 px-2"
                 for="mainImageUrl"
@@ -98,31 +95,28 @@
               上傳圖片
             </label>
           </div>
-          <div class="form-group col-md-8">
-            <label for="content">文章內容</label>
-            <textarea
-              id="content"
-              type="text"
-              class="form-control mt-1"
-              placeholder="請輸入文章內容"
-              rows="12"
-              v-model.trim="this.tempArticle.content"
-            >
-            </textarea>
-          </div>
-        </div>
-
-        <div class="form-group mt-3">
-          <div class="form-check">
-            <input
-              id="isPublic"
-              class="form-check-input"
-              type="checkbox"
-              :true-value="true"
-              :false-value="false"
-              v-model="this.tempArticle.isPublic"
-            />
-            <label class="form-check-label" for="isPublic">是否啟用</label>
+          <div class="col-md-8">
+            <div class="form-group">
+              <label for="content">文章內容</label>
+              <ckeditor
+                :editor="editor"
+                :config="editorConfig"
+                v-model="tempArticle.content"
+              ></ckeditor>
+            </div>
+            <div class="form-group mt-3">
+              <div class="form-check">
+                <input
+                  id="isPublic"
+                  class="form-check-input"
+                  type="checkbox"
+                  :true-value="true"
+                  :false-value="false"
+                  v-model="this.tempArticle.isPublic"
+                />
+                <label class="form-check-label" for="isPublic">是否啟用</label>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -144,11 +138,16 @@
 </template>
 
 <script>
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 export default {
   data() {
     return {
       tempArticle: {},
       create_at: "",
+      editor: ClassicEditor,
+      editorConfig: {
+        toolbar: ["heading", "typing", "bold", "italic", "|", "link"],
+      },
     };
   },
   emits: ["update-article"],

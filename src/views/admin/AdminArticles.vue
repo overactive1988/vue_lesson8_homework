@@ -16,7 +16,7 @@
           <h5 class="card-header min-vh-75 d-flex align-items-center">
             {{ item.title }}
           </h5>
-          <img :src="item.image" alt class="card-img-top" />
+          <img :src="item.image" alt class="card-img-top img-cover" />
           <div class="card-body d-flex flex-column justify-content-end">
             <span class="badge bg-primary mb-1">{{ item.tag }}</span>
             <h5 class="card-title">

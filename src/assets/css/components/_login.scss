@@ -31,6 +31,14 @@ a.text-main {
   }
 }
 
+.text-link-light {
+  color: #eee;
+  &:hover {
+    color: #d4d2d2;
+    transition: 0.3s ease;
+  }
+}
+
 .border-double {
   box-shadow: 0 0 0 1px #000, 0 0 0 3px #efefef;
   &:focus {
