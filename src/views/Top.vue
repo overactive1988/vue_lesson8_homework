@@ -41,7 +41,7 @@
               "
             >
               <h3 class="section-title__text h2 mb-3">簡介概述</h3>
-              <p class="fs-5">
+              <p class="fs-6 fs-sm-5">
                 小魔女諾貝塔是一款於 2017 年 6
                 月開始製作，台灣獨立開發的動作冒險遊戲，前期主要由
                 <a
@@ -52,7 +52,7 @@
                 >
                 一人獨力開發。
               </p>
-              <p class="fs-5">
+              <p class="fs-6 fs-sm-5">
                 之後開始與
                 <a
                   href="http://simon.moe/"
@@ -65,7 +65,7 @@
               </p>
               <hr class="mb-4" />
               <h3 class="section-title__text h2 mb-3">得獎紀錄</h3>
-              <ul class="fs-5 list-unstyled">
+              <ul class="fs-6 fs-sm-5 list-unstyled">
                 <li class="mb-3">
                   榮獲 第十三屆 巴哈姆特 遊戲動漫大賞 年度人氣國產遊戲 金賞
                 </li>
@@ -95,7 +95,7 @@
             <!-- <span class="material-icons section-icon"> flare </span> -->
             選購商品
           </p>
-          <p class="section-title__text fw-normal fs-5">
+          <p class="section-title__text fw-normal fs-6 fs-sm-5">
             請選擇您有興趣的商品類別
           </p>
         </h3>
