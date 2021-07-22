@@ -166,7 +166,6 @@ export default {
       this.$http
         .get(url)
         .then((res) => {
-          // console.log(res);
           if (res.data.success) {
             this.cart = res.data.data;
             emitter.emit("update-cart");

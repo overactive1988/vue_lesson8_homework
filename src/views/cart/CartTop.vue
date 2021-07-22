@@ -160,11 +160,9 @@ export default {
       this.$http
         .get(url)
         .then((res) => {
-          // console.log(res);
           if (res.data.success) {
             this.cart = res.data.data;
             emitter.emit("update-cart");
-            console.log(this.cart);
           }
         })
         .catch((error) => {
@@ -199,7 +197,6 @@ export default {
       this.$http
         .put(url, cartInfo)
         .then((res) => {
-          console.log(res);
           if (res.data.success) {
             this.loadingStatus.loadingItem = "";
             this.getCart();
@@ -221,7 +218,6 @@ export default {
       this.$http
         .put(url, cartInfo)
         .then((res) => {
-          console.log(res);
           if (res.data.success) {
             this.loadingStatus.loadingItem = "";
             this.getCart();
@@ -249,7 +245,6 @@ export default {
           } else {
             this.coupon_code = "";
             this.loadingStatus.loadingItem = "";
-            console.log(res);
             this.message = res.data.message;
           }
         })

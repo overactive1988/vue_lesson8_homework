@@ -228,7 +228,6 @@ export default {
       for (let index = 0; index < maxSize; index++) {
         this.newArticles.push(this.articles[index]);
       }
-      console.log(this.newArticles);
     },
     nextNewArticles() {
       this.newArticles = [];
@@ -236,7 +235,6 @@ export default {
       for (let index = 3; index < maxSize; index++) {
         this.newArticles.push(this.articles[index]);
       }
-      console.log(this.newArticles);
     },
   },
   mounted() {
@@ -245,5 +243,3 @@ export default {
   },
 };
 </script>
-
-<style scoped></style>

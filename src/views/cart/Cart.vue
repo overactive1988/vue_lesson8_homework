@@ -31,7 +31,6 @@ export default {
   },
   created() {
     emitter.on("sendForm", (data) => {
-      // console.log("test", data);
       this.tempform = data;
     });
   },

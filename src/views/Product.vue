@@ -220,7 +220,6 @@ export default {
       arrSet.forEach((i) => {
         this.randomProducts.push(fliterProducts[i]);
       });
-      console.log(this.randomProducts);
     },
     cutUserModalProduct() {
       this.qty -= 1;
@@ -242,7 +241,6 @@ export default {
         .post(url, cartInfo)
         .then((res) => {
           this.loadingStatus.loadingItem = "";
-          console.log(res);
           emitter.emit("update-cart");
           this.showAlert(res);
           this.qty = 1;
@@ -265,7 +263,6 @@ export default {
         .post(url, cartInfo)
         .then((res) => {
           this.loadingStatus.loadingItem = "";
-          console.log(res);
           emitter.emit("update-cart");
           this.showAlert(res);
           this.qty = 1;

@@ -21,6 +21,7 @@ export default {
     emitter.on("clearProps", () => {
       this.topCategory = "";
     });
+    
   },
 };
 </script>

@@ -162,7 +162,6 @@ export default {
         .get(url)
         .then((res) => {
           this.tempArticle = res.data.article;
-          console.log(this.tempArticle);
         })
         .catch((error) => {
           console.log(error);
@@ -177,8 +176,6 @@ export default {
           if (res.data.success) {
             this.showAlert(res);
             this.$router.push("/admin/articles/");
-          } else {
-            console.log(res);
           }
         })
         .catch((error) => {
@@ -194,7 +191,6 @@ export default {
       this.$http
         .post(url, formData)
         .then((res) => {
-          console.log(res);
           this.tempArticle.image = res.data.imageUrl;
         })
         .catch((err) => {

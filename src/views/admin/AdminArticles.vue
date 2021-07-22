@@ -68,8 +68,8 @@
 
 <script>
 import Pagination from "@/components/Pagination.vue";
-import AdminArticleModal from "@/components/AdminArticleModal.vue";
-import DelArticleModal from "@/components/DelArticleModal.vue";
+import AdminArticleModal from "@/components/admin/AdminArticleModal.vue";
+import DelArticleModal from "@/components/admin/DelArticleModal.vue";
 export default {
   data() {
     return {
@@ -98,7 +98,6 @@ export default {
             const { articles, pagination } = res.data;
             this.articles = articles;
             this.pagination = pagination;
-            console.log(this.articles);
           }
         })
         .catch((error) => {
@@ -112,7 +111,6 @@ export default {
         .then((res) => {
           this.$refs.adminDelModal.closeModal(); // 關掉 modal
           this.showAlert(res);
-          console.log(res.data);
           this.getArticles();
         })
         .catch((error) => {
@@ -134,8 +132,6 @@ export default {
           if (res.data.success) {
             this.$refs.adminModal.closeModal(); // 關掉 modal
             this.getArticles(); // 重整畫面
-          } else {
-            console.log(res);
           }
         })
         .catch((error) => {
@@ -143,7 +139,6 @@ export default {
         });
     },
     openModal(isNew, item) {
-      // console.log(isNew, item)
       switch (isNew) {
         case "new":
           this.tempArticle = {

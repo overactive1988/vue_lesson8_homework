@@ -197,7 +197,6 @@ export default {
       this.$http
         .get(url)
         .then((res) => {
-          // console.log(res);
           if (res.data.success) {
             this.cart = res.data.data;
             emitter.emit("update-cart");
@@ -213,7 +212,6 @@ export default {
       this.$http
         .get(url)
         .then((res) => {
-          // console.log(res);
           if (res.data.success) {
             this.cart = res.data.data;
             emitter.emit("update-cart");
@@ -231,12 +229,10 @@ export default {
           message: this.propsForm.message,
         },
       };
-      console.log(orderInfo);
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/order`;
       this.$http
         .post(url, orderInfo)
         .then((res) => {
-          console.log(res);
           if (res.data.success) {
             this.$refs.form.resetForm();
             this.form.message = "";
@@ -244,8 +240,6 @@ export default {
             this.loadingStatus.loadingItem = "";
             this.getCartOnly();
             this.$router.push(`/cartpayment/${res.data.orderId}`);
-          }else{
-            console.log(res);
           }
         })
         .catch((error) => {

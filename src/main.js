@@ -58,11 +58,6 @@ app.component("Form", Form);
 app.component("Field", Field);
 app.component("ErrorMessage", ErrorMessage);
 
-// LINE OGP 顯示
-// npm run build 時打開
-// new App({
-//   render: h => h(App)
-// }).$mount('#app')
-
-// npm run build 時關掉
 app.mount("#app");
+
+app.unmount("app");

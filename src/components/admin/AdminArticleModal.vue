@@ -189,7 +189,6 @@ export default {
       this.$http
         .post(url, formData)
         .then((res) => {
-          console.log(res);
           this.newArticle.image = res.data.imageUrl;
         })
         .catch((err) => {

@@ -298,7 +298,6 @@ export default {
       this.$http
         .post(url, formData)
         .then((res) => {
-          console.log(res);
           this.newProduct.imageUrl = res.data.imageUrl;
         })
         .catch((err) => {
@@ -314,7 +313,6 @@ export default {
       this.$http
         .post(url, formData)
         .then((res) => {
-          console.log(res);
           this.newProduct.imagesUrl[this.newProduct.imagesUrl.length - 1] =
             res.data.imageUrl;
         })

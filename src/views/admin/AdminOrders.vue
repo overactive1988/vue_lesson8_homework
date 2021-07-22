@@ -104,9 +104,9 @@
 
 <script>
 import Pagination from "@/components/Pagination.vue";
-import AdminOrderModal from "@/components/AdminOrderModal.vue";
-import DelOrdersModal from "@/components/DelOrdersModal.vue";
-import DelAllOrders from "@/components/DelAllOrdersModal.vue";
+import AdminOrderModal from "@/components/admin/AdminOrderModal.vue";
+import DelOrdersModal from "@/components/admin/DelOrdersModal.vue";
+import DelAllOrders from "@/components/admin/DelAllOrdersModal.vue";
 
 export default {
   data() {
@@ -138,7 +138,6 @@ export default {
             const { orders, pagination } = res.data;
             this.orders = orders;
             this.pagination = pagination;
-            console.log(this.orders);
           }
         })
         .catch((error) => {
@@ -186,7 +185,6 @@ export default {
           this.getOrder();
           this.tempOrder = { ...item };
           console.clear();
-          console.log(this.tempOrder);
           this.$refs.adminModal.openModal();
           break;
         case "delete":

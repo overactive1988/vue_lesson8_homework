@@ -64,7 +64,6 @@ export default {
             const { articles, pagination } = res.data;
             this.articles = articles;
             this.pagination = pagination;
-            console.log(this.articles);
           }
         })
         .catch((error) => {

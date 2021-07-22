@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import AdminNavbar from "../../components/AdminNavbar.vue";
-import AdminFooter from "../../components/AdminFooter.vue";
+import AdminNavbar from "../../components/admin/AdminNavbar.vue";
+import AdminFooter from "../../components/admin/AdminFooter.vue";
 export default {
   data() {
     return {

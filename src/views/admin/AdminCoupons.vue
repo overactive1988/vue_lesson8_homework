@@ -76,8 +76,8 @@
 
 <script>
 import Pagination from "@/components/Pagination.vue";
-import AdminCouponModal from "@/components/AdminCouponModal.vue";
-import DelCouponModal from "@/components/DelCouponModal.vue";
+import AdminCouponModal from "@/components/admin/AdminCouponModal.vue";
+import DelCouponModal from "@/components/admin/DelCouponModal.vue";
 
 export default {
   data() {
@@ -106,7 +106,6 @@ export default {
             const { coupons, pagination } = res.data;
             this.coupons = coupons;
             this.pagination = pagination;
-            console.log(res.data);
           }
         })
         .catch((error) => {
@@ -170,7 +169,6 @@ export default {
         .then((res) => {
           this.$refs.adminCouponDelModal.closeModal(); // 關掉 modal
           this.showAlert(res);
-          console.log(res.data);
           this.getCoupon();
         })
         .catch((error) => {

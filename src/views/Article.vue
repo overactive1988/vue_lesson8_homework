@@ -11,7 +11,6 @@
             :src="article.image"
             alt="article.title"
             class="img-fluid d-block ms-auto"
-            style=""
           />
         </div>
       </div>
@@ -55,7 +54,6 @@ export default {
           if (res.data.success) {
             const { article } = res.data;
             this.article = article;
-            console.log(this.article);
           }
         })
         .catch((error) => {

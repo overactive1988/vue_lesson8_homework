@@ -81,8 +81,8 @@
 
 <script>
 import Pagination from "@/components/Pagination.vue";
-import AdminProductModal from "@/components/AdminProductModal.vue";
-import DelProductModal from "@/components/DelProductModal.vue";
+import AdminProductModal from "@/components/admin/AdminProductModal.vue";
+import DelProductModal from "@/components/admin/DelProductModal.vue";
 
 export default {
   data() {
@@ -120,7 +120,6 @@ export default {
             const { products, pagination } = res.data;
             this.products = products;
             this.pagination = pagination;
-            console.log(this.products);
             this.getAllproducts();
           }
         })
@@ -146,7 +145,6 @@ export default {
         .then((res) => {
           this.$refs.adminDelModal.closeModal(); // 關掉 modal
           this.showAlert(res);
-          console.log(res.data);
           this.getData();
         })
         .catch((error) => {
@@ -154,7 +152,6 @@ export default {
         });
     }, // 開啟modal
     openModal(isNew, item) {
-      // console.log(isNew, item)
       switch (isNew) {
         case "new":
           // 先將預設物件內容清空

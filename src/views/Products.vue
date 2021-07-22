@@ -151,7 +151,6 @@ export default {
       } else {
         this.myFavorite.push(id);
       }
-      console.log(this.myFavorite);
       storageMethods.save(this.myFavorite);
     },
     showAlert(res) {
@@ -166,7 +165,6 @@ export default {
           if (res.data.success) {
             const { products } = res.data;
             this.products = products;
-            console.log(this.products);
             this.getCatgories();
           }
         })
@@ -199,9 +197,7 @@ export default {
       this.products.forEach((item) => {
         categories.add(item.category);
       });
-      // console.log("categories:", categories); // set 原形 類陣列
       this.categories = [...categories];
-      console.log(this.categories);
       this.selectCategory = this.propsCategory;
       emitter.emit("clearProps");
     },
