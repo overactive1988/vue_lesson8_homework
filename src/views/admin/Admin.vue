@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="nav-header">
     <AdminNavbar></AdminNavbar>
   </header>
   <router-view v-if="check" />

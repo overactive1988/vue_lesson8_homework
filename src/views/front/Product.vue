@@ -1,7 +1,16 @@
 <template>
-  <header>
+  <header class="nav-header">
     <Navbar></Navbar>
   </header>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><router-link :to="`/`">首頁</router-link></li>
+    <li class="breadcrumb-item">
+      <router-link :to="`/products`">商品列表</router-link>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      {{tempProduct.title}}
+    </li>
+  </ol>
   <div id="main" class="container content content-user">
     <div class="modal-content border-0 pt-4">
       <div class="modal-body">

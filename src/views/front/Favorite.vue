@@ -1,7 +1,13 @@
 <template>
-  <header>
+  <header class="nav-header">
     <Navbar></Navbar>
   </header>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><router-link :to="`/`">首頁</router-link></li>
+      <li class="breadcrumb-item active" aria-current="page">收藏清單</li>
+    </ol>
+  </nav>
   <div id="main" class="container-lg content content-user">
     <h2 class="text-center pt-4">收藏清單</h2>
     <p class="mt-4 text-end">

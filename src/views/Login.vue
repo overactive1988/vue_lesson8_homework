@@ -1,5 +1,7 @@
 <template>
-  <Navbar></Navbar>
+  <header class="nav-header">
+    <Navbar></Navbar>
+  </header>
   <div id="main" class="container content content-user">
     <h2 class="text-center pt-4">後台登入</h2>
     <article class="login-article text-center my-4">

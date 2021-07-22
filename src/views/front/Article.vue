@@ -1,7 +1,18 @@
 <template>
-  <header>
+  <header class="nav-header">
     <Navbar></Navbar>
   </header>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><router-link :to="`/`">首頁</router-link></li>
+      <li class="breadcrumb-item">
+        <router-link :to="`/articles`">最新消息</router-link>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        {{ article.title }}
+      </li>
+    </ol>
+  </nav>
   <main id="main" class="container-lg content content-user">
     <h2 class="text-center pt-4">{{ article.title }}</h2>
     <div class="row my-4">

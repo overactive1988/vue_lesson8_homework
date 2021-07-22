@@ -1,8 +1,14 @@
 <template>
-  <header>
+  <header class="nav-header">
     <Navbar></Navbar>
   </header>
-  <div id="main" class="container-fluid content content-user">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><router-link :to="`/`">首頁</router-link></li>
+      <li class="breadcrumb-item active" aria-current="page">商品列表</li>
+    </ol>
+  </nav>
+  <div id="main" class="container-fluid content">
     <h2 class="text-center pt-4">商品列表</h2>
     <p class="mt-4 text-end">
       總共有

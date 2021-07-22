@@ -1,7 +1,8 @@
 <template>
-  <header>
+  <header class="nav-header">
     <Navbar></Navbar>
   </header>
+
   <router-view :props-form="tempform" />
 </template>
 

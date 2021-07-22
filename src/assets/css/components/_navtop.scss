@@ -1,3 +1,11 @@
+.nav-header {
+  padding-bottom: 96px;
+  @include media-breakpoint-down(md) {
+    padding-bottom: 85px;
+  }
+}
+
+
 .nav-top {
   background-color: rgba(0, 0, 0, 0.1);
   transition: 0.3s all;

@@ -1,7 +1,13 @@
 <template>
-  <header>
+  <header class="nav-header">
     <Navbar></Navbar>
   </header>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><router-link :to="`/`">首頁</router-link></li>
+      <li class="breadcrumb-item active" aria-current="page">關於諾貝塔</li>
+    </ol>
+  </nav>
   <div class="container content content-user">
     <h2 class="text-center pt-4">關於諾貝塔</h2>
     <figure class="text-center">

@@ -1,8 +1,9 @@
 <template>
-  <header>
+  <header class="nav-header">
     <Navbar></Navbar>
   </header>
-  <div id="main" class="container-fulid content-user text-center bg-primary">
+  
+  <div id="main" class="container-fulid text-center bg-primary">
     <div class="container content-user pt-8 pb-4 content position-relative">
       <div class="col position-relative">
         <figure class="ms-4 mb-0">

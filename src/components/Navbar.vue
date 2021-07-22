@@ -6,6 +6,7 @@
       position-fixed
       header-nav
       w-100
+      nav-bar
     "
     style="z-index: 10"
   >

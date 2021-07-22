@@ -1375,11 +1375,11 @@ $figure-caption-color:              $gray-600 !default;
 
 // scss-docs-start breadcrumb-variables
 $breadcrumb-font-size:              null !default;
-$breadcrumb-padding-y:              0 !default;
-$breadcrumb-padding-x:              0 !default;
+$breadcrumb-padding-y:              12px !default;
+$breadcrumb-padding-x:              1.5% !default;
 $breadcrumb-item-padding-x:         .5rem !default;
-$breadcrumb-margin-bottom:          1rem !default;
-$breadcrumb-bg:                     null !default;
+$breadcrumb-margin-bottom:          0 !default;
+$breadcrumb-bg:                     #f5f5f5 !default;
 $breadcrumb-divider-color:          $gray-600 !default;
 $breadcrumb-active-color:           $gray-600 !default;
 $breadcrumb-divider:                quote(">") !default;
