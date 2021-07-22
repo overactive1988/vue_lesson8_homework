@@ -14,6 +14,11 @@ export default {
   components: {
     Footer,
   },
+  provide() {
+    return {
+      emitter,
+    };
+  },
   mounted() {
     emitter.on("categoryTop", (c) => {
       this.topCategory = c;
@@ -21,7 +26,14 @@ export default {
     emitter.on("clearProps", () => {
       this.topCategory = "";
     });
-    
+  },
+  unmounted() {
+    emitter.off("categoryTop", (c) => {
+      this.topCategory = c;
+    });
+    emitter.off("clearProps", () => {
+      this.topCategory = "";
+    });
   },
 };
 </script>

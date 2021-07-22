@@ -34,5 +34,10 @@ export default {
       this.tempform = data;
     });
   },
+  unmounted() {
+    emitter.off("sendForm", (data) => {
+      this.tempform = data;
+    });
+  },
 };
 </script>

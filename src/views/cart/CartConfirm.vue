@@ -160,7 +160,7 @@
 
 <script>
 import emitter from "../../assets/js/methods/emitter";
-import ConfirmCart from "../../components/ConfirmCart.vue";
+import ConfirmCart from "../../components/cart/ConfirmCart.vue";
 export default {
   props: {
     propsForm: {

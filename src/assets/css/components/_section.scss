@@ -2,21 +2,34 @@
 }
 
 .section-title {
-    display: inline-flex;
-    flex-direction: column;
-
+  display: inline-flex;
+  flex-direction: column;
 }
 
 .section-title__text {
-    position: relative;
+  position: relative;
 }
 
 .section-title__text + .section-title__text {
-    margin-top: .5em;
+  margin-top: 0.5em;
 }
 
 .section-icon {
-    position: absolute;
-    left: -35px;
-    top: 15%;
+  position: absolute;
+  left: -35px;
+  top: 15%;
+}
+
+.section-list {
+  position: relative;
+  padding-left: 35px;
+}
+
+.section-list-icon {
+  position: absolute;
+  left: 0;
+  top: 5%;
+  @include media-breakpoint-down(md) {
+  top: 8%;
+  }
 }

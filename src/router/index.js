@@ -20,7 +20,7 @@ const routes = [
     children: [
       {
         path: "",
-        component: () => import("@/views/Top.vue"),
+        component: () => import("@/views/front/Top.vue"),
         meta: {
           title: "",
           desc: "諾貝塔為了瞭解自己的身世之謎而來到古堡探險，並在那邊挑戰了許多生魂，學習到各類的魔法與能力，同時也遇上了充滿謎團的小黑貓，如今已能在古堡裡獨當一面的諾貝塔，開始販賣起不知從何處入手的奇怪商品與物資…",
@@ -28,7 +28,7 @@ const routes = [
       },
       {
         path: "articles",
-        component: () => import("@/views/Articles.vue"),
+        component: () => import("@/views/front/Articles.vue"),
         meta: {
           title: "最新消息",
           desc: "來自官方的諾貝塔相關創作與新聞的所有最新消息，統統集結於此",
@@ -36,11 +36,11 @@ const routes = [
       },
       {
         path: "article/:id",
-        component: () => import("@/views/Article.vue"),
+        component: () => import("@/views/front/Article.vue"),
       },
       {
         path: "products",
-        component: () => import("@/views/Products.vue"),
+        component: () => import("@/views/front/Products.vue"),
         meta: {
           title: "商品列表",
           desc: "專門販賣諾貝塔不知從何處入手的奇怪商品與物資…",
@@ -48,7 +48,14 @@ const routes = [
       },
       {
         path: "product/:id",
-        component: () => import("@/views/Product.vue"),
+        component: () => import("@/views/front/Product.vue"),
+      },
+      {
+        path: "favorite",
+        component: () => import("@/views/front/Favorite.vue"),
+        meta: {
+          title: "收藏清單",
+        },
       },
       {
         path: "cart",
@@ -108,7 +115,7 @@ const routes = [
       },
       {
         path: "about",
-        component: () => import("@/views/About.vue"),
+        component: () => import("@/views/front/About.vue"),
         meta: { title: "關於諾貝塔", desc: "關於諾貝塔為何踏上探險旅途的故事" },
       },
     ],

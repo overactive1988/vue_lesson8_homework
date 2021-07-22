@@ -59,20 +59,31 @@
                   target="_blank"
                   class="text-link-light text-decoration-none"
                   >希萌創意</a
-                > 進行合作，並於 2020 年 6 月 24
+                >
+                進行合作，並於 2020 年 6 月 24
                 日，遊戲以搶先體驗形式在Steam平台推出，遊戲內容尚未完全製作完成，預定日後更新補完。遊戲推出第一周銷量便超過
                 5 萬份，其中超過一半的銷量來自日本地區。
               </p>
               <hr class="mb-4" />
               <h3 class="section-title__text h2 mb-3">得獎紀錄</h3>
               <ul class="fs-6 fs-sm-5 list-unstyled">
-                <li class="mb-3">
+                <li class="mb-3 section-list">
+                  <span class="material-icons section-list-icon">
+                    emoji_events
+                  </span>
                   榮獲 第十三屆 巴哈姆特 遊戲動漫大賞 年度人氣國產遊戲 金賞
                 </li>
-                <li class="mb-3">
+                <li class="mb-3 section-list">
+                  <span class="material-icons section-list-icon">
+                    emoji_events
+                  </span>
                   榮獲 巴哈姆特 2019 ACG 創作大賽 &lt; Unity 特別獎 &gt;
                 </li>
-                <li>榮獲 巴哈姆特 2019 ACG 創作大賽 &lt; 人氣賞 &gt;</li>
+                <li class="section-list">
+                  <span class="material-icons section-list-icon">
+                    emoji_events </span
+                  >榮獲 巴哈姆特 2019 ACG 創作大賽 &lt; 人氣賞 &gt;
+                </li>
               </ul>
             </div>
           </div>
@@ -168,7 +179,7 @@
 </template>
 
 <script>
-import emitter from "../assets/js/methods/emitter";
+import emitter from "../../assets/js/methods/emitter";
 import TopNavbar from "@/components/TopNavbar.vue";
 export default {
   data() {

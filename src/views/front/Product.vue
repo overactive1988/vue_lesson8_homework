@@ -147,7 +147,7 @@
 <script>
 import Navbar from "@/components/Navbar.vue";
 import SwiperCore, { Navigation, Thumbs } from "swiper";
-import emitter from "../assets/js/methods/emitter";
+import emitter from "../../assets/js/methods/emitter";
 import { Swiper, SwiperSlide } from "swiper/vue";
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);

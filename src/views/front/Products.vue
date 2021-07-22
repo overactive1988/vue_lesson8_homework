@@ -49,7 +49,11 @@
       <div class="col-12 col-sm-9 col-md-10 ms-auto">
         <!-- 商品列表 -->
         <ul
-          class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 list-unstyled"
+          class="
+            row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4
+            g-3
+            list-unstyled
+          "
         >
           <li v-for="item in filterProducts" :key="item" class="col">
             <div class="card h-100">
@@ -111,21 +115,8 @@
 </template>
 
 <script>
-// LocalStorage
-// 轉型
-const storageMethods = {
-  save(favorite) {
-    const favoriteString = JSON.stringify(favorite);
-    // Favorite
-    localStorage.setItem("Favorite", favoriteString);
-  },
-  get() {
-    return JSON.parse(localStorage.getItem("Favorite"));
-  },
-};
-
 import Navbar from "@/components/Navbar.vue";
-import emitter from "../assets/js/methods/emitter";
+import localStorage from "@/assets/js/mixins/localStorage";
 export default {
   props: ["propsCategory"],
   data() {
@@ -134,25 +125,17 @@ export default {
         loadingItem: "",
       },
       products: [],
-      product: {},
-      cart: {},
-      myFavorite: storageMethods.get() || [],
+      myFavorite: this.getLocalStorage() || [],
       categories: [],
       selectCategory: "",
     };
   },
+  mixins: [localStorage],
   components: {
     Navbar,
   },
+  inject: ["emitter"],
   methods: {
-    addMyFavorite(id) {
-      if (this.myFavorite.includes(id)) {
-        this.myFavorite.splice(this.myFavorite.indexOf(id), 1);
-      } else {
-        this.myFavorite.push(id);
-      }
-      storageMethods.save(this.myFavorite);
-    },
     showAlert(res) {
       this.$swal(res.data.message);
     },
@@ -168,9 +151,7 @@ export default {
             this.getCatgories();
           }
         })
-        .catch((error) => {
-          console.log(error);
-        });
+        .catch((error) => error);
     },
     addCart(id, qty = 1) {
       this.loadingStatus.loadingItem = id + 1;
@@ -185,7 +166,7 @@ export default {
         .post(url, cartInfo)
         .then((res) => {
           this.loadingStatus.loadingItem = "";
-          emitter.emit("update-cart");
+          this.emitter.emit("update-cart");
           this.showAlert(res);
         })
         .catch((error) => {
@@ -199,7 +180,7 @@ export default {
       });
       this.categories = [...categories];
       this.selectCategory = this.propsCategory;
-      emitter.emit("clearProps");
+      this.emitter.emit("clearProps");
     },
   },
   computed: {
@@ -210,7 +191,6 @@ export default {
     },
   },
   mounted() {
-    console.clear();
     this.getProducts();
     this.topCategory = "";
   },
