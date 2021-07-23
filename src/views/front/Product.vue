@@ -266,7 +266,6 @@ export default {
         .then((res) => {
           this.tempProduct = res.data.product;
           this.getProducts();
-          console.log(this.tempProduct);
         })
         .catch((error) => {
           console.log(error);

@@ -75,7 +75,7 @@
 </template>
 
 <script>
-import Pagination from "@/components/Pagination.vue";
+import Pagination from "@/components/admin/AdminPagination.vue";
 import AdminCouponModal from "@/components/admin/AdminCouponModal.vue";
 import DelCouponModal from "@/components/admin/DelCouponModal.vue";
 

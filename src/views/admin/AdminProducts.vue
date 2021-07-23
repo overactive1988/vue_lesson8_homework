@@ -80,7 +80,7 @@
 </template>
 
 <script>
-import Pagination from "@/components/Pagination.vue";
+import Pagination from "@/components/admin/AdminPagination.vue";
 import AdminProductModal from "@/components/admin/AdminProductModal.vue";
 import DelProductModal from "@/components/admin/DelProductModal.vue";
 

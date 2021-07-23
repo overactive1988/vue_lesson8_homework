@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import Pagination from "@/components/Pagination.vue";
+import Pagination from "@/components/admin/AdminPagination.vue";
 import AdminArticleModal from "@/components/admin/AdminArticleModal.vue";
 import DelArticleModal from "@/components/admin/DelArticleModal.vue";
 export default {

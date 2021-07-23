@@ -104,7 +104,7 @@
 }
 
 .bg-cover--02 {
-  background-image: url(https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1627010928100.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=EkcTO07cP0FfBz1sdAn03A6OvSURHrPTE6ZC4Q4pQOplTlL8XEY3%2BCLJy%2FNEm8ScH5sa5oc%2FSHpxKRhEEwIqG4VP7GhqaVbBvQBGGTCK%2B1iuONQR4chSWeU72EP9%2FTRr4uEP%2F4gnKZ%2FS8g47ZYmO%2F0ulZdMuW6dBVohAAowE5BXy7jgnlyp7CQ%2FVmnBBtmktoEJK0vpxQOUAoEF6B8xTgomUsp%2BtSxAORVy6sp0h8lWUgjBqSy9kIBYAgmC7qeWdhrkVWdyYuoTS19HXjmaep%2Bq2G4mmJMXgenrJtKTSwVrc%2Fg06%2FdWy%2BwiP10iFJqm7Mz3eRfzv%2FCidzPnynCOaHQ%3D%3D);
+  background-image: url(https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1627025419155.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=gfeL%2BhbCiB5wN26gfbdytQBB3mPcVqABIQ3TXDaffsB7ttHfRcnIB%2FIB7PXD0j%2BV5uHLk2pgtW0JAh6XqBEDmruAPeYIMa9ITtBcciSzb8eQSYsiitah7CZiOMyxvRTgCKBk1nW7VVnjC4ZibZlVKEPWxn6VaF8Hrc3B5eETORmTrZVjNpcegboMA%2B2EaRP4tp2N2Jhr9laejoTQLABsiTdxAtcjRYkRD8DM6MXAa5sipKhWAB%2F7i1j3pTqj5M%2FC4ExCD73Cnilwsos%2FWhiSwdshpTwpVfyI9eYLmvGvi1ZlXKHSntBTrjcll3O%2BF9%2FIigTIXG8n0n0wUO8a3M1KGw%3D%3D);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -145,12 +145,25 @@
     & img {
       -webkit-transform: scale(1.08);
       transform: scale(1.08);
+      @include media-breakpoint-down(sm) {
+        transform: none;
+      }
     }
   }
 }
 
 .card-lick__button {
   z-index: 8;
+}
+
+.card-articles {
+  border: none;
+}
+
+.card-articles__date {
+  position: absolute;
+  bottom: .5rem;
+  left: 1rem;
 }
 
 .goods-detail-description {

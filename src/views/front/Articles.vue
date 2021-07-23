@@ -1,47 +1,60 @@
 <template>
-  <header class="nav-header">
-    <Navbar></Navbar>
-  </header>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><router-link class="text-light" :to="`/`">首頁</router-link></li>
-      <li class="breadcrumb-item text-light active" aria-current="page">最新消息</li>
-    </ol>
-  </nav>
-  <div id="main" class="container-lg content">
-    <h2 class="text-center pt-4">最新消息</h2>
-    <div class="row mt-4">
-      <div
-        v-for="item in articles"
-        :key="item"
-        class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
-      >
-        <div class="card h-100">
-          <router-link
-            :to="`/article/${item.id}`"
-            class="d-flex flex-column text-decoration-none stretched-link h-100"
+  <div class="bg-cover--02">
+    <header class="nav-header">
+      <Navbar></Navbar>
+    </header>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <router-link class="text-light" :to="`/`">首頁</router-link>
+        </li>
+        <li class="breadcrumb-item text-light active" aria-current="page">
+          最新消息
+        </li>
+      </ol>
+    </nav>
+    <div class="container-fluid pb-5 bg-01">
+      <div id="main" class="container-lg content">
+        <h2 class="pt-4 text-light">最新消息</h2>
+        <div class="row mt-4">
+          <div
+            v-for="item in articles"
+            :key="item"
+            class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
           >
-            <img :src="item.image" alt class="card-img-top img-cover" />
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title my-auto">
-                {{ item.title }}
-              </h5>
-              <small class="card-text mb-2 text-muted">
-                <time :datetime="$filters.datetime(item.create_at)">{{
-                  $filters.date(item.create_at)
-                }}</time>
-              </small>
-              <span class="badge bg-primary mb-1 w-25 w-md-50 mx-auto">{{
-                item.tag
-              }}</span>
+            <div class="card h-100 card-articles">
+              <router-link
+                :to="`/article/${item.id}`"
+                class="
+                  d-flex
+                  flex-column
+                  text-decoration-none
+                  stretched-link
+                  h-100
+                "
+              >
+                <img :src="item.image" alt class="card-img-top img-cover" />
+                <div class="card-body d-flex flex-column py-2">
+                  <span class="mb-1 fs-7">{{ item.tag }}</span>
+
+                  <h5 class="card-title mb-4">
+                    {{ item.title }}
+                  </h5>
+                  <small class="card-text mt-2 text-muted card-articles__date">
+                    <time :datetime="$filters.datetime(item.create_at)">{{
+                      $filters.date(item.create_at)
+                    }}</time>
+                  </small>
+                </div>
+              </router-link>
             </div>
-          </router-link>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center mt-5 mb-4">
+          <Pagination :page="pagination" @get-page="getArticles"></Pagination>
         </div>
       </div>
-    </div>
-
-    <div class="d-flex justify-content-center mt-5 mb-4">
-      <Pagination :page="pagination" @get-page="getArticles"></Pagination>
     </div>
   </div>
 </template>
@@ -70,6 +83,7 @@ export default {
             const { articles, pagination } = res.data;
             this.articles = articles;
             this.pagination = pagination;
+            console.log(this.articles);
           }
         })
         .catch((error) => {

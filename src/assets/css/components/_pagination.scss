@@ -1,0 +1,43 @@
+.c-pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  & .c-page-item.active .c-page-link {
+    color: #fff;
+    background-color: #562a4d;
+  }
+  & .c-page-item.disabled {
+    & .c-page-link {
+      pointer-events: none;
+      color: #6c757d;
+      border: 2px solid #6c757d;
+    }
+  }
+}
+
+.c-page-link {
+  background-color: transparent;
+  z-index: 3;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 250ms;
+  display: inline-block;
+  text-transform: uppercase;
+  margin: 0 3px 6px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 38px;
+  border: 2px solid #fff;
+  line-height: 32px;
+  padding: 0;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-align: center;
+  &:hover {
+    z-index: 2;
+    color: #45223e;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+  }
+}

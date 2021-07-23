@@ -103,7 +103,7 @@
 </template>
 
 <script>
-import Pagination from "@/components/Pagination.vue";
+import Pagination from "@/components/admin/AdminPagination.vue";
 import AdminOrderModal from "@/components/admin/AdminOrderModal.vue";
 import DelOrdersModal from "@/components/admin/DelOrdersModal.vue";
 import DelAllOrders from "@/components/admin/DelAllOrdersModal.vue";

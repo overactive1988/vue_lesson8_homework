@@ -1,11 +1,11 @@
 .img-cover {
   object-position: center top;
   object-fit: cover;
-  height: calc(10vw);
+  height: calc(5vw);
   max-height: 400px;
-  min-height: 300px;
+  min-height: 150px;
   @include media-breakpoint-down(sm) {
-    min-height: 350px;
+    min-height: 200px;
   }
 }
 
