@@ -1,5 +1,5 @@
 <template>
-  <div id="main" class="container-lg content">
+  <main id="main" class="container-lg content">
     <h2 class="pt-4">確認購物車</h2>
     <template v-if="cart.total > 0">
       <figure class="my-5 text-center mx-auto">
@@ -122,7 +122,7 @@
         >下一步</router-link
       >
     </div>
-  </div>
+  </main>
 </template>
 
 <script>

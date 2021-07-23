@@ -2,7 +2,7 @@
   <header class="nav-header">
     <Navbar></Navbar>
   </header>
-  <div id="main" class="container content">
+  <main id="main" class="container content">
     <h2 class="text-center pt-4">後台登入</h2>
     <article class="login-article text-center my-4">
       <div class="login p-4 rounded">
@@ -57,7 +57,7 @@
         </small>
       </div>
     </article>
-  </div>
+  </main>
   <Footer></Footer>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div id="main" class="container-lg content">
+  <main id="main" class="container-lg content">
     <h2 class="text-center pt-4">確認訂單</h2>
     <figure class="my-5 text-center mx-auto">
       <img
@@ -155,7 +155,7 @@
       </template>
       <p v-else class="text-center">請先將商品加入購物車</p>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>

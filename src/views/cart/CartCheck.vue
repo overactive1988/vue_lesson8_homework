@@ -1,5 +1,5 @@
 <template>
-  <div id="main" class="container-lg content">
+  <main id="main" class="container-lg content">
     <h2 class="text-center pt-4">填寫訂單</h2>
     <figure class="my-5 text-center mx-auto">
       <img
@@ -127,7 +127,7 @@
         </div>
       </Form>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>

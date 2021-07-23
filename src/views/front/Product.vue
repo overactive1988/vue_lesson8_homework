@@ -15,7 +15,7 @@
       </li>
     </ol>
     <div class="container-fluid pb-5 bg-01">
-      <div id="main" class="container content">
+      <main id="main" class="container content">
         <div class="modal-content border-0 pt-4">
           <div class="modal-body">
             <div class="row align-items-center">
@@ -215,7 +215,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   </div>
 </template>

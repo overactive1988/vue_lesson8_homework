@@ -14,7 +14,7 @@
       </ol>
     </nav>
     <div class="container-fluid pb-5 bg-01">
-      <div id="main" class="container-lg content">
+      <main id="main" class="container-lg content">
         <h2 class="pt-4 text-light">最新消息</h2>
         <ul v-for="item in articles" :key="item" class="list-unstyled mt-4">
           <li class="card h-100 card-articles">
@@ -55,7 +55,7 @@
         <div class="d-flex justify-content-center mt-5 mb-4">
           <Pagination :page="pagination" @get-page="getArticles"></Pagination>
         </div>
-      </div>
+      </main>
     </div>
   </div>
 </template>

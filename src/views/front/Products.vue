@@ -14,7 +14,7 @@
       </ol>
     </nav>
     <div class="container-fluid pb-5 bg-01">
-      <div id="main" class="container-lg content">
+      <main id="main" class="container-lg content">
         <h2 class="pt-4 text-light">商品列表</h2>
         <p class="mt-4 text-end text-light">
           總共有
@@ -131,7 +131,7 @@
             </ul>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   </div>
 </template>

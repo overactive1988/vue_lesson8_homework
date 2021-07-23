@@ -14,7 +14,7 @@
       </ol>
     </nav>
     <div class="container-fluid pb-5 bg-01">
-      <div id="main" class="container-lg content">
+      <main id="main" class="container-lg content">
         <h2 class="pt-4 text-light">收藏清單</h2>
         <p class="mt-4 text-end text-light">
           您共有
@@ -68,7 +68,7 @@
         <div class="d-flex my-4">
           <router-link class="btn btn-primary" to="/products">返回</router-link>
         </div>
-      </div>
+      </main>
     </div>
   </div>
 </template>

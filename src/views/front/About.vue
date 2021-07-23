@@ -14,7 +14,7 @@
       </ol>
     </nav>
     <div class="container-fluid pb-5 bg-01">
-      <div class="container content">
+      <main id="main" class="container-lg content">
         <h2 class="pt-4 text-light">關於諾貝塔</h2>
         <section class="section mt-4">
           <h3 class="section-title__text text-light">
@@ -158,7 +158,7 @@
             />
           </figure>
         </div>
-      </div>
+      </main>
     </div>
   </div>
 </template>
