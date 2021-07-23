@@ -85,7 +85,7 @@
                     class="text-link-light text-decoration-none"
                     href="https://youtu.be/BXKRNT1GMU8"
                     target="_blank"
-                    >A.I.Games - Kizuna AI株式会社</a
+                    >A.I.Games - Kizuna AI 株式会社</a
                   >
                 </li>
               </ul>
