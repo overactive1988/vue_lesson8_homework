@@ -102,7 +102,14 @@
         </tfoot>
       </table>
     </template>
-    <p v-else class="text-center text-light">請先將商品加入購物車</p>
+    <p v-else class="mt-4 w-100 w-md-50 mx-auto">
+      <router-link to="/products"
+        ><img
+          src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1627073373471.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=nNa9akIBbRDa89lEbbSqN8nB8m2IENQvCpVTrLT4B7yQT2D5ppJ1tJEiX1jbDw%2BK4joUPKWJLxVY0n4HCQu4Ej5IC1let9%2FZv6OO5LQZJkv4NIwMAiGrXiSxkWAVfu1yYAYWKd979eFzInOK1C93ucgF2NcNVYiseScKRn8MPVAVDntip%2BpThF7cO8Qn17wroEIglimPOZ60%2FRnuQeHFmxNtyJtBpZKuSPSzTH1FL1ZP6sPrkTVrUE9KZAsE4xMfc89IRQiklA8wLcNYY%2FoyGInF14NMYBrYEFR2TU%2FP%2BmF4qhyG%2Bw5rFvcsC36BzpdHacqxhhuiKuwc0nLF6Xz9fA%3D%3D"
+          alt="請先將商品加入購物車"
+          class="img-fluid"
+      /></router-link>
+    </p>
     <div class="d-flex justify-content-between mb-4">
       <router-link class="btn btn-secondary" to="/products"
         >繼續購物</router-link
