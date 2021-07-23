@@ -4,11 +4,13 @@
   </header>
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><router-link :to="`/`">首頁</router-link></li>
-      <li class="breadcrumb-item active" aria-current="page">關於諾貝塔</li>
+      <li class="breadcrumb-item">
+        <router-link class="text-light" :to="`/`">首頁</router-link>
+      </li>
+      <li class="breadcrumb-item text-light active" aria-current="page">關於諾貝塔</li>
     </ol>
   </nav>
-  <div class="container content content-user">
+  <div class="container content">
     <h2 class="text-center pt-4">關於諾貝塔</h2>
     <figure class="text-center">
       <img

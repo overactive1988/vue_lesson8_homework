@@ -4,11 +4,11 @@
   </header>
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><router-link :to="`/`">首頁</router-link></li>
-      <li class="breadcrumb-item active" aria-current="page">收藏清單</li>
+      <li class="breadcrumb-item"><router-link class="text-light" :to="`/`">首頁</router-link></li>
+      <li class="breadcrumb-item text-light active" aria-current="page">收藏清單</li>
     </ol>
   </nav>
-  <div id="main" class="container-lg content content-user">
+  <div id="main" class="container-lg content">
     <h2 class="text-center pt-4">收藏清單</h2>
     <p class="mt-4 text-end">
       您共有

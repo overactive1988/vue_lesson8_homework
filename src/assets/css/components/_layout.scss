@@ -94,3 +94,96 @@
     opacity: 0.8;
   }
 }
+
+.bg-cover--01 {
+  background-image: url(https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1627010928100.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=EkcTO07cP0FfBz1sdAn03A6OvSURHrPTE6ZC4Q4pQOplTlL8XEY3%2BCLJy%2FNEm8ScH5sa5oc%2FSHpxKRhEEwIqG4VP7GhqaVbBvQBGGTCK%2B1iuONQR4chSWeU72EP9%2FTRr4uEP%2F4gnKZ%2FS8g47ZYmO%2F0ulZdMuW6dBVohAAowE5BXy7jgnlyp7CQ%2FVmnBBtmktoEJK0vpxQOUAoEF6B8xTgomUsp%2BtSxAORVy6sp0h8lWUgjBqSy9kIBYAgmC7qeWdhrkVWdyYuoTS19HXjmaep%2Bq2G4mmJMXgenrJtKTSwVrc%2Fg06%2FdWy%2BwiP10iFJqm7Mz3eRfzv%2FCidzPnynCOaHQ%3D%3D);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.bg-cover--02 {
+  background-image: url(https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1627010928100.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=EkcTO07cP0FfBz1sdAn03A6OvSURHrPTE6ZC4Q4pQOplTlL8XEY3%2BCLJy%2FNEm8ScH5sa5oc%2FSHpxKRhEEwIqG4VP7GhqaVbBvQBGGTCK%2B1iuONQR4chSWeU72EP9%2FTRr4uEP%2F4gnKZ%2FS8g47ZYmO%2F0ulZdMuW6dBVohAAowE5BXy7jgnlyp7CQ%2FVmnBBtmktoEJK0vpxQOUAoEF6B8xTgomUsp%2BtSxAORVy6sp0h8lWUgjBqSy9kIBYAgmC7qeWdhrkVWdyYuoTS19HXjmaep%2Bq2G4mmJMXgenrJtKTSwVrc%2Fg06%2FdWy%2BwiP10iFJqm7Mz3eRfzv%2FCidzPnynCOaHQ%3D%3D);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.bg-01 {
+  background: linear-gradient(
+    to bottom,
+    rgba(33, 37, 41, 0.9) 0%,
+    rgba(33, 37, 41, 0.3) 100%
+  );
+}
+
+.breadcrumb {
+  background-color: rgba(108, 117, 125, 0.9);
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+}
+
+.card {
+  border-width: 2px;
+}
+
+.card-icon-link {
+  z-index: 5;
+  position: absolute;
+  top: 1.5%;
+  right: 1.5%;
+}
+
+.card-link {
+  overflow: hidden;
+  & img {
+    transition: 0.3s all;
+  }
+  &:hover {
+    & img {
+      -webkit-transform: scale(1.08);
+      transform: scale(1.08);
+    }
+  }
+}
+
+.card-lick__button {
+  z-index: 8;
+}
+
+.goods-detail-description {
+  display: table;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 1rem;
+  @include media-breakpoint-down(md) {
+    font-size: 0.8rem;
+  }
+  & dt {
+    display: table-cell;
+    width: 100px;
+    font-weight: bold;
+    padding: 6px 15px 6px 0;
+    position: relative;
+    @include media-breakpoint-down(md) {
+      width: 80px;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      height: 80%;
+      width: 1px;
+      background: #666;
+      right: 0;
+      top: 10%;
+    }
+  }
+  & dd {
+    display: table-cell;
+    padding: 6px 0 6px 15px;
+  }
+}

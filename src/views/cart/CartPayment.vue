@@ -1,5 +1,5 @@
 <template>
-  <div id="main" class="container content content-user">
+  <div id="main" class="container content">
     <template class="text-center pt-4" v-if="!this.$route.params.id">
       <h2>很抱歉，您並未依照正常流程操作</h2>
     </template>

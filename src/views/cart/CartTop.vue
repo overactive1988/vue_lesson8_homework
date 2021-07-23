@@ -1,5 +1,5 @@
 <template>
-  <div id="main" class="container-lg content content-user">
+  <div id="main" class="container-lg content">
     <h2 class="text-center pt-4">確認購物車</h2>
     <template v-if="cart.total > 0">
       <figure class="my-5 text-center mx-auto">
