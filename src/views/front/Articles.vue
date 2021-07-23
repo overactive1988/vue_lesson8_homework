@@ -16,40 +16,41 @@
     <div class="container-fluid pb-5 bg-01">
       <div id="main" class="container-lg content">
         <h2 class="pt-4 text-light">最新消息</h2>
-        <div class="row mt-4">
-          <div
-            v-for="item in articles"
-            :key="item"
-            class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
-          >
-            <div class="card h-100 card-articles">
-              <router-link
-                :to="`/article/${item.id}`"
-                class="
-                  d-flex
-                  flex-column
-                  text-decoration-none
-                  stretched-link
-                  h-100
-                "
-              >
-                <img :src="item.image" alt class="card-img-top img-cover" />
-                <div class="card-body d-flex flex-column py-2">
-                  <span class="mb-1 fs-7">{{ item.tag }}</span>
-
-                  <h5 class="card-title mb-4">
-                    {{ item.title }}
-                  </h5>
-                  <small class="card-text mt-2 text-muted card-articles__date">
-                    <time :datetime="$filters.datetime(item.create_at)">{{
-                      $filters.date(item.create_at)
-                    }}</time>
-                  </small>
+        <ul v-for="item in articles" :key="item" class="list-unstyled mt-4">
+          <li class="card h-100 card-articles">
+            <router-link
+              :to="`/article/${item.id}`"
+              class="
+                d-flex
+                flex-column
+                text-decoration-none
+                stretched-link
+                h-100
+              "
+            >
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img :src="item.image" alt class="img-cover" />
                 </div>
-              </router-link>
-            </div>
-          </div>
-        </div>
+                <div class="col-md-8">
+                  <div class="card-body d-flex flex-column">
+                    <span class="mb-1 fs-7">{{ item.tag }}</span>
+
+                    <h5 class="card-title mb-4">
+                      {{ item.title }}
+                    </h5>
+                    <p class="card-text">{{ item.description }}</p>
+                    <small class="card-text mt-2 text-muted">
+                      <time :datetime="$filters.datetime(item.create_at)">{{
+                        $filters.date(item.create_at)
+                      }}</time>
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </router-link>
+          </li>
+        </ul>
 
         <div class="d-flex justify-content-center mt-5 mb-4">
           <Pagination :page="pagination" @get-page="getArticles"></Pagination>

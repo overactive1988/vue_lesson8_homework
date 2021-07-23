@@ -5,7 +5,6 @@
   }
 }
 
-
 .nav-top {
   background-color: rgba(0, 0, 0, 0.1);
   transition: 0.3s all;
@@ -15,5 +14,85 @@
   transition: 0.5s all;
   &:hover {
     opacity: 0.75;
+  }
+}
+
+.nav-products__lists {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  margin: 0 -5px 2rem;
+  @include media-breakpoint-down(sm) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 0 1rem;
+  }
+  & .nav-products__list {
+    &:nth-child(1) {
+      background-size: cover;
+      background-position: center;
+      background-image: url(https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1627051177946.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=omUyb1Yh2u5PljjKyWpchzblRMcYFRVTSotdZbN%2BcZzXKrTC076v3WyrOijw7co7fANFcdU0L518IG7KtktvAd7eQcs4ySDTNJAGidreTaRvHj54rCWhHNptyrMCTRScJHZQgbgk%2FIvR%2FMrqBnJ8b7o%2FOHQcb4AcJ2Oyeu0PzLEm5oXt00aI2u4UclgveifK4h02nWN%2FfjIk05fQBXlw6ZIrbKDRyEv0NEMkLdoOX2v%2FNrftOhb4lu%2Br5cexxxv5kP4fFIDBA8Kk6scth4hPU802UebuURe%2Bo71E8CGzSR9OSfvLKpFOYIR2MQIIa9r4hrkvjvohw0eT0Gm2OclZ0g%3D%3D);
+    }
+    &:nth-child(2) {
+      background-size: cover;
+      background-position: center;
+      background-image: url(https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1627051199551.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=iqydpTDv4grqbvHh5m06qitIa4%2BHmK8MGj%2FnWqvag9wUFYMV5AINQ52QDxh0Q2GBdZGIt2HnHCW2odWRd6q8HOiegXV2F2s7dAyyuyYcBEm832N7hSGlI81WNRcYrbojAmGS07YWEdDgRk5yDVAbUDVhCqP6RKFDm0jrCRHz7QJf8MRbe6TFIJaL%2BYB6VDOB0R4d7xGBmz9u00my0%2BgX%2FaDGkT8UaGACJ1K9FtbcFhu3Z216mAe9sAdLOx67%2B%2Bv7kOjmjHm9V%2FVrRzbx1CY41N5osJzE76XQbxBuXSMX1T%2F0uuXH94bc8gYmEa7lZItVx4h%2FXzvfSSItr%2BL2fkIDrQ%3D%3D);
+    }
+    &:nth-child(3) {
+      background-size: cover;
+      background-position: center;
+      background-image: url(https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1627051191252.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=BNArHUcvU8KUQl%2B62QDcWdW9LMMgWqFliCfIRN5TdQhN8grYcDP5%2FueXaDbNTsdBVMaor0VvGAotPxG5KVPTHL7%2BOjpwu5hU4J%2FEr6GsxfzOkVJe7rfKsGozAUDUor8%2BAGbZZPPYIvTAPOUsBxWfg5vEhCHT0HyrGL0C6W173YWXY%2FKurBw2fIOp7tl%2Fu7Fpipvz5%2FA6PTLUUYJxhfcpAjQqGV8XKxpvZScyRKGf15rJAAadEdaSiZrAzYfugT9AufxltX%2BTN7cawXJaMupZ6IDR6BvUbBwRiZ7lppED6zIJHEEymOEnppweIo3ZxKKdSmEsisVM5HylieeeYHBSWA%3D%3D);
+    }
+    &:nth-child(4) {
+      background-size: cover;
+      background-position: center;
+      background-image: url(https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1627051184433.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=LsO%2FMr6RbbcP%2Fn7xL3EN9Wl1db7x%2FTYGqiCSchOo5AuwGHhHRStXqOr2TwnvWMqAB%2B4QCxSZ7tCcq4efztxPBIoqNap77tzBtkOyFPmHrsP%2B8WN9ceeUbhMlQyAilPERhKaZ724QkeTEP9tbMVFqODYjToVL6%2B1dNzTeiur90%2FahN77m79dv9brp37%2B91DJDBPsPOYpFfj1BUn%2F%2BQdE0%2B85SE8478FfJ5Rcce0JW%2BU0GL35zAEl6qHXfT4uuObLeMyCE0MshIsEcbEuf0mTWSxcv79I%2Bsj2u47qMMFPA%2FR%2BR83oHApZH4IMsmACTWyU9H%2FbbSwHK2GPnly6bZS3bmA%3D%3D);
+    }
+    &:nth-child(5) {
+      background-size: cover;
+      background-position: center;
+      background-image: url(https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1627051205578.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=DQI9vm0QE73GXMg3VO%2FWQ92WqwKap4RhLGJd9h9u4OSFykSXTrlBnjDMXMtqw5TcrFN6kdeLgV%2FugQFROsD83q71DLTimqihBHQcVajMufC7ny3W%2BbBgzIxg1V2SDa%2B7wsA3%2B6W34sBWGoFQjmkNSKkL%2F78Qdt1uB7hZ9kOzQGbjakDEqsWx0bWgjQYHwdkNpnyCplWfETXVH2bF8boK%2BfXKCVk7hunhoZKW5gz%2BQzn7cGY9lRfKWma848udEzv5T%2FId5NZ6v06RhIeUeaw1KxuW8iKRcWikdQ7y127o%2BfPD1gbTgkEk6O5LKoxxRhae%2Bn1pgpUF9GoYzNFwYaMkSA%3D%3D);
+    }
+  }
+}
+
+.nav-products__list {
+  width: 20%;
+  text-align: center;
+  margin: 0 5px;
+  min-height: 50px;
+  border-radius: 0.25rem;
+  @include media-breakpoint-down(sm) {
+    max-width: 49%;
+    flex: 1 1 49%;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  & .active {
+    background: rgba(86, 42, 77, 0.9);
+  }
+  & a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #ffffff;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(86, 42, 77, 0.5);
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    transition: 0.3s all;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  & span {
+    color: #fff;
+    position: relative;
+    z-index: 2;
   }
 }

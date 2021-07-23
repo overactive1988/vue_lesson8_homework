@@ -3,7 +3,15 @@
   object-fit: cover;
   height: calc(5vw);
   max-height: 400px;
-  min-height: 150px;
+  min-height: 175px;
+  width: 100%;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  @include media-breakpoint-down(md) {
+    border-top-right-radius: 0.25rem;
+    border-bottom-left-radius: 0;
+    min-height: 250px;
+  }
   @include media-breakpoint-down(sm) {
     min-height: 200px;
   }
