@@ -13,7 +13,7 @@
         </li>
       </ol>
     </nav>
-    <div id="main" class="container-fluid content bg-01">
+    <div id="main" class="container-fluid content bg-01 pb-4">
       <h2 class="pt-4 text-light">商品列表</h2>
       <p class="mt-4 text-end text-light">
         總共有

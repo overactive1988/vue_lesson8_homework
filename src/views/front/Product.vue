@@ -86,7 +86,7 @@
                   <dt>商品規格</dt>
                   <dd>{{ tempProduct.content }}</dd>
                 </dl>
-                <div class="d-flex">
+                <div class="d-flex mt-4">
                   <div class="input-group text-center w-50 d-inline-flex">
                     <button
                       type="button"
@@ -113,7 +113,13 @@
                   </div>
                   <button
                     type="button"
-                    class="btn btn-primary ms-2 fs-7 fs-lg-6"
+                    class="
+                      btn btn-primary
+                      ms-1 ms-md-2
+                      fs-8 fs-sm-7 fs-lg-6
+                      p-0
+                      px-1 px-md-2
+                    "
                     @click="addCart(qty)"
                   >
                     <span
@@ -125,7 +131,7 @@
                     加入購物車
                   </button>
                   <a
-                    class="btn ms-2"
+                    class="btn ms-1 ms-md-2"
                     href="#"
                     :class="{
                       'btn-primary': myFavorite.includes(tempProduct.id),
@@ -173,7 +179,19 @@
                         <p class="card-text">{{ item.price }}NTD</p>
                       </div>
                     </a>
-
+                    <a
+                      class="card-icon-link"
+                      href="#"
+                      @click.prevent="addMyFavorite(item.id)"
+                    >
+                      <span
+                        v-if="myFavorite.includes(item.id)"
+                        class="material-icons"
+                      >
+                        star
+                      </span>
+                      <span v-else class="material-icons"> star_border </span>
+                    </a>
                     <div class="card-footer d-flex position-relative">
                       <button
                         @click="cardAddCart(item, qty)"

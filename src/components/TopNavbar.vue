@@ -28,7 +28,7 @@
             ><span class="material-icons position-relative h1">
               star
               <span
-                v-if="cartItems"
+                v-if="myFavorite.length"
                 class="
                   position-absolute
                   top-0
