@@ -149,7 +149,7 @@
           </div>
         </div>
         <div class="section mt-4">
-          <figure class="w-25 w-md-75 mb-0 mx-auto">
+          <figure class="w-100 w-md-75 mb-0 mx-auto">
             <figcaption class="text-light mb-2">剩下還在做qq</figcaption>
             <img
               src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626976385985.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=dDK0BwVGekCxyUGJ34wQzV3yW8YoDEMyVp0KpMA2HuOLTiJOnDa0eou3SAWQNWNt5U63FLLUdooAAUqrT7v2A0PfPAjZ7rDmIEdVLovpl%2BGbtwwDZ8yM48u9yCp3Od1hRSjaVx4t268AOgBbFXNvYTwo%2BccXaoOHFCEEBTAd2sRuSiorjuU0c7w8lIMHlkQSA8bzkAZR05OUb7h%2Fy65T7UltXP%2BjzvjK7ejwhOj6gPsn%2Fl5Hc6hd90x8j4QJ9NCPIdaxiwzCRLR5V0CZ8x43TvS8fIh96Bf%2FmUHyxMbyDhJrkVqKkfVK%2F3J01uq9hi27GpiacZzLY4et22xeV9K27g%3D%3D"
