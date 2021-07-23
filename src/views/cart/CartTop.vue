@@ -1,6 +1,6 @@
 <template>
   <div id="main" class="container-lg content">
-    <h2 class="text-center pt-4">確認購物車</h2>
+    <h2 class="pt-4">確認購物車</h2>
     <template v-if="cart.total > 0">
       <figure class="my-5 text-center mx-auto">
         <img
@@ -102,7 +102,7 @@
         </tfoot>
       </table>
     </template>
-    <p v-else class="text-center">請先將商品加入購物車</p>
+    <p v-else class="text-center text-light">請先將商品加入購物車</p>
     <div class="d-flex justify-content-between mb-4">
       <router-link class="btn btn-secondary" to="/products"
         >繼續購物</router-link

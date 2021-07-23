@@ -27,7 +27,9 @@
     </section>
     <section id="main" class="section pt-6 bg-dark">
       <div class="container-fluid px-0">
-        <h2 class="text-center text-light mb-4">關於小魔女諾貝塔</h2>
+        <h2 class="text-center text-light mb-4">
+          <router-link class="text-link-light text-decoration-none" to="/about">關於小魔女諾貝塔</router-link>
+        </h2>
         <div class="row gx-0">
           <div class="col-md-6 col-lg-5">
             <div

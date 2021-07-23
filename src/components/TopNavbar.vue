@@ -115,13 +115,13 @@
               >最新消息<span class="text-uppercase">news</span></router-link
             >
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <router-link
               class="nav-link text-decoration-none header-nav-link fs-5"
               to="/about"
               >關於諾貝塔<span class="text-uppercase">about</span></router-link
             >
-          </li> -->
+          </li>
           <li
             v-if="myFavorite.length > 0"
             class="nav-item text-center d-none d-lg-block"

@@ -1,9 +1,12 @@
 <template>
-  <header class="nav-header">
-    <Navbar></Navbar>
-  </header>
-
-  <router-view :props-form="tempform" />
+  <div class="">
+    <header class="nav-header">
+      <Navbar></Navbar>
+    </header>
+    <div class="container-fluid pb-5">
+      <router-view :props-form="tempform" />
+    </div>
+  </div>
 </template>
 
 <script>
