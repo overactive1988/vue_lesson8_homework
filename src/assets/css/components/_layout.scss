@@ -162,7 +162,6 @@
 }
 
 .card-articles__date {
-
 }
 
 .goods-detail-description {
@@ -198,4 +197,9 @@
     display: table-cell;
     padding: 6px 0 6px 15px;
   }
+}
+
+.article-post {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.85);
 }
