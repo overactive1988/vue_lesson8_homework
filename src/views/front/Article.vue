@@ -47,7 +47,12 @@
           </div>
           <div class="col-12 col-md-4 mt-4 mt-md-0">
             <nav class="nav-products">
-              <ul class="nav-products__lists article-list">
+              <ul
+                class="nav-products__lists article-list"
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="600"
+              >
                 <li class="nav-products__list">
                   <a
                     href="#"

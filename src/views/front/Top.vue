@@ -10,13 +10,28 @@
         </div>
         <div class="container position-relative vh-100">
           <div class="top__inner">
-            <h1 class="top__title text-light">小魔女諾貝塔<br />雜貨工坊</h1>
-            <p class="top__subtitle text-light h6 fw-normal mb-2 mb-md-4">
+            <h1
+              class="top__title text-light"
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="300"
+            >
+              小魔女諾貝塔<br />雜貨工坊
+            </h1>
+            <p
+              class="top__subtitle text-light h6 fw-normal mb-2 mb-md-4"
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="350"
+            >
               所有小魔女諾貝塔相關的商品，只有在這裡獨家販售
             </p>
             <router-link
               class="top__button btn btn-outline-light w-100"
               to="/products"
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="450"
               >商品列表<span class="material-icons">
                 navigate_next
               </span></router-link
@@ -28,7 +43,9 @@
     <section id="main" class="section pt-6 bg-dark">
       <div class="container-fluid px-0">
         <h2 class="text-center text-light mb-4">
-          <router-link class="text-link-light text-decoration-none" to="/about">關於小魔女諾貝塔</router-link>
+          <router-link class="text-link-light text-decoration-none" to="/about"
+            >關於小魔女諾貝塔</router-link
+          >
         </h2>
         <div class="row gx-0">
           <div class="col-md-6 col-lg-5">
@@ -42,8 +59,20 @@
                 h-100
               "
             >
-              <h3 class="section-title__text h2 mb-3">簡介概述</h3>
-              <p class="fs-6 fs-sm-5">
+              <h3
+                class="section-title__text h2 mb-3"
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="400"
+              >
+                簡介概述
+              </h3>
+              <p
+                class="fs-6 fs-sm-5"
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="450"
+              >
                 小魔女諾貝塔是一款於 2017 年 6
                 月開始製作，台灣獨立開發的動作冒險遊戲，前期主要由
                 <a
@@ -54,7 +83,12 @@
                 >
                 一人獨力開發。
               </p>
-              <p class="fs-6 fs-sm-5">
+              <p
+                class="fs-6 fs-sm-5"
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="500"
+              >
                 之後開始與
                 <a
                   href="http://simon.moe/"
@@ -67,21 +101,43 @@
                 5 萬份，其中超過一半的銷量來自日本地區。
               </p>
               <hr class="mb-4" />
-              <h3 class="section-title__text h2 mb-3">得獎紀錄</h3>
+              <h3
+                class="section-title__text h2 mb-3"
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="300"
+              >
+                得獎紀錄
+              </h3>
               <ul class="fs-6 fs-sm-5 list-unstyled">
-                <li class="mb-3 section-list">
+                <li
+                  class="mb-3 section-list"
+                  data-aos="fade-up"
+                  data-aos-easing="linear"
+                  data-aos-duration="400"
+                >
                   <span class="material-icons section-list-icon">
                     emoji_events
                   </span>
                   榮獲 第十三屆 巴哈姆特 遊戲動漫大賞 年度人氣國產遊戲 金賞
                 </li>
-                <li class="mb-3 section-list">
+                <li
+                  class="mb-3 section-list"
+                  data-aos="fade-up"
+                  data-aos-easing="linear"
+                  data-aos-duration="450"
+                >
                   <span class="material-icons section-list-icon">
                     emoji_events
                   </span>
                   榮獲 巴哈姆特 2019 ACG 創作大賽 &lt; Unity 特別獎 &gt;
                 </li>
-                <li class="section-list">
+                <li
+                  class="section-list"
+                  data-aos="fade-up"
+                  data-aos-easing="linear"
+                  data-aos-duration="500"
+                >
                   <span class="material-icons section-list-icon">
                     emoji_events </span
                   >榮獲 巴哈姆特 2019 ACG 創作大賽 &lt; 人氣賞 &gt;
@@ -95,6 +151,9 @@
                 src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626797489591.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=KN7bl3n%2Fy%2FgkCgGzbnUJBisq4XINHS9vhF43sHm8OSxMk0dHThDfK9u2fx2jhgbXQuBl8H2YAFyflxeh9FDohBsuGoqCq2LPf4g8Bg7dYPOi%2FWrdcnB2hnhghjiq37bqIgXbVLumcatnHSdIOVfic8kJFT2iZdLDOUR%2BE8dRNETzY8UCv250qhslIaXa1fwhLNsB3Az5YleWhpwQkBytTQpILKl%2B%2BfdwVWusB6qvqnM%2F9oWEm3f5RjcsC9lNpwH%2Fl1D7Tf2egcTkLjeEkM9cxQP%2Bol01mVvQBXMBIHL%2F%2BwoDkEIQWgXihT%2Ft%2FChdtEwJpq6u9baSLJEOdiFcKouvEQ%3D%3D"
                 alt=""
                 class="img-top-about img-fluid"
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="1000"
               />
             </figure>
           </div>
@@ -103,17 +162,35 @@
     </section>
     <section class="top-products section py-6">
       <div class="container px-4 px-sm-0">
-        <h3 class="section-title mb-5">
+        <h3
+          class="section-title mb-5"
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="300"
+        >
           <p class="section-title__text h2">
             <!-- <span class="material-icons section-icon"> flare </span> -->
             選購商品
           </p>
-          <p class="section-title__text fw-normal fs-6 fs-sm-5">
+          <p
+            class="section-title__text fw-normal fs-6 fs-sm-5"
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="350"
+          >
             請選擇您有興趣的商品類別
           </p>
         </h3>
         <div class="row row-cols-2 row-cols-lg-3 g-2 g-lg-3">
-          <div v-for="item in this.category" :key="item.name" class="col">
+          <div
+            v-for="item in this.category"
+            :key="item.name"
+            class="col"
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="400"
+            data-aos-anchor-placement="bottom-bottom"
+          >
             <div class="top-products-card">
               <a
                 href="#"
@@ -137,7 +214,13 @@
       <div class="container">
         <dl class="top-news__inner">
           <dt class="top-news__title">
-            <div class="d-flex" v-if="newArticles">
+            <div
+              class="d-flex"
+              v-if="newArticles"
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="500"
+            >
               <a href="#" class="me-3"
                 ><img
                   src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626681936945.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=qtWyghLUdNHaBdAGfAZXLIqojS8p3TfSeBfX1YpPfOYfLWL%2BqwRomHpSYbf0MDT3DrVejkTiR7XqI%2Bp6ik6%2FGq3T1hklxhlAw9ocMveQUTyqnmgOKRE4wX%2F%2Bw08nD4Obur1R10d5cPY%2BWJI8SELvpxK4avKmGgWn4JgAlh8VI7Z5yuB2%2Frjq2tUMeLU%2FhCstnJMLk%2B3up4IW8xJnq8bUdWnT%2BOglkq6sx9xyE4crg6c7NfR7spyqTMSwfEkA2n3AZnU99Ju78KpVNrYIBRv0TNuK9pbPZFBk%2BO1qaEMWNcEA841zN7uJ7%2Bk6yfEB7VSDxwlp48D63oOKkD2uIh6f%2Fw%3D%3D"

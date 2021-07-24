@@ -16,7 +16,14 @@
     <div class="container-fluid pb-5 bg-01">
       <main id="main" class="container-lg content">
         <h2 class="pt-4 text-light">最新消息</h2>
-        <ul v-for="item in articles" :key="item" class="list-unstyled mt-4">
+        <ul
+          v-for="item in articles"
+          :key="item"
+          class="list-unstyled mt-4"
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="300"
+        >
           <li class="card h-100 card-articles">
             <router-link
               :to="`/article/${item.id}`"

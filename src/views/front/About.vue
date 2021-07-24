@@ -31,23 +31,50 @@
               >資料來源：維基百科wiki</a
             ></q
           >
-          <h3 class="section-title__text text-light mt-4">
+          <h3
+            class="section-title__text text-light mt-4"
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="300"
+          >
             全球發行銷售量超過 15 萬份！
           </h3>
-          <p class="text-light fs-6 fs-sm-5">
+          <p
+            class="text-light fs-6 fs-sm-5"
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="350"
+          >
             本作於 2020 年 6月 24 日於 Steam 遊戲平台推出先行體驗版，截止同年 8
             月中旬，全球銷量已達到 150,000 份，其中有超過一半的使用者來自日本。
           </p>
         </section>
-        <div class="section mt-4">
+        <section class="section mt-4">
           <div class="row align-items-center">
             <div class="col-12 col-md-5">
-              <h3 class="section-title__text text-light">知名 Vtuber 直播</h3>
-              <p class="text-light fs-6 fs-sm-5">
+              <h3
+                class="section-title__text text-light"
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="300"
+              >
+                知名 Vtuber 直播
+              </h3>
+              <p
+                class="text-light fs-6 fs-sm-5"
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="350"
+              >
                 本作發售約 1 星期左右，便收到許多海外知名 Vtuber
                 直播主聯繫，表示希望能夠實況直播遊玩這款遊戲，以下列舉幾位。
               </p>
-              <ul class="text-light">
+              <ul
+                class="text-light"
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-anchor-placement="center-bottom"
+              >
                 <li>
                   <a
                     class="text-link-light text-decoration-none"
@@ -91,7 +118,12 @@
               </ul>
             </div>
             <div class="col-12 col-md-7">
-              <figure class="mb-0">
+              <figure
+                class="mb-0"
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-anchor-placement="center-bottom"
+              >
                 <img
                   src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1627071304843.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=BROsKIESGOIOwDNgzOcamrannT%2FJ50pKiQ02Rll%2Fbyul%2FNYaxtYmAYJWEKyEzliv%2BAiRSrbS6UnU1%2FKNpnXF5C7qq2HV4AAqLymI2VxhNdCRN3%2Fq4KWmMCxJGFSd8LO9QpNvb2G4DmpRyepbfrZkDoxkNl45pvAGb9WY5SbWTRPb89kEE%2B%2BxjCSfdAghamwQnF%2FPZVWcPySz6O0WWceq%2BaWUJPxs%2B%2F38gqy5p5t70zvqAoVnTTeUhP5M3l9wzzEajVBhIMZYOkNFnrJQ28q0k9G3nbAo49SwvmVbcrOh5%2BiJGBT%2BsHomilYvkGuIugmF84OrvL%2BuwoXv7kQfLFOaDg%3D%3D"
                   alt=""
@@ -105,7 +137,13 @@
             <div class="col mt-4">
               <div class="row">
                 <div class="col-12 col-md-6">
-                  <div class="ratio ratio-16x9">
+                  <div
+                    class="ratio ratio-16x9"
+                    data-aos="fade-up"
+                    data-aos-easing="linear"
+                    data-aos-duration="300"
+                    data-aos-anchor-placement="center-bottom"
+                  >
                     <iframe
                       src="https://www.youtube.com/embed/J-qsc-0_aUQ?rel=0"
                       title="YouTube video"
@@ -114,7 +152,13 @@
                   </div>
                 </div>
                 <div class="col-12 col-md-6 mt-3 mt-md-0">
-                  <div class="ratio ratio-16x9">
+                  <div
+                    class="ratio ratio-16x9"
+                    data-aos="fade-up"
+                    data-aos-easing="linear"
+                    data-aos-duration="400"
+                    data-aos-anchor-placement="center-bottom"
+                  >
                     <iframe
                       src="https://www.youtube.com/embed/cVBoFyzOuhg?rel=0"
                       title="YouTube video"
@@ -125,8 +169,13 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="section mt-4">
+        </section>
+        <div
+          class="section mt-4"
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="300"
+        >
           <div class="row align-items-center">
             <div class="col-12 col-md-8 order-1 order-md-0">
               <figure class="mb-0">
@@ -148,7 +197,12 @@
             </div>
           </div>
         </div>
-        <div class="section mt-4">
+        <section
+          class="section mt-4"
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="400"
+        >
           <figure class="w-100 w-md-75 mb-0 mx-auto">
             <figcaption class="text-light mb-2">剩下還在做qq</figcaption>
             <img
@@ -157,7 +211,7 @@
               class="img-fluid"
             />
           </figure>
-        </div>
+        </section>
       </main>
     </div>
   </div>
