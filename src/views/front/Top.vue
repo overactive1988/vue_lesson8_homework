@@ -10,28 +10,13 @@
         </div>
         <div class="container position-relative vh-100">
           <div class="top__inner">
-            <h1
-              class="top__title text-light"
-              data-aos="fade-up"
-              data-aos-easing="linear"
-              data-aos-duration="300"
-            >
-              小魔女諾貝塔<br />雜貨工坊
-            </h1>
-            <p
-              class="top__subtitle text-light h6 fw-normal mb-2 mb-md-4"
-              data-aos="fade-up"
-              data-aos-easing="linear"
-              data-aos-duration="350"
-            >
+            <h1 class="top__title text-light">小魔女諾貝塔<br />雜貨工坊</h1>
+            <p class="top__subtitle text-light h6 fw-normal mb-2 mb-md-4">
               所有小魔女諾貝塔相關的商品，只有在這裡獨家販售
             </p>
             <router-link
               class="top__button btn btn-outline-light w-100"
               to="/products"
-              data-aos="fade-up"
-              data-aos-easing="linear"
-              data-aos-duration="450"
               >商品列表<span class="material-icons">
                 navigate_next
               </span></router-link
