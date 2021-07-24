@@ -49,6 +49,33 @@
             月中旬，全球銷量已達到 150,000 份，其中有超過一半的使用者來自日本。
           </p>
         </section>
+        <section
+          class="section mt-4"
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="300"
+        >
+          <div class="row align-items-center">
+            <div class="col-12 col-md-8 order-1 order-md-0">
+              <figure class="mb-0">
+                <img
+                  src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1627068595030.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=JrjZKIVtaLczzfgavYHmtieOqdm%2BFDuuZMCnifr%2Bs4qZogXfWX5aw4A6TynwSC5%2Byx2%2FEIM%2FCrRAk%2F45KnxFbHFxTTEmxt0a9SZGMpJrWdwOTkGq4XuxcMkwqqat6zZJryEEn7GCOywCH%2FqorhWYEp8KRv7WBIiW%2Fz8JNhN1GeBWX%2BJy8r8GJCpV1Aw9wElqUkwnTNGowXgTDvU1CGNJ7GLhFJEj4do0QlXZrCnSKR7esAe9Waw5OQj0yPZ%2FZa65cgz1SpOORvzBYXHrWN5Fxp1f1Cfnbgh1URLuDsPw1ikR1i7BxZWC6S6l%2BtY9QVABfpIIAXXxZv6e%2FqRUHfVjTw%3D%3D"
+                  alt=""
+                  class="img-fluid"
+                />
+                <figcaption class="text-light">
+                  小魔女諾貝塔 遊戲畫面
+                </figcaption>
+              </figure>
+            </div>
+            <div class="col-12 col-md-4 order-0 order-md-1">
+              <h3 class="section-title__text text-light">遊戲介紹</h3>
+              <p class="text-light fs-6 fs-sm-5">
+                小魔女諾貝塔是一款動作冒險遊戲<br />為了解開自己的身世之謎少女獨自來到古堡，<br />不斷的挑戰強大的生魂，<br />也學習到各式各樣的魔法與能力，<br />並邂逅了神祕的小黑貓，<br />古堡深處究竟隱藏了什麼樣的秘密呢?
+              </p>
+            </div>
+          </div>
+        </section>
         <section class="section mt-4">
           <div class="row align-items-center">
             <div class="col-12 col-md-5">
@@ -170,33 +197,7 @@
             </div>
           </div>
         </section>
-        <div
-          class="section mt-4"
-          data-aos="fade-up"
-          data-aos-easing="linear"
-          data-aos-duration="300"
-        >
-          <div class="row align-items-center">
-            <div class="col-12 col-md-8 order-1 order-md-0">
-              <figure class="mb-0">
-                <img
-                  src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1627068595030.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=JrjZKIVtaLczzfgavYHmtieOqdm%2BFDuuZMCnifr%2Bs4qZogXfWX5aw4A6TynwSC5%2Byx2%2FEIM%2FCrRAk%2F45KnxFbHFxTTEmxt0a9SZGMpJrWdwOTkGq4XuxcMkwqqat6zZJryEEn7GCOywCH%2FqorhWYEp8KRv7WBIiW%2Fz8JNhN1GeBWX%2BJy8r8GJCpV1Aw9wElqUkwnTNGowXgTDvU1CGNJ7GLhFJEj4do0QlXZrCnSKR7esAe9Waw5OQj0yPZ%2FZa65cgz1SpOORvzBYXHrWN5Fxp1f1Cfnbgh1URLuDsPw1ikR1i7BxZWC6S6l%2BtY9QVABfpIIAXXxZv6e%2FqRUHfVjTw%3D%3D"
-                  alt=""
-                  class="img-fluid"
-                />
-                <figcaption class="text-light">
-                  小魔女諾貝塔 遊戲畫面
-                </figcaption>
-              </figure>
-            </div>
-            <div class="col-12 col-md-4 order-0 order-md-1">
-              <h3 class="section-title__text text-light">遊戲介紹</h3>
-              <p class="text-light fs-6 fs-sm-5">
-                小魔女諾貝塔是一款動作冒險遊戲<br />為了解開自己的身世之謎少女獨自來到古堡，<br />不斷的挑戰強大的生魂，<br />也學習到各式各樣的魔法與能力，<br />並邂逅了神祕的小黑貓，<br />古堡深處究竟隱藏了什麼樣的秘密呢?
-              </p>
-            </div>
-          </div>
-        </div>
+
         <section
           class="section mt-4"
           data-aos="fade-up"
