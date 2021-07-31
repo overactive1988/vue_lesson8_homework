@@ -1,9 +1,9 @@
 <template>
-  <div class="">
+  <div class="bg-cover--03">
     <header class="nav-header">
       <Navbar></Navbar>
     </header>
-    <div class="container-fluid pb-5">
+    <div class="container-fluid pb-5 bg-01">
       <router-view :props-form="tempform" />
     </div>
   </div>
