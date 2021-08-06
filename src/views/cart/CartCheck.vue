@@ -123,7 +123,7 @@
 
               <button
                 type="submit"
-                class="btn btn-primary"
+                class="btn btn-nobeta"
                 :disabled="cart.carts <= 1"
               >
                 <span

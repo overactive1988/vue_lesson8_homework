@@ -3,7 +3,7 @@
     <Navbar></Navbar>
   </header>
   
-  <main id="main" class="container-fulid text-center bg-primary">
+  <main id="main" class="container-fulid text-center bg-nobeta">
     <div class="container pt-8 pb-4 content position-relative">
       <div class="col position-relative">
         <figure class="ms-4 mb-0">

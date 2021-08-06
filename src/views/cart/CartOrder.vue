@@ -27,7 +27,7 @@
                 :alt="item.product.title"
               />
               <figcaption class="ps-2">
-                <span class="badge bg-primary">{{
+                <span class="badge bg-nobeta">{{
                   item.product.category
                 }}</span>
                 <p class="fs-7 fs-sm-6">{{ item.product.title }}</p>
@@ -70,7 +70,7 @@
     </div>
 
     <div class="d-flex justify-content-center my-4">
-      <button type="button" class="btn btn-primary" @click="payment()">
+      <button type="button" class="btn btn-nobeta" @click="payment()">
         <span
           v-if="loadingStatus.loadingItem === 3"
           class="material-icons animate-spin"

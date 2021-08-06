@@ -107,7 +107,7 @@
             >繼續購物</router-link
           >
           <router-link
-            class="btn btn-primary"
+            class="btn btn-nobeta"
             :aria-disabled="cart.carts <= 1"
             :class="{ disabled: cart.carts <= 1 }"
             to="/cartcheck"
@@ -154,8 +154,8 @@
               </li>
             </ul>
           </nav>
-          <div class="mt-auto d-flex justify-content-end mb-4 w-100">
-            <router-link class="btn btn-secondary" to="/products"
+          <div class="mt-auto d-flex mb-4 w-100">
+            <router-link class="btn btn-nobeta" to="/products"
               >繼續購物</router-link
             >
           </div>

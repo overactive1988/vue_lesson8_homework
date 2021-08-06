@@ -64,7 +64,7 @@
               </div>
               <div class="col-md-6 mt-4 mt-md-0">
                 <p class="mb-0">
-                  <span class="badge bg-primary align-self-center">{{
+                  <span class="badge bg-nobeta align-self-center">{{
                     tempProduct.category
                   }}</span>
                 </p>
@@ -114,7 +114,7 @@
                   <button
                     type="button"
                     class="
-                      btn btn-primary
+                      btn btn-nobeta
                       ms-1 ms-md-2
                       fs-8 fs-sm-7 fs-lg-6
                       p-0
@@ -134,8 +134,8 @@
                     class="btn ms-1 ms-md-2"
                     href="#"
                     :class="{
-                      'btn-primary': myFavorite.includes(tempProduct.id),
-                      'btn-outline-primary': !myFavorite.includes(
+                      'btn-nobeta': myFavorite.includes(tempProduct.id),
+                      'btn-outline-nobeta': !myFavorite.includes(
                         tempProduct.id
                       ),
                     }"
@@ -197,7 +197,7 @@
                         @click="cardAddCart(item, qty)"
                         type="button"
                         :disabled="loadingStatus.loadingItem === item.id + 2"
-                        class="btn btn-primary btn-sm ms-auto"
+                        class="btn btn-nobeta btn-sm ms-auto"
                         style="z-index: 5"
                       >
                         <span

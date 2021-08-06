@@ -51,7 +51,7 @@
                   @click="addCart(item.id)"
                   type="button"
                   :disabled="loadingStatus.loadingItem === item.id + 1"
-                  class="btn btn-primary btn-sm card-lick__button"
+                  class="btn btn-nobeta btn-sm card-lick__button"
                 >
                   <span
                     v-if="loadingStatus.loadingItem === item.id + 1"
@@ -66,7 +66,7 @@
           </ul>
         </div>
         <div class="d-flex my-4">
-          <router-link class="btn btn-primary" to="/products">返回</router-link>
+          <router-link class="btn btn-nobeta" to="/products">返回</router-link>
         </div>
       </main>
     </div>

@@ -8,7 +8,7 @@
           :alt="item.product.title"
         />
         <figcaption class="ps-2">
-          <span class="badge bg-primary">{{ item.product.category }}</span>
+          <span class="badge bg-nobeta">{{ item.product.category }}</span>
           <p class="fs-7 fs-sm-6">{{ item.product.title }}</p>
         </figcaption>
       </figure>

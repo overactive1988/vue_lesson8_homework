@@ -37,12 +37,17 @@
                   <time :datetime="$filters.datetime(article.create_at)">{{
                     $filters.date(article.create_at)
                   }}</time>
-                  <span class="badge bg-primary ms-2 fs-7">{{
+                  <span class="badge bg-nobeta ms-2 fs-7">{{
                     article.tag
                   }}</span>
                 </p>
                 <p><span v-html="article.content"></span></p>
               </article>
+              <div class="d-flex my-4">
+                <router-link class="btn btn-nobeta" to="/articles"
+                  >返回</router-link
+                >
+              </div>
             </div>
           </div>
           <div class="col-12 col-md-4 mt-4 mt-md-0">
@@ -76,9 +81,6 @@
               </ul>
             </nav>
           </div>
-        </div>
-        <div class="d-flex my-4">
-          <router-link class="btn btn-primary" to="/articles">返回</router-link>
         </div>
       </main>
     </div>

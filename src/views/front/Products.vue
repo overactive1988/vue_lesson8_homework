@@ -116,7 +116,7 @@
                     @click="addCart(item.id)"
                     type="button"
                     :disabled="loadingStatus.loadingItem === item.id + 1"
-                    class="btn btn-primary btn-sm card-lick__button"
+                    class="btn btn-nobeta btn-sm card-lick__button"
                   >
                     <span
                       v-if="loadingStatus.loadingItem === item.id + 1"

@@ -45,7 +45,7 @@
                       :alt="item.product.title"
                     />
                     <figcaption class="ps-2">
-                      <span class="badge bg-primary">{{
+                      <span class="badge bg-nobeta">{{
                         item.product.category
                       }}</span>
                       <p class="fs-7 fs-sm-6">{{ item.product.title }}</p>
@@ -69,10 +69,10 @@
         </div>
 
         <div class="mt-auto d-flex justify-content-between w-100">
-          <router-link class="btn btn-primary" to="/products"
+          <router-link class="btn btn-nobeta" to="/products"
             >繼續購物</router-link
           >
-          <router-link class="btn btn-primary" to="/">回首頁</router-link>
+          <router-link class="btn btn-nobeta" to="/">回首頁</router-link>
         </div>
       </div>
     </div>
