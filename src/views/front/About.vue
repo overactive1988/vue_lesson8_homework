@@ -197,7 +197,123 @@
             </div>
           </div>
         </section>
-
+        <section class="mt-4">
+          <h2 class="pt-4 text-light">常見問題 Q&A</h2>
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseOne"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseOne"
+                >
+                  遊戲何時會完成？
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseOne"
+                class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingOne"
+              >
+                <div class="accordion-body">
+                  預計於 2021
+                  年下半年會完成遊戲，順利的話會在當年度年底推出。若有多平台發行的狀況產生，可能會推遲到
+                  2022 年上半年。
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseTwo"
+                >
+                  遊戲會有配音嗎？
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingTwo"
+              >
+                <div class="accordion-body">
+                  考慮到我們有 50%
+                  的玩家來自日本，正式版將會支援完整的日文配音。
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseThree"
+                >
+                  允許使用小魔女諾貝塔中的登場角色進行二次創作嗎？
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingThree"
+              >
+                <div class="accordion-body">
+                  <h4 class="text-nobeta">同意事項</h4>
+                  <ol>
+                    <li>個人使用 OK。</li>
+                    <li>R18 創作 OK。</li>
+                    <li>
+                      非商業性質之二次創作，如同人誌、COSPLAY、模型製作、3D
+                      建模、音樂編曲、短篇動畫等
+                      OK。（商業性質泛指：高利潤、大量生產之行為。）
+                    </li>
+                    <li>
+                      販售同人創作 OK：<br />
+                      <ul>
+                        <li>同人誌：數量不德高於 300 本。</li>
+                        <li>模型：數量不德高於 10 個。</li>
+                        <li>音樂專輯：數量不得高於 300 片。</li>
+                        <li>
+                          凡超過數量限制，或未列舉織品項，應申請官方授權。
+                        </li>
+                      </ul>
+                    </li>
+                  </ol>
+                  <h4 class="text-nobeta">禁止事項</h4>
+                  <ol>
+                    <li>禁止『公司（法人、協會）』使用。</li>
+                    <li>禁止支解獵奇創作。</li>
+                    <li>
+                      禁止製作販售周邊產品（如：抱枕、掛軸、扭蛋、徽章、吊飾、桌遊等）。
+                    </li>
+                    <li>
+                      禁止使用官方商標、LOGO 等，容易招致誤會為官方產物的行為。
+                    </li>
+                    <li>
+                      禁止支援特定的個人、法人、政黨及宗教團體或是被認定會造成誤解時的使用。
+                    </li>
+                    <li>
+                      禁止擅自使用官方 LOGO、商標等引起消費者誤解之情況的使用。
+                    </li>
+                    <li>
+                      其他如本公司（希萌創意行銷股份有限公司）判斷為不適當之情況時禁止。
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   </div>
