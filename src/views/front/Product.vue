@@ -5,10 +5,10 @@
     </header>
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <router-link class="text-light" to="`/`">首頁</router-link>
+        <router-link class="text-light" to="/">首頁</router-link>
       </li>
       <li class="breadcrumb-item">
-        <router-link class="text-light" to="`/products`">商品列表</router-link>
+        <router-link class="text-light" to="/products">商品列表</router-link>
       </li>
       <li class="breadcrumb-item text-light active" aria-current="page">
         {{ tempProduct.title }}

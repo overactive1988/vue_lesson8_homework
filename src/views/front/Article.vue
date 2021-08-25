@@ -6,12 +6,10 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <router-link class="text-light" to="`/`">首頁</router-link>
+          <router-link class="text-light" to="/">首頁</router-link>
         </li>
         <li class="breadcrumb-item">
-          <router-link class="text-light" to="`/articles`"
-            >最新消息</router-link
-          >
+          <router-link class="text-light" to="/articles">最新消息</router-link>
         </li>
         <li class="breadcrumb-item text-light active" aria-current="page">
           {{ article.title }}

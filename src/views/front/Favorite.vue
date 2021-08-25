@@ -3,16 +3,6 @@
     <header class="nav-header">
       <Navbar></Navbar>
     </header>
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <router-link class="text-light" to="`/`">首頁</router-link>
-        </li>
-        <li class="breadcrumb-item text-light active" aria-current="page">
-          收藏清單
-        </li>
-      </ol>
-    </nav>
     <div class="container-fluid pb-5 bg-01">
       <main id="main" class="container-lg content">
         <h2 class="pt-4 text-light">收藏清單</h2>
