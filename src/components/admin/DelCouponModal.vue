@@ -50,6 +50,7 @@
 import modalMixin from "@/assets/js/mixins/modalMixin";
 
 export default {
+  emits: ["delete-coupon"],
   props: {
     propsCoupon: {
       type: Object,
@@ -58,7 +59,6 @@ export default {
       },
     },
   },
-  emits: ["delete-coupon"],
   data() {
     return {
       modal: "",

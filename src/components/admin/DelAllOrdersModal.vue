@@ -21,7 +21,7 @@
           ></button>
         </div>
         <div class="modal-body text-center">
-          是否刪除所有訂單<br>
+          是否刪除所有訂單<br />
           <strong class="text-danger fs-4">刪除後將無法復原</strong>
         </div>
         <div class="modal-footer">
@@ -46,8 +46,9 @@
 </template>
 
 <script>
-import modalMixin from '@/assets/js/mixins/modalMixin';
+import modalMixin from "@/assets/js/mixins/modalMixin";
 export default {
+  emits: ["delete-all-orders"],
   data() {
     return {
       modal: "",

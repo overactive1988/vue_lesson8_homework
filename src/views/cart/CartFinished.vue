@@ -87,6 +87,12 @@ export default {
     };
   },
   methods: {
+    showErrorAlert(error) {
+      this.$swal({
+        title: error,
+        icon: "error",
+      });
+    },
     getOrder() {
       const id = this.$route.params.id;
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/order/${id}`;
@@ -96,7 +102,7 @@ export default {
           this.order = res.data.order;
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
   },

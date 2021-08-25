@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import AdminNavbar from "../../components/admin/AdminNavbar.vue";
-import AdminFooter from "../../components/admin/AdminFooter.vue";
+import AdminNavbar from "@/components/admin/AdminNavbar.vue";
+import AdminFooter from "@/components/admin/AdminFooter.vue";
 export default {
   data() {
     return {
@@ -30,10 +30,16 @@ export default {
     this.loginCheck();
   },
   methods: {
-    showAlert() {
+    showAlert(res) {
       this.$swal({
-        title: "您尚未登入，請重新登入",
-        icon: 'info',
+        title: res.data.message,
+        icon: "info",
+      });
+    },
+    showErrorAlert(error) {
+      this.$swal({
+        title: error,
+        icon: "error",
       });
     },
     // 檢查使用者是否仍持續登入
@@ -45,12 +51,12 @@ export default {
           if (res.data.success) {
             this.check = true;
           } else {
-            this.showAlert();
+            this.showAlert(res);
             this.$router.push("/login");
           }
         })
-        .catch((err) => {
-          console.log(err);
+        .catch((error) => {
+          this.showErrorAlert(error);
         });
     },
   },
@@ -58,5 +64,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../assets/css/back";
+@import "@/assets/css/back";
 </style>

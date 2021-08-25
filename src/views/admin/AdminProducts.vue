@@ -109,6 +109,12 @@ export default {
     showAlert(res) {
       this.$swal(res.data.message);
     },
+    showErrorAlert(error) {
+      this.$swal({
+        title: error,
+        icon: "error",
+      });
+    },
     // 取得商品列表
     getData(num = this.pagination.current_page || 1) {
       // 參數預設值
@@ -124,7 +130,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     getAllproducts() {
@@ -135,7 +141,7 @@ export default {
           this.allproductsNum = Object.values(res.data.products); // 將回傳的物件轉換為陣列
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     deleteProduct() {
@@ -148,7 +154,7 @@ export default {
           this.getData();
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     }, // 開啟modal
     openModal(isNew, item) {
@@ -199,7 +205,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
   },

@@ -97,6 +97,12 @@ export default {
     showAlert(res) {
       this.$swal(res.data.message);
     },
+    showErrorAlert(error) {
+      this.$swal({
+        title: error,
+        icon: "error",
+      });
+    },
     getCoupon(num = this.pagination.current_page || 1) {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupons?page=${num}`;
       this.$http
@@ -109,7 +115,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     openModal(isNew, item) {
@@ -159,7 +165,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     deleteCoupon(propsCoupon) {
@@ -172,7 +178,7 @@ export default {
           this.getCoupon();
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
   },

@@ -6,7 +6,7 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <router-link class="text-light" :to="`/`">首頁</router-link>
+          <router-link class="text-light" to="`/`">首頁</router-link>
         </li>
         <li class="breadcrumb-item text-light active" aria-current="page">
           收藏清單
@@ -41,7 +41,7 @@
                     <img
                       :src="item.imageUrl"
                       class="card-img-top"
-                      alt="item.title"
+                      :alt="item.title"
                     />
                     <div class="card-body">
                       <h5 class="card-title">{{ item.title }}</h5>
@@ -124,7 +124,7 @@
 <script>
 import Navbar from "@/components/Navbar.vue";
 import localStorage from "@/assets/js/mixins/localStorage";
-import emitter from "../../assets/js/methods/emitter";
+import emitter from "@/assets/js/methods/emitter";
 export default {
   props: ["propsCategory"],
   data() {
@@ -162,6 +162,12 @@ export default {
     showAlert(res) {
       this.$swal(res.data.message);
     },
+    showErrorAlert(error) {
+      this.$swal({
+        title: error,
+        icon: "error",
+      });
+    },
     // 取得收藏列表
     getFavorite() {
       this.myFavorite = this.getLocalStorage() || [];
@@ -198,7 +204,7 @@ export default {
           this.showAlert(res);
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
       this.getFavorite();
     },

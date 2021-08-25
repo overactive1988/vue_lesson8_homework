@@ -88,6 +88,12 @@ export default {
     showAlert(res) {
       this.$swal(res.data.message);
     },
+    showErrorAlert(error) {
+      this.$swal({
+        title: error,
+        icon: "error",
+      });
+    },
     getArticles(num = this.pagination.current_page || 1) {
       // 參數預設值
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/articles?page=${num}`;
@@ -101,7 +107,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     deleteArticle() {
@@ -114,7 +120,7 @@ export default {
           this.getArticles();
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     updateArticle(propsArticle) {
@@ -135,7 +141,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     openModal(isNew, item) {

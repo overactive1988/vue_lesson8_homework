@@ -276,6 +276,7 @@
 <script>
 import modalMixin from "@/assets/js/mixins/modalMixin";
 export default {
+  emits: ["update-product"],
   props: {
     propsProduct: {
       type: Object,
@@ -285,6 +286,12 @@ export default {
     },
   },
   methods: {
+    showErrorAlert(error) {
+      this.$swal({
+        title: error,
+        icon: "error",
+      });
+    },
     // 新增陣列圖片
     createImages() {
       this.newProduct.imagesUrl = [""];
@@ -300,8 +307,8 @@ export default {
         .then((res) => {
           this.newProduct.imageUrl = res.data.imageUrl;
         })
-        .catch((err) => {
-          console.log(err);
+        .catch((error) => {
+          this.showErrorAlert(error);
         });
     },
     uploadSubImgage(e) {
@@ -316,8 +323,8 @@ export default {
           this.newProduct.imagesUrl[this.newProduct.imagesUrl.length - 1] =
             res.data.imageUrl;
         })
-        .catch((err) => {
-          console.log(err);
+        .catch((error) => {
+          this.showErrorAlert(error);
         });
     },
   },

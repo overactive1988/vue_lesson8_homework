@@ -185,8 +185,8 @@
 </template>
 
 <script>
-import emitter from "../../assets/js/methods/emitter";
-import ConfirmCart from "../../components/cart/ConfirmCart.vue";
+import emitter from "@/assets/js/methods/emitter";
+import ConfirmCart from "@/components/cart/ConfirmCart.vue";
 export default {
   data() {
     return {
@@ -210,12 +210,21 @@ export default {
     ConfirmCart,
   },
   methods: {
-    showAlert(res) {
-      this.$swal(res.data.message);
+    showAlert() {
+      this.$swal({
+        title: "請先加入商品至購物車",
+        icon: "error",
+      });
+    },
+    showErrorAlert(error) {
+      this.$swal({
+        title: error,
+        icon: "error",
+      });
     },
     check() {
       if (this.cart.carts.length < 1) {
-        alert("請先加入商品至購物車");
+        this.showAlert();
         this.$router.push("/products");
       }
     },
@@ -231,7 +240,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     isPhone(value) {

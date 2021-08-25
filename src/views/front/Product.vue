@@ -5,10 +5,10 @@
     </header>
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <router-link class="text-light" :to="`/`">首頁</router-link>
+        <router-link class="text-light" to="`/`">首頁</router-link>
       </li>
       <li class="breadcrumb-item">
-        <router-link class="text-light" :to="`/products`">商品列表</router-link>
+        <router-link class="text-light" to="`/products`">商品列表</router-link>
       </li>
       <li class="breadcrumb-item text-light active" aria-current="page">
         {{ tempProduct.title }}
@@ -24,7 +24,7 @@
                   v-if="!tempProduct.imagesUrl"
                   class="img-fluid"
                   :src="tempProduct.imageUrl"
-                  alt="{{tempProduct.title}}"
+                  :alt="tempProduct.title"
                 />
                 <template v-if="tempProduct.imagesUrl">
                   <swiper
@@ -41,7 +41,7 @@
                       v-for="item in tempProduct.imagesUrl"
                       :key="item"
                     >
-                      <img class="img-fluid" :src="item" alt="" />
+                      <img class="img-fluid" alt :src="item" />
                     </swiper-slide>
                   </swiper>
                   <swiper
@@ -57,7 +57,7 @@
                       v-for="item in tempProduct.imagesUrl"
                       :key="item"
                     >
-                      <img class="img-fluid" :src="item" alt="" />
+                      <img class="img-fluid" alt :src="item" />
                     </swiper-slide>
                   </swiper>
                 </template>
@@ -172,7 +172,7 @@
                       <img
                         :src="item.imageUrl"
                         class="card-img-top"
-                        alt="item.title"
+                        :alt="item.title"
                       />
                       <div class="card-body">
                         <h5 class="card-title">{{ item.title }}</h5>
@@ -258,6 +258,12 @@ export default {
     showAlert(res) {
       this.$swal(res.data.message);
     },
+    showErrorAlert(error) {
+      this.$swal({
+        title: error,
+        icon: "error",
+      });
+    },
     getProduct() {
       const id = this.$route.params.id;
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/product/${id}`;
@@ -268,7 +274,7 @@ export default {
           this.getProducts();
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     getProducts() {
@@ -281,7 +287,7 @@ export default {
           this.getAsLike();
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     getAsLike() {
@@ -325,7 +331,7 @@ export default {
           this.qty = 1;
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     cardAddCart(item, qty = 1) {
@@ -347,7 +353,7 @@ export default {
           this.qty = 1;
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     cardLink(item) {
@@ -363,7 +369,7 @@ export default {
           this.getProducts();
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
   },

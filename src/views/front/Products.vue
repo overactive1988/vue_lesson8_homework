@@ -6,7 +6,7 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <router-link class="text-light" :to="`/`">首頁</router-link>
+          <router-link class="text-light" to="`/`">首頁</router-link>
         </li>
         <li class="breadcrumb-item text-light active" aria-current="page">
           商品列表
@@ -92,7 +92,7 @@
                     <img
                       :src="item.imageUrl"
                       class="card-img-top"
-                      alt="item.title"
+                      :alt="item.title"
                     />
                     <div class="card-body">
                       <h5 class="card-title">{{ item.title }}</h5>
@@ -161,6 +161,12 @@ export default {
     showAlert(res) {
       this.$swal(res.data.message);
     },
+    showErrorAlert(error) {
+      this.$swal({
+        title: error,
+        icon: "error",
+      });
+    },
     // 取得商品列表
     getProducts() {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`;
@@ -192,7 +198,7 @@ export default {
           this.showAlert(res);
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     getCatgories() {

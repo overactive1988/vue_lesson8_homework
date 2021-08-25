@@ -6,10 +6,10 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <router-link class="text-light" :to="`/`">首頁</router-link>
+          <router-link class="text-light" to="`/`">首頁</router-link>
         </li>
         <li class="breadcrumb-item">
-          <router-link class="text-light" :to="`/articles`"
+          <router-link class="text-light" to="`/articles`"
             >最新消息</router-link
           >
         </li>
@@ -27,7 +27,7 @@
               <figure class="mb-0">
                 <img
                   :src="article.image"
-                  alt="article.title"
+                  :alt="article.title"
                   class="img-fluid d-block ms-auto"
                 />
               </figure>
@@ -89,7 +89,7 @@
 
 <script>
 import Navbar from "@/components/Navbar.vue";
-import emitter from "../../assets/js/methods/emitter";
+import emitter from "@/assets/js/methods/emitter";
 export default {
   data() {
     return {
@@ -114,6 +114,12 @@ export default {
     Navbar,
   },
   methods: {
+    showErrorAlert(error) {
+      this.$swal({
+        title: error,
+        icon: "error",
+      });
+    },
     getArticle() {
       const id = this.$route.params.id;
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/article/${id}`;
@@ -126,7 +132,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     clickCategory(category = "") {

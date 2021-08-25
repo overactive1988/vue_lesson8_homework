@@ -27,9 +27,7 @@
                 :alt="item.product.title"
               />
               <figcaption class="ps-2">
-                <span class="badge bg-nobeta">{{
-                  item.product.category
-                }}</span>
+                <span class="badge bg-nobeta">{{ item.product.category }}</span>
                 <p class="fs-7 fs-sm-6">{{ item.product.title }}</p>
               </figcaption>
             </figure>
@@ -97,6 +95,12 @@ export default {
     showAlert(res) {
       this.$swal(res.data.message);
     },
+    showErrorAlert(error) {
+      this.$swal({
+        title: error,
+        icon: "error",
+      });
+    },
     getOrder() {
       const id = this.$route.params.id;
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/order/${id}`;
@@ -106,7 +110,7 @@ export default {
           this.order = res.data.order;
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     payment() {
@@ -123,7 +127,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
   },

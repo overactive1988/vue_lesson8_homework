@@ -166,8 +166,8 @@
 </template>
 
 <script>
-import emitter from "../../assets/js/methods/emitter";
-import UserCart from "../../components/cart/UserCart.vue";
+import emitter from "@/assets/js/methods/emitter";
+import UserCart from "@/components/cart/UserCart.vue";
 export default {
   data() {
     return {
@@ -200,6 +200,12 @@ export default {
     showAlert(res) {
       this.$swal(res.data.message);
     },
+    showErrorAlert(error) {
+      this.$swal({
+        title: error,
+        icon: "error",
+      });
+    },
     deleteCartAll() {
       this.loadingStatus.loadingItem = 1;
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/carts`;
@@ -213,7 +219,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     getCart() {
@@ -227,7 +233,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     deleteCart(item) {
@@ -243,7 +249,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     cutProductNum(item) {
@@ -264,7 +270,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     addProductNum(item) {
@@ -285,7 +291,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     addCouponCode() {
@@ -310,7 +316,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     clickCategory(category = "") {

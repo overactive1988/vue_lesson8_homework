@@ -182,9 +182,9 @@ export default {
   methods: {
     paidTime() {
       if (this.tempOrder.paid_date) {
-        this.tempOrder.paid_date = '';
+        this.tempOrder.paid_date = "";
       } else {
-        this.tempOrder.paid_date = Math.floor(Date.now()/1000);
+        this.tempOrder.paid_date = Math.floor(Date.now() / 1000);
       }
     },
   },

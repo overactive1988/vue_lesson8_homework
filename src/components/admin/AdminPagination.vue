@@ -42,6 +42,7 @@
 
 <script>
 export default {
+  emits: ["get-page"],
   props: {
     page: {
       type: Object,

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import emitter from "../../assets/js/methods/emitter";
+import emitter from "@/assets/js/methods/emitter";
 import Navbar from "@/components/Navbar.vue";
 export default {
   data() {

@@ -61,5 +61,3 @@ app.component("Form", Form);
 app.component("Field", Field);
 app.component("ErrorMessage", ErrorMessage);
 app.mount("#app");
-
-app.unmount("app");

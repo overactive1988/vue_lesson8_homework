@@ -49,6 +49,7 @@
 import modalMixin from "@/assets/js/mixins/modalMixin";
 
 export default {
+  emits: ["delete-article"],
   props: {
     propsArticle: {
       type: Object,
@@ -57,7 +58,6 @@ export default {
       },
     },
   },
-  emits: ["delete-article"],
   data() {
     return {
       modal: "",

@@ -6,7 +6,7 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <router-link class="text-light" :to="`/`">首頁</router-link>
+          <router-link class="text-light" to="`/`">首頁</router-link>
         </li>
         <li class="breadcrumb-item text-light active" aria-current="page">
           最新消息
@@ -17,14 +17,16 @@
       <main id="main" class="container-lg content">
         <h2 class="pt-4 text-light">最新消息</h2>
         <ul
-          v-for="item in articles"
-          :key="item"
           class="list-unstyled mt-4"
           data-aos="fade-up"
           data-aos-easing="linear"
           data-aos-duration="300"
         >
-          <li class="card h-100 card-articles">
+          <li
+            v-for="item in articles"
+            :key="item"
+            class="card h-100 card-articles"
+          >
             <router-link
               :to="`/article/${item.id}`"
               class="
@@ -82,6 +84,12 @@ export default {
     Pagination,
   },
   methods: {
+    showErrorAlert(error) {
+      this.$swal({
+        title: error,
+        icon: "error",
+      });
+    },
     getArticles(num = this.pagination.current_page || 1) {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/articles?page=${num}`;
       this.$http
@@ -94,7 +102,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
   },

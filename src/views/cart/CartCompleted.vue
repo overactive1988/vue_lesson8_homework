@@ -10,9 +10,15 @@
 <script>
 export default {
   methods: {
+    showAlert() {
+      this.$swal({
+        title: "很抱歉，請依照正常流程進行操作",
+        icon: "error",
+      });
+    },
     check() {
       if (!this.$route.params.id) {
-        alert("很抱歉，請依照正常流程進行操作");
+        this.showAlert();
         this.$router.push("/");
       }
     },

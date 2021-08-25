@@ -49,6 +49,7 @@
 <script>
 import modalMixin from "@/assets/js/mixins/modalMixin";
 export default {
+  emits: ["delete-orders"],
   props: {
     propsOrder: {
       type: Object,

@@ -164,6 +164,7 @@
 <script>
 import modalMixin from "@/assets/js/mixins/modalMixin";
 export default {
+  emits: ["update-article"],
   props: {
     propsArticle: {
       type: Object,
@@ -180,6 +181,12 @@ export default {
     };
   },
   methods: {
+    showErrorAlert(error) {
+      this.$swal({
+        title: error,
+        icon: "error",
+      });
+    },
     uploadMainImgage(e) {
       console.dir(e);
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/upload`;
@@ -191,12 +198,11 @@ export default {
         .then((res) => {
           this.newArticle.image = res.data.imageUrl;
         })
-        .catch((err) => {
-          console.log(err);
+        .catch((error) => {
+          this.showErrorAlert(error);
         });
     },
   },
-  emits: ["update-article"],
   watch: {
     propsArticle() {
       this.newArticle = this.propsArticle;

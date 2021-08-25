@@ -2,7 +2,7 @@
   <header class="nav-header">
     <Navbar></Navbar>
   </header>
-  
+
   <main id="main" class="container-fulid text-center bg-nobeta">
     <div class="container pt-8 pb-4 content position-relative">
       <div class="col position-relative">

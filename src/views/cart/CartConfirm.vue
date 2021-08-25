@@ -162,8 +162,8 @@
 </template>
 
 <script>
-import emitter from "../../assets/js/methods/emitter";
-import ConfirmCart from "../../components/cart/ConfirmCart.vue";
+import emitter from "@/assets/js/methods/emitter";
+import ConfirmCart from "@/components/cart/ConfirmCart.vue";
 export default {
   props: {
     propsForm: {
@@ -189,6 +189,12 @@ export default {
     showAlert(res) {
       this.$swal(res.data.message);
     },
+    showErrorAlert(error) {
+      this.$swal({
+        title: error,
+        icon: "error",
+      });
+    },
     check() {
       if (this.cart.carts.length < 1) {
         alert("請先加入商品至購物車");
@@ -207,7 +213,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     getCartOnly() {
@@ -221,7 +227,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     onSubmit() {
@@ -246,7 +252,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
   },

@@ -109,6 +109,7 @@
 <script>
 import modalMixin from "@/assets/js/mixins/modalMixin";
 export default {
+  emits: ["update-coupon"],
   props: {
     propsCoupon: {
       type: Object,
@@ -124,7 +125,6 @@ export default {
       newCoupon: [],
     };
   },
-  emits: ["update-coupon"],
   watch: {
     propsCoupon() {
       this.newCoupon = this.propsCoupon;

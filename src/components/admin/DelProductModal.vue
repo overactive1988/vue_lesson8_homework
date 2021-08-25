@@ -50,6 +50,7 @@
 import modalMixin from "@/assets/js/mixins/modalMixin";
 
 export default {
+  emits: ["delete-product"],
   props: {
     propsProduct: {
       type: Object,

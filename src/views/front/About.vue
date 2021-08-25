@@ -6,7 +6,7 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <router-link class="text-light" :to="`/`">首頁</router-link>
+          <router-link class="text-light" to="`/`">首頁</router-link>
         </li>
         <li class="breadcrumb-item text-light active" aria-current="page">
           關於諾貝塔
@@ -60,7 +60,7 @@
               <figure class="mb-0">
                 <img
                   src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1627068595030.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=JrjZKIVtaLczzfgavYHmtieOqdm%2BFDuuZMCnifr%2Bs4qZogXfWX5aw4A6TynwSC5%2Byx2%2FEIM%2FCrRAk%2F45KnxFbHFxTTEmxt0a9SZGMpJrWdwOTkGq4XuxcMkwqqat6zZJryEEn7GCOywCH%2FqorhWYEp8KRv7WBIiW%2Fz8JNhN1GeBWX%2BJy8r8GJCpV1Aw9wElqUkwnTNGowXgTDvU1CGNJ7GLhFJEj4do0QlXZrCnSKR7esAe9Waw5OQj0yPZ%2FZa65cgz1SpOORvzBYXHrWN5Fxp1f1Cfnbgh1URLuDsPw1ikR1i7BxZWC6S6l%2BtY9QVABfpIIAXXxZv6e%2FqRUHfVjTw%3D%3D"
-                  alt=""
+                  alt
                   class="img-fluid"
                 />
                 <figcaption class="text-light">
@@ -153,7 +153,7 @@
               >
                 <img
                   src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1627071304843.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=BROsKIESGOIOwDNgzOcamrannT%2FJ50pKiQ02Rll%2Fbyul%2FNYaxtYmAYJWEKyEzliv%2BAiRSrbS6UnU1%2FKNpnXF5C7qq2HV4AAqLymI2VxhNdCRN3%2Fq4KWmMCxJGFSd8LO9QpNvb2G4DmpRyepbfrZkDoxkNl45pvAGb9WY5SbWTRPb89kEE%2B%2BxjCSfdAghamwQnF%2FPZVWcPySz6O0WWceq%2BaWUJPxs%2B%2F38gqy5p5t70zvqAoVnTTeUhP5M3l9wzzEajVBhIMZYOkNFnrJQ28q0k9G3nbAo49SwvmVbcrOh5%2BiJGBT%2BsHomilYvkGuIugmF84OrvL%2BuwoXv7kQfLFOaDg%3D%3D"
-                  alt=""
+                  alt
                   class="img-fluid"
                 />
                 <figcaption class="text-light mt-2">

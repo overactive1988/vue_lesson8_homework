@@ -122,7 +122,7 @@
       </div>
 
       <div class="modal-footer">
-        <router-link class="btn btn-outline-secondary" :to="`/admin/articles/`"
+        <router-link class="btn btn-outline-secondary" to="`/admin/articles/`"
           >取消</router-link
         >
         <button
@@ -155,6 +155,12 @@ export default {
     showAlert(res) {
       this.$swal(res.data.message);
     },
+    showErrorAlert(error) {
+      this.$swal({
+        title: error,
+        icon: "error",
+      });
+    },
     getArticle() {
       const id = this.$route.params.id;
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/article/${id}`;
@@ -164,7 +170,7 @@ export default {
           this.tempArticle = res.data.article;
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     updateArticle(tempArticle) {
@@ -179,7 +185,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     uploadMainImgage(e) {
@@ -193,8 +199,8 @@ export default {
         .then((res) => {
           this.tempArticle.image = res.data.imageUrl;
         })
-        .catch((err) => {
-          console.log(err);
+        .catch((error) => {
+          this.showErrorAlert(error);
         });
     },
   },

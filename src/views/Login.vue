@@ -83,6 +83,12 @@ export default {
         icon: "error",
       });
     },
+    showErrorAlert(error) {
+      this.$swal({
+        title: error,
+        icon: "error",
+      });
+    },
     login() {
       const url = `${process.env.VUE_APP_API}admin/signin`;
       this.$http
@@ -106,7 +112,7 @@ export default {
         })
         // axios報錯
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
   },

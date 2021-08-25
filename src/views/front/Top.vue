@@ -134,7 +134,7 @@
             <figure class="mb-0">
               <img
                 src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626797489591.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=KN7bl3n%2Fy%2FgkCgGzbnUJBisq4XINHS9vhF43sHm8OSxMk0dHThDfK9u2fx2jhgbXQuBl8H2YAFyflxeh9FDohBsuGoqCq2LPf4g8Bg7dYPOi%2FWrdcnB2hnhghjiq37bqIgXbVLumcatnHSdIOVfic8kJFT2iZdLDOUR%2BE8dRNETzY8UCv250qhslIaXa1fwhLNsB3Az5YleWhpwQkBytTQpILKl%2B%2BfdwVWusB6qvqnM%2F9oWEm3f5RjcsC9lNpwH%2Fl1D7Tf2egcTkLjeEkM9cxQP%2Bol01mVvQBXMBIHL%2F%2BwoDkEIQWgXihT%2Ft%2FChdtEwJpq6u9baSLJEOdiFcKouvEQ%3D%3D"
-                alt=""
+                alt
                 class="img-top-about img-fluid"
                 data-aos="fade-up"
                 data-aos-easing="linear"
@@ -184,7 +184,11 @@
               >
                 <div class="top-products-card__inner">
                   <figure class="top-products-card__media">
-                    <img class="img-fluid" :src="item.imgUrl" alt="item.name" />
+                    <img
+                      class="img-fluid"
+                      :src="item.imgUrl"
+                      :alt="item.name"
+                    />
                     <figcaption>{{ item.name }} 相關商品</figcaption>
                   </figure>
                   <span class="top-products-card__text">{{ item.enName }}</span>
@@ -209,7 +213,7 @@
               <a href="#" class="me-3"
                 ><img
                   src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626681936945.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=qtWyghLUdNHaBdAGfAZXLIqojS8p3TfSeBfX1YpPfOYfLWL%2BqwRomHpSYbf0MDT3DrVejkTiR7XqI%2Bp6ik6%2FGq3T1hklxhlAw9ocMveQUTyqnmgOKRE4wX%2F%2Bw08nD4Obur1R10d5cPY%2BWJI8SELvpxK4avKmGgWn4JgAlh8VI7Z5yuB2%2Frjq2tUMeLU%2FhCstnJMLk%2B3up4IW8xJnq8bUdWnT%2BOglkq6sx9xyE4crg6c7NfR7spyqTMSwfEkA2n3AZnU99Ju78KpVNrYIBRv0TNuK9pbPZFBk%2BO1qaEMWNcEA841zN7uJ7%2Bk6yfEB7VSDxwlp48D63oOKkD2uIh6f%2Fw%3D%3D"
-                  alt=""
+                  alt
                   @click.prevent="getNewArticles"
               /></a>
               <router-link to="/articles">最新消息</router-link>
@@ -217,7 +221,7 @@
                 ><img
                   src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626681959597.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=dKMqb5sq5bjeXHWfegMqPgbTjHY%2FN94z0fxKNk62pmWXBD2YdfCSVckIrk0C6rPsCG8JBMzL4FZGh3ORwpwytqTSH66CkBMfDV6ltZI9upYrvdxT7hejl5608DaZ1iBfmCWEAYEz2SKmaprYUt3eRQzqTcD5J%2BTujdF1iGWg2l%2B9TxOWC8Ve%2BPx8cuz33cgeB19zgWTEgM1gM9su5wxVzPJx7JXvs%2B5qeGz1ZPpiNDnB3NbKjZtnzQCae5dnkeLX5HK3W4%2FoQJU4Lx21qm3mxVRrtaqi8zHFA7nDxJ1Ak8R5w7JTl%2FrOYCWx%2BrfxnnljWGeD3pjWFFHnHfLKavXWWQ%3D%3D"
                   @click.prevent="nextNewArticles"
-                  alt=""
+                  alt
               /></a>
             </div>
           </dt>
@@ -249,7 +253,7 @@
 </template>
 
 <script>
-import emitter from "../../assets/js/methods/emitter";
+import emitter from "@/assets/js/methods/emitter";
 import TopNavbar from "@/components/TopNavbar.vue";
 export default {
   data() {
@@ -282,7 +286,14 @@ export default {
   components: {
     TopNavbar,
   },
+  props: ["propsCategory"],
   methods: {
+    showErrorAlert(error) {
+      this.$swal({
+        title: error,
+        icon: "error",
+      });
+    },
     getArticles(num = this.pagination.current_page || 1) {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/articles?page=${num}`;
       this.$http
@@ -296,7 +307,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          this.showErrorAlert(error);
         });
     },
     clickCategory(category) {
