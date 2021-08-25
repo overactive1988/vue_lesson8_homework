@@ -368,7 +368,7 @@ export default {
     },
   },
   mounted() {
-    console.clear();
+    // console.clear();
     this.getProduct();
   },
 };

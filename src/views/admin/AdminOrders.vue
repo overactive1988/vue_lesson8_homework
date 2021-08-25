@@ -184,7 +184,7 @@ export default {
           // 因為傳參考特性會連動到資料，因此將資料進行淺層複製
           this.getOrder();
           this.tempOrder = { ...item };
-          console.clear();
+          // console.clear();
           this.$refs.adminModal.openModal();
           break;
         case "delete":
@@ -219,7 +219,7 @@ export default {
     },
   },
   mounted() {
-    console.clear();
+    // console.clear();
     this.getOrder();
   },
 };

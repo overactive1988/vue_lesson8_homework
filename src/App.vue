@@ -8,7 +8,7 @@ export default {
     createTitleDesc: function (routeInstance) {
       // title設定
       if (routeInstance.meta.title) {
-        var setTitle = routeInstance.meta.title + " | 小魔女諾貝塔雜貨工坊";
+        let setTitle = routeInstance.meta.title + " | 小魔女諾貝塔雜貨工坊";
         document.title = setTitle;
       } else {
         document.title = "小魔女諾貝塔雜貨工坊";
@@ -16,7 +16,7 @@ export default {
 
       // meta description設定
       if (routeInstance.meta.desc) {
-        var setDesc = routeInstance.meta.desc + " | 小魔女諾貝塔雜貨工坊";
+        let setDesc = routeInstance.meta.desc + " | 小魔女諾貝塔雜貨工坊";
         document
           .querySelector("meta[name='description']")
           .setAttribute("content", setDesc);
@@ -28,7 +28,7 @@ export default {
     },
   },
   mounted: function () {
-    var routeInstance = this.$route;
+    let routeInstance = this.$route;
     this.createTitleDesc(routeInstance);
   },
   watch: {

@@ -31,7 +31,7 @@ export default {
     Navbar,
   },
   mounted() {
-    console.clear();
+    // console.clear();
   },
   created() {
     emitter.on("sendForm", (data) => {
