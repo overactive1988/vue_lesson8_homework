@@ -1,4 +1,5 @@
 <template>
+  <Loading :active="isLoading" :z-index="1060"></Loading>
   <div class="bg-cover--01">
     <header class="nav-header">
       <Navbar></Navbar>
@@ -119,6 +120,7 @@ export default {
   props: ["propsCategory"],
   data() {
     return {
+      isLoading: false,
       loadingStatus: {
         loadingItem: "",
       },
@@ -162,6 +164,7 @@ export default {
     getFavorite() {
       this.myFavorite = this.getLocalStorage() || [];
       this.favoriteProduct = [];
+      this.isLoading = true;
       if (this.myFavorite.length > 0) {
         this.myFavorite.forEach((item) => {
           const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/product/${item}`;
@@ -170,10 +173,15 @@ export default {
             .then((res) => {
               if (res.data.success) {
                 this.favoriteProduct.push(res.data.product);
+                this.isLoading = false;
               }
             })
-            .catch((err) => err);
+            .catch((error) => {
+              this.showErrorAlert(error);
+            });
         });
+      } else {
+        this.isLoading = false;
       }
     },
     addCart(id, qty = 1) {

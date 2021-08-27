@@ -1,6 +1,3 @@
-.p-table {
-}
-
 .p-table__th--num {
   width: 20%;
   @include media-breakpoint-down(sm) {
@@ -16,11 +13,8 @@
 }
 
 .p-table__head {
-  background: #af7ca4;
-  border-bottom: 3px solid #562a4d;
-}
-
-.p-table__body {
+  background: #562a4d;
+  border-bottom: 3px solid #6c757d;
 }
 
 .p-table__link {
@@ -33,6 +27,6 @@
 }
 
 .p-table__foot {
-  background: #af7ca4;
-  border-top: 3px solid #562a4d;
+  background: #562a4d;
+  border-top: 3px solid #6c757d;
 }

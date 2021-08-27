@@ -3,6 +3,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import axios from "axios";
 import VueAxios from "vue-axios";
+import Loading from "vue3-loading-overlay";
+import "vue3-loading-overlay/dist/vue3-loading-overlay.css";
 import CKEditor from "@ckeditor/ckeditor5-vue";
 import { Field, Form, ErrorMessage, defineRule, configure } from "vee-validate";
 // 匯入 vee-validate 相關規則
@@ -56,7 +58,7 @@ const options = {
 
 app.use(VueSweetalert2, options);
 app.use(CKEditor);
-
+app.component("Loading", Loading);
 app.component("Form", Form);
 app.component("Field", Field);
 app.component("ErrorMessage", ErrorMessage);

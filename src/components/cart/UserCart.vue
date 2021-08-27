@@ -57,7 +57,7 @@
       <button
         @click="$emit('delete-cart', item)"
         type="button"
-        class="btn btn-outline-danger btn-sm fs-7 fs-sm-6"
+        class="btn btn-outline-secondary btn-sm fs-7 fs-sm-6"
       >
         <span
           v-if="loading.loadingItem === item.id"
