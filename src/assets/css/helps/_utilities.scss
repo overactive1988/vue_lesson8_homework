@@ -660,6 +660,7 @@ $utilities: map-merge(
       property: border-top-left-radius border-top-right-radius,
       class: rounded-top,
       values: (
+        0: 0,
         null: $border-radius
       )
     ),
@@ -674,6 +675,7 @@ $utilities: map-merge(
       property: border-bottom-right-radius border-bottom-left-radius,
       class: rounded-bottom,
       values: (
+        0: 0,
         null: $border-radius
       )
     ),

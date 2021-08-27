@@ -6,52 +6,67 @@
     <div class="container-fluid pb-5 bg-01">
       <main id="main" class="container-lg content">
         <h2 class="pt-4 text-light">最新消息</h2>
-        <ul
-          class="list-unstyled mt-4"
-          data-aos="fade-up"
-          data-aos-easing="linear"
-          data-aos-duration="300"
-        >
-          <li
-            v-for="item in articles"
-            :key="item"
-            class="card h-100 card-articles"
+        <div class="mt-4">
+          <ul
+            class="list-unstyled row"
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="300"
           >
-            <router-link
-              :to="`/article/${item.id}`"
-              class="
-                d-flex
-                flex-column
-                text-decoration-none
-                stretched-link
-                h-100
-              "
+            <li
+              v-for="item in articles"
+              :key="item"
+              class="col-12 col-md-9 col-lg-6 mx-auto mx-lg-0 mb-4"
             >
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img :src="item.image" alt class="img-cover" />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body d-flex flex-column">
-                    <span class="mb-1 fs-7">{{ item.tag }}</span>
-
-                    <h5 class="card-title mb-4">
-                      {{ item.title }}
-                    </h5>
-                    <p class="card-text text-inner">{{ item.description }}</p>
-                    <small class="card-text mt-2 text-muted">
-                      <time :datetime="$filters.datetime(item.create_at)">{{
-                        $filters.date(item.create_at)
-                      }}</time>
-                    </small>
+              <div class="card h-100 card-articles">
+                <router-link
+                  :to="`/article/${item.id}`"
+                  class="
+                    d-flex
+                    flex-column
+                    text-decoration-none
+                    stretched-link
+                    h-100
+                  "
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4 position-relative">
+                      <img :src="item.image" alt class="img-cover" />
+                      <div class="position-absolute top-0 start-0">
+                        <span class="badge bg-nobeta rounded-0 fs-7">{{
+                          item.tag
+                        }}</span>
+                      </div>
+                    </div>
+                    <div class="col-md-8 position-relative">
+                      <div class="card-body d-flex flex-column">
+                        <h5 class="card-title mb-4">
+                          {{ item.title }}
+                        </h5>
+                        <p class="card-text text-inner">
+                          {{ item.description }}
+                        </p>
+                        <small class="card-text mt-2 text-muted">
+                          <time :datetime="$filters.datetime(item.create_at)">{{
+                            $filters.date(item.create_at)
+                          }}</time>
+                        </small>
+                      </div>
+                      <div class="position-absolute bottom-0 end-0">
+                        <p class="text-nobeta text-inner mb-0">
+                          觀看詳細<span class="material-icons mb-1">
+                            arrow_forward
+                          </span>
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </router-link>
               </div>
-            </router-link>
-          </li>
-        </ul>
-
-        <div class="d-flex justify-content-center mt-5 mb-4">
+            </li>
+          </ul>
+        </div>
+        <div class="d-flex justify-content-center mt-2 mb-4">
           <Pagination :page="pagination" @get-page="getArticles"></Pagination>
         </div>
       </main>

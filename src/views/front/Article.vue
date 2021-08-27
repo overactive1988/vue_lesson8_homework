@@ -30,14 +30,12 @@
                 />
               </figure>
               <article class="mt-3">
-                <h3 class="text-start">{{ article.description }}</h3>
+                <span class="badge bg-nobeta fs-7">{{ article.tag }}</span>
+                <h3 class="text-start mt-2">{{ article.description }}</h3>
                 <p class="text-muted">
                   <time :datetime="$filters.datetime(article.create_at)">{{
                     $filters.date(article.create_at)
                   }}</time>
-                  <span class="badge bg-nobeta ms-2 fs-7">{{
-                    article.tag
-                  }}</span>
                 </p>
                 <div class="text-inner" v-html="article.content"></div>
               </article>
