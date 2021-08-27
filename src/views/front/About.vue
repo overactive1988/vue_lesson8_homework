@@ -5,63 +5,85 @@
     </header>
     <div class="container-fluid pb-5 bg-01">
       <main id="main" class="container-lg content">
-        <h2 class="pt-4 text-light">關於諾貝塔</h2>
+        <h2 class="pt-4 text-light text-center">關於諾貝塔</h2>
         <section class="section mt-4">
-          <h3 class="section-title__text text-light">
-            熱銷全球的台灣原創遊戲<br /><span class="fs-5 fs-sm-5"
-              >-又被玩家俗稱為 蘿莉黑暗靈魂</span
+          <div class="row mb-4 align-items-baseline">
+            <div class="col-12 col-md-6">
+              <h3 class="section-title__text text-light">
+                熱銷全球的台灣原創遊戲
+              </h3>
+              <h4 class="h5 text-light text-inner">
+                全球發行銷售量超過 15 萬份！
+              </h4>
+              <p class="text-light fs-6 fs-sm-5 text-inner">
+                本作於 2020 年 6月 24 日於 Steam
+                遊戲平台推出先行體驗版，截止同年 8 月中旬，全球銷量已達到
+                150,000 份，其中有超過一半的使用者來自日本。
+              </p>
+            </div>
+            <div class="col-12 col-md-6">
+              <h3 class="section-title__text text-light mt-4">
+                又被玩家俗稱為 蘿莉黑暗靈魂
+              </h3>
+              <q class="text-light fs-7 text-inner"
+                >黑暗靈魂被認為是第七世代遊戲機中最傑出的電子遊戲之一，由於黑暗靈魂的成功，諸多遊戲都受魂系列的影響，如《天命》、《異化》、《墮落之王》、《鹽與避難所》、《鏟子騎士》、《泰坦之魂》、《挺進地牢》、《巫師3：狂獵》、《仁王》等。
+                <br /><a
+                  href="https://zh.wikipedia.org/wiki/%E9%BB%91%E6%9A%97%E9%9D%88%E9%AD%82"
+                  target="_blank"
+                  class="text-link-light text-decoration-none"
+                  >資料來源：維基百科wiki</a
+                ></q
+              >
+            </div>
+          </div>
+
+          <div class="row">
+            <div
+              class="col-12 col-sm-10 col-md-8 mx-auto text-center"
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="300"
+              data-aos-anchor-placement="center-bottom"
             >
-          </h3>
-          <q class="text-light fs-7"
-            >黑暗靈魂被認為是第七世代遊戲機中最傑出的電子遊戲之一，由於黑暗靈魂的成功，諸多遊戲都受魂系列的影響，如《天命》、《異化》、《墮落之王》、《鹽與避難所》、《鏟子騎士》、《泰坦之魂》、《挺進地牢》、《巫師3：狂獵》、《仁王》等。
-            <br /><a
-              href="https://zh.wikipedia.org/wiki/%E9%BB%91%E6%9A%97%E9%9D%88%E9%AD%82"
-              target="_blank"
-              class="text-link-light text-decoration-none"
-              >資料來源：維基百科wiki</a
-            ></q
-          >
-          <h3
-            class="section-title__text text-light mt-4"
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="300"
-          >
-            全球發行銷售量超過 15 萬份！
-          </h3>
-          <p
-            class="text-light fs-6 fs-sm-5"
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="350"
-          >
-            本作於 2020 年 6月 24 日於 Steam 遊戲平台推出先行體驗版，截止同年 8
-            月中旬，全球銷量已達到 150,000 份，其中有超過一半的使用者來自日本。
-          </p>
-        </section>
-        <section
-          class="section mt-4"
-          data-aos="fade-up"
-          data-aos-easing="linear"
-          data-aos-duration="300"
-        >
-          <div class="row align-items-center">
-            <div class="col-12 col-md-8 order-1 order-md-0">
-              <figure class="mb-0">
+              <a
+                class="text-decoration-none p-table__link"
+                href="https://store.steampowered.com/app/1049890/Little_Witch_Nobeta/"
+                target="_blank"
+              >
+                <figure class="mb-0">
+                  <img
+                    src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1630060777216.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=YgZfI4nI2NnuDYgtBfk1okT89vfLKghsvixVL2PlhsJ02Gv9wfP41T1%2Bq2KN1MwBzieM%2Ba%2BksDbBhb4kuOi060tBm9IGgs3xhojLS1ee3Q4%2FSUdfgxZ2hZ7iGBt715z1pUlCdo3ejsvVhR0RB32gHUSw1hgNVTEuyDUbO%2Ff0BJQymO%2F51ARq8I795cPjT4VdiAiHfBCow9rVLxUKbZLJyK5GneXcxOo75HDVZCrqUVwl7NRh1CgDUk5txhbyKe6YIFDSpchzzgQzyVllfGMSYL8cMNsyYL3uFpSu%2Be%2Bc%2F6altjhZllLaZrKjdBCjzZ45m1KOvF0D1LmemCMzTPL%2FeQ%3D%3D"
+                    alt="LITTLE WITCH NOBETA"
+                    class="img-fluid"
+                  />
+                  <figcaption class="mt-2 text-light text-inner fs-7">
+                    小魔女諾貝塔 Steam 商品頁面<span
+                      class="ps-2 pb-1 fs-7 material-icons"
+                    >
+                      open_in_new
+                    </span>
+                  </figcaption>
+                </figure>
+              </a>
+            </div>
+          </div>
+          <div class="row align-items-center flex-column-reverse flex-md-row">
+            <div class="col-12 col-md-7 col-lg-8 align-self-center text-center">
+              <figure class="mt-3 mb-0">
                 <img
                   src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1627068595030.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=JrjZKIVtaLczzfgavYHmtieOqdm%2BFDuuZMCnifr%2Bs4qZogXfWX5aw4A6TynwSC5%2Byx2%2FEIM%2FCrRAk%2F45KnxFbHFxTTEmxt0a9SZGMpJrWdwOTkGq4XuxcMkwqqat6zZJryEEn7GCOywCH%2FqorhWYEp8KRv7WBIiW%2Fz8JNhN1GeBWX%2BJy8r8GJCpV1Aw9wElqUkwnTNGowXgTDvU1CGNJ7GLhFJEj4do0QlXZrCnSKR7esAe9Waw5OQj0yPZ%2FZa65cgz1SpOORvzBYXHrWN5Fxp1f1Cfnbgh1URLuDsPw1ikR1i7BxZWC6S6l%2BtY9QVABfpIIAXXxZv6e%2FqRUHfVjTw%3D%3D"
                   alt
                   class="img-fluid"
                 />
-                <figcaption class="text-light">
+                <figcaption class="text-light text-inner fs-7">
                   小魔女諾貝塔 遊戲畫面
                 </figcaption>
               </figure>
             </div>
-            <div class="col-12 col-md-4 order-0 order-md-1">
-              <h3 class="section-title__text text-light">遊戲介紹</h3>
-              <p class="text-light fs-6 fs-sm-5">
-                小魔女諾貝塔是一款動作冒險遊戲<br />為了解開自己的身世之謎少女獨自來到古堡，<br />不斷的挑戰強大的生魂，<br />也學習到各式各樣的魔法與能力，<br />並邂逅了神祕的小黑貓，<br />古堡深處究竟隱藏了什麼樣的秘密呢?
+            <div class="col-12 col-md-5 col-lg-4">
+              <h3 class="section-title__text text-light mt-4">遊戲介紹</h3>
+              <p class="text-light fs-6 fs-sm-5 text-inner">
+                小魔女諾貝塔是一款動作冒險遊戲<br />為了解開自己的身世之謎少女獨自來到古堡，不斷的挑戰強大的生魂，也學習到各式各樣的魔法與能力，並邂逅了神祕的小黑貓，古堡深處究竟隱藏了什麼樣的秘密呢?
               </p>
             </div>
           </div>
@@ -69,20 +91,8 @@
         <section class="section mt-4">
           <div class="row align-items-center">
             <div class="col-12 col-md-5">
-              <h3
-                class="section-title__text text-light"
-                data-aos="fade-up"
-                data-aos-easing="linear"
-                data-aos-duration="300"
-              >
-                知名 Vtuber 直播
-              </h3>
-              <p
-                class="text-light fs-6 fs-sm-5"
-                data-aos="fade-up"
-                data-aos-easing="linear"
-                data-aos-duration="350"
-              >
+              <h3 class="section-title__text text-light">知名 Vtuber 直播</h3>
+              <p class="text-light fs-6 fs-sm-5 text-inner">
                 本作發售約 1 星期左右，便收到許多海外知名 Vtuber
                 直播主聯繫，表示希望能夠實況直播遊玩這款遊戲，以下列舉幾位。
               </p>
@@ -134,19 +144,14 @@
                 </li>
               </ul>
             </div>
-            <div class="col-12 col-md-7">
-              <figure
-                class="mb-0"
-                data-aos="fade-up"
-                data-aos-easing="linear"
-                data-aos-anchor-placement="center-bottom"
-              >
+            <div class="col-12 col-md-7 text-center">
+              <figure class="mb-0">
                 <img
                   src="https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1627071304843.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=BROsKIESGOIOwDNgzOcamrannT%2FJ50pKiQ02Rll%2Fbyul%2FNYaxtYmAYJWEKyEzliv%2BAiRSrbS6UnU1%2FKNpnXF5C7qq2HV4AAqLymI2VxhNdCRN3%2Fq4KWmMCxJGFSd8LO9QpNvb2G4DmpRyepbfrZkDoxkNl45pvAGb9WY5SbWTRPb89kEE%2B%2BxjCSfdAghamwQnF%2FPZVWcPySz6O0WWceq%2BaWUJPxs%2B%2F38gqy5p5t70zvqAoVnTTeUhP5M3l9wzzEajVBhIMZYOkNFnrJQ28q0k9G3nbAo49SwvmVbcrOh5%2BiJGBT%2BsHomilYvkGuIugmF84OrvL%2BuwoXv7kQfLFOaDg%3D%3D"
                   alt
                   class="img-fluid"
                 />
-                <figcaption class="text-light mt-2">
+                <figcaption class="text-light mt-2 text-inner fs-7">
                   海外知名實況主直播
                 </figcaption>
               </figure>

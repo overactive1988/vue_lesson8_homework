@@ -53,7 +53,7 @@
                 簡介概述
               </h3>
               <p
-                class="fs-6 fs-sm-5"
+                class="fs-6 fs-sm-5 text-inner"
                 data-aos="fade-up"
                 data-aos-easing="linear"
                 data-aos-duration="450"
@@ -96,7 +96,7 @@
               </h3>
               <ul class="fs-6 fs-sm-5 list-unstyled">
                 <li
-                  class="mb-3 section-list"
+                  class="mb-3 section-list text-inner"
                   data-aos="fade-up"
                   data-aos-easing="linear"
                   data-aos-duration="400"
@@ -107,7 +107,7 @@
                   榮獲 第十三屆 巴哈姆特 遊戲動漫大賞 年度人氣國產遊戲 金賞
                 </li>
                 <li
-                  class="mb-3 section-list"
+                  class="mb-3 section-list text-inner"
                   data-aos="fade-up"
                   data-aos-easing="linear"
                   data-aos-duration="450"
@@ -118,7 +118,7 @@
                   榮獲 巴哈姆特 2019 ACG 創作大賽 &lt; Unity 特別獎 &gt;
                 </li>
                 <li
-                  class="section-list"
+                  class="section-list text-inner"
                   data-aos="fade-up"
                   data-aos-easing="linear"
                   data-aos-duration="500"
@@ -158,7 +158,7 @@
             選購商品
           </p>
           <p
-            class="section-title__text fw-normal fs-6 fs-sm-5"
+            class="section-title__text text-inner fw-normal fs-6 fs-sm-5"
             data-aos="fade-up"
             data-aos-easing="linear"
             data-aos-duration="350"

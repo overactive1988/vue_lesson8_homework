@@ -76,15 +76,15 @@
                 </p>
                 <dl class="goods-detail-description">
                   <dt>商品編號</dt>
-                  <dd class="text-nowrap">{{ tempProduct.id }}</dd>
+                  <dd class="text-nowrap text-inner">{{ tempProduct.id }}</dd>
                 </dl>
                 <dl class="goods-detail-description">
                   <dt>商品說明</dt>
-                  <dd>{{ tempProduct.description }}</dd>
+                  <dd class="text-inner">{{ tempProduct.description }}</dd>
                 </dl>
                 <dl class="goods-detail-description">
                   <dt>商品規格</dt>
-                  <dd>{{ tempProduct.content }}</dd>
+                  <dd class="text-inner">{{ tempProduct.content }}</dd>
                 </dl>
                 <div class="d-flex mt-4">
                   <div class="input-group text-center w-50 d-inline-flex">
@@ -153,7 +153,14 @@
               </div>
               <!-- col-sm-6 end -->
               <h3 class="text-center mt-4 mb-0">
-                {{ tempProduct.category }} 相關商品
+                <a
+                  href="#"
+                  aria-current="true"
+                  @click.prevent="clickCategory(tempProduct.category)"
+                  class="text-decoration-none"
+                >
+                  更多{{ tempProduct.category }}相關商品</a
+                >
               </h3>
               <ul
                 class="
@@ -176,7 +183,7 @@
                       />
                       <div class="card-body">
                         <h5 class="card-title">{{ item.title }}</h5>
-                        <p class="card-text">{{ item.price }}NTD</p>
+                        <p class="card-text text-inner">{{ item.price }}NTD</p>
                       </div>
                     </a>
                     <a
@@ -225,6 +232,7 @@ import Navbar from "@/components/Navbar.vue";
 import SwiperCore, { Navigation, Thumbs } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import localStorage from "@/assets/js/mixins/localStorage";
+import emitter from "@/assets/js/methods/emitter";
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
@@ -371,6 +379,10 @@ export default {
         .catch((error) => {
           this.showErrorAlert(error);
         });
+    },
+    clickCategory() {
+      emitter.emit("categoryTop", this.tempProduct.category);
+      this.$router.push(`/products/`);
     },
   },
   mounted() {

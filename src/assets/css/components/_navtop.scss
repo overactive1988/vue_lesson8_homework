@@ -83,8 +83,7 @@
     justify-content: center;
     align-items: center;
     background: rgba(86, 42, 77, 0.5);
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
+    border-radius: .25rem;
     transition: 0.3s all;
     &:hover {
       opacity: 0.8;

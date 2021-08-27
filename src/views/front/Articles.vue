@@ -38,7 +38,7 @@
                     <h5 class="card-title mb-4">
                       {{ item.title }}
                     </h5>
-                    <p class="card-text">{{ item.description }}</p>
+                    <p class="card-text text-inner">{{ item.description }}</p>
                     <small class="card-text mt-2 text-muted">
                       <time :datetime="$filters.datetime(item.create_at)">{{
                         $filters.date(item.create_at)

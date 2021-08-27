@@ -181,7 +181,8 @@
   margin-bottom: 1rem;
 }
 
-.card-articles__date {
+.list-group {
+  border-radius: 0.25rem;
 }
 
 .goods-detail-description {
@@ -224,16 +225,16 @@
   background: rgba(255, 255, 255, 0.85);
 }
 
-.cart-detail-list {
-  
-}
-
 .accordion-button {
   font-weight: bold;
-  border-radius: 0rem!important;
+  border-radius: 0rem !important;
 }
 
 .accordion-item {
   margin: 1rem 0;
   border: none;
+}
+
+.text-inner {
+  opacity: 0.85 !important;
 }

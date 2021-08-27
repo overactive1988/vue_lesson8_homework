@@ -39,7 +39,7 @@
                     article.tag
                   }}</span>
                 </p>
-                <p><span v-html="article.content"></span></p>
+                <div class="text-inner" v-html="article.content"></div>
               </article>
               <div class="d-flex my-4">
                 <router-link class="btn btn-nobeta" to="/articles"

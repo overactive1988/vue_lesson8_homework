@@ -2,7 +2,6 @@
   <footer
     class="
       bg-dark
-      fs-7
       p-3
       text-center
       position-relative
@@ -60,7 +59,7 @@
         </router-link>
       </small>
     </div>
-    <p class="text-light mb-2">
+    <p class="text-light mb-2 fs-7">
       本站所使用一切 小魔女諾貝塔 相關素材已取得授權<br />著作權皆屬於
       <a
         class="text-link text-decoration-none"

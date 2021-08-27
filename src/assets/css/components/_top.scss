@@ -1,5 +1,6 @@
 .top {
-  background: url(https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626638369252.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=p39ROs9YBUDaPqO9uuBiY1EZ1FUcOWzn2le1xDBSAR2THVQoEP6yLZ1Ibv5gnoPXHdhW%2Fun9Y1eDT6mmOayTBGTrj6b7RgRB7rPQUh4ijNyTOqgYoV92Wvky%2BZ9CNMm58u5KfD5p5kaAuYTZ5uIwZ6AfkaedocP%2B6L8bMuyL33mZ9JV02d0cKXvJOENOgd%2F7eteG%2BkaIywQfp4e3tg4%2F5QMboQ1HF9gqDhRB3G%2FAaJspBJ0rxPQxnkCqT7xFGaGqmubrq6p4SH9v3013tMSr3aIRGcHOC%2BxxNi0v9Ete8beGJixF2g1rQpxfKGsIrLYPUMEzeHBIEEwp4DTjYLBiSQ%3D%3D) 50% 20% no-repeat;
+  background: url(https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626638369252.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=p39ROs9YBUDaPqO9uuBiY1EZ1FUcOWzn2le1xDBSAR2THVQoEP6yLZ1Ibv5gnoPXHdhW%2Fun9Y1eDT6mmOayTBGTrj6b7RgRB7rPQUh4ijNyTOqgYoV92Wvky%2BZ9CNMm58u5KfD5p5kaAuYTZ5uIwZ6AfkaedocP%2B6L8bMuyL33mZ9JV02d0cKXvJOENOgd%2F7eteG%2BkaIywQfp4e3tg4%2F5QMboQ1HF9gqDhRB3G%2FAaJspBJ0rxPQxnkCqT7xFGaGqmubrq6p4SH9v3013tMSr3aIRGcHOC%2BxxNi0v9Ete8beGJixF2g1rQpxfKGsIrLYPUMEzeHBIEEwp4DTjYLBiSQ%3D%3D)
+    50% 20% no-repeat;
   background-size: cover;
 }
 
@@ -40,7 +41,7 @@
   overflow: hidden;
   color: #fff;
   font-weight: bold;
-  font-size: .6rem;
+  font-size: 0.6rem;
   font-family: "Montserrat", sans-serif;
   line-height: 1.2;
   -webkit-transform: rotate(90deg) translate(0%, -100%);
@@ -49,7 +50,7 @@
   -webkit-transform-origin: bottom right;
   -ms-transform-origin: bottom right;
   transform-origin: bottom right;
-  letter-spacing: .3em;
+  letter-spacing: 0.3em;
   @include media-breakpoint-down(md) {
     right: 8%;
   }
@@ -130,7 +131,8 @@
 
 // products
 .top-products {
-  background: url(https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626638411518.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=QcOhOOb2mCwtn31EdJGoxDW2yMz80RGwfbe0fv8lBatiaCQzbIpCdR8iE%2FFLXCaaO9XTcgps3Dp2Mym1vb0oeS0NdZjnERMbcH8la%2FBVIs%2BjxgQ73ImSqSmdSOhFmVpg83cifYOf0MzdrHAwrxaPWvlTlX36R0IglI2Mr6uCbBKK6LN6aOYfJSbqfU9Erkg6OMfpbOVQJcJ0gxcccp2Gs8lAC1DmRQsryLvlUHEKAhUqZtzrLEX%2Bqqz76f6TkQ2uwX%2BbftFjF24MClmWzQ58KdXmSQdii%2B8uynHnLK8qyqskjtE%2BAGx6cCRKLr3miGMsmgN7W19po%2BDaNExfEN5%2BBA%3D%3D) no-repeat top center;
+  background: url(https://storage.googleapis.com/vue-course-api.appspot.com/leolee/1626638411518.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=QcOhOOb2mCwtn31EdJGoxDW2yMz80RGwfbe0fv8lBatiaCQzbIpCdR8iE%2FFLXCaaO9XTcgps3Dp2Mym1vb0oeS0NdZjnERMbcH8la%2FBVIs%2BjxgQ73ImSqSmdSOhFmVpg83cifYOf0MzdrHAwrxaPWvlTlX36R0IglI2Mr6uCbBKK6LN6aOYfJSbqfU9Erkg6OMfpbOVQJcJ0gxcccp2Gs8lAC1DmRQsryLvlUHEKAhUqZtzrLEX%2Bqqz76f6TkQ2uwX%2BbftFjF24MClmWzQ58KdXmSQdii%2B8uynHnLK8qyqskjtE%2BAGx6cCRKLr3miGMsmgN7W19po%2BDaNExfEN5%2BBA%3D%3D)
+    no-repeat top center;
   background-size: cover;
   color: #fff;
 }
